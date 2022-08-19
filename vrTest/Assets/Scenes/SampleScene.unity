@@ -5353,7 +5353,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 552997451956263877, guid: 88d15c56298901044a0e62ab4369c320, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 827694294, guid: 88d15c56298901044a0e62ab4369c320, type: 3}
+    - {fileID: 742567634, guid: 88d15c56298901044a0e62ab4369c320, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 88d15c56298901044a0e62ab4369c320, type: 3}
 --- !u!114 &2337301994235047351 stripped
 MonoBehaviour:
@@ -5361,7 +5367,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 2337301994235047350}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a35f53729f49854a8e5b84d52aa0d72, type: 3}
   m_Name: 
@@ -5389,17 +5395,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pcon: {fileID: 2337301994235047351}
+  triggerEffectHolder: {fileID: 0}
   magnet: {fileID: 0}
   hovering: 0
   connected: 0
   lastShoot: 0
   chain: {fileID: 0}
-  triggerEffectHolder: {fileID: 0}
+  overrideRotation: {x: 0, y: 0, z: 0, w: 0}
   testGrip: 0
   testTrigger: 0
   overrideTarget: 0
-  testTarget: {fileID: 0}
   CT: 0
+  rc: {fileID: 0}
+  isTrigger: 0
 --- !u!114 &2337301994235047355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5413,17 +5421,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pcon: {fileID: 2337301994235047351}
+  triggerEffectHolder: {fileID: 0}
   magnet: {fileID: 0}
   hovering: 0
   connected: 0
   lastShoot: 0
   chain: {fileID: 0}
-  triggerEffectHolder: {fileID: 0}
+  overrideRotation: {x: 0, y: 0, z: 0, w: 0}
   testGrip: 0
   testTrigger: 0
   overrideTarget: 0
-  testTarget: {fileID: 0}
   CT: 0
+  rc: {fileID: 0}
+  isTrigger: 0
 --- !u!1001 &6048638498760838860
 PrefabInstance:
   m_ObjectHideFlags: 0

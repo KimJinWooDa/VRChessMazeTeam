@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - BISHOP
+  - MAGNET
+  - GROUND
+  - SKY
+  - WARNING
+  - STOP
   layers:
   - Default
   - TransparentFX

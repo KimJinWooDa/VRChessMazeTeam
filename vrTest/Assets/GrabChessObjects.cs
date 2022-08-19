@@ -8,6 +8,16 @@ public class GrabChessObjects : MonoBehaviour
     {
         if (other.CompareTag("BISHOP") && OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
         {
+            GameManager.instance.SetUI(0, false);
+            GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(1);
+        }
+    }
+
+    private void Update()
+    {
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
+        {
+            GameManager.instance.SetUI(0, false);
             GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(1);
         }
     }

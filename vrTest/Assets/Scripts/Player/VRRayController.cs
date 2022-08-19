@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class VRRayController : MonoBehaviour
 {
     public const int MAGNET_LAYER = 6;
-    public const float PULL_STR = 100f, STALL_TIME = 3f, YEET_STR = 600f, HOLD_LINGER = 0.5f, MAGNET_RANGE = 40f;
+    public const float PULL_STR = 23f, STALL_TIME = 3f, YEET_STR = 600f, HOLD_LINGER = 0.5f, MAGNET_RANGE = 40f;
 
     [Header("Preset Values")]
     public PlayerControl pcon;
@@ -29,6 +29,9 @@ public class VRRayController : MonoBehaviour
     private float holdf = 0;
     private bool holdb = false;
 
+    [SerializeField] RotateCharacter rc;
+    public bool isTrigger = false;
+
     void Start()
     {
         holdb = false;
@@ -43,26 +46,23 @@ public class VRRayController : MonoBehaviour
     }
     public void VRHovering(Magnet magnet)
     {
-        //grip
-        if (lastShoot || Physics.Raycast(transform.position, transform.forward, out hit, MAGNET_RANGE, 1 << MAGNET_LAYER) && IsValid(hit))
+
+        if (!hovering)
         {
-            if (!hovering)
-            {
-                hovering = true;
-                this.magnet = magnet;
-                this.magnet.Hover(CT);
-            }
+            hovering = true;
+            this.magnet = magnet;
+            this.magnet.Hover(CT);
         }
+
     }
 
     public void VRExitHovering()
     {
-        if (hovering)
-        {
-            hovering = false;
-            magnet.Unhover(CT);
-            this.magnet = null;
-        }
+
+        hovering = false;
+        magnet.Unhover(CT);
+        this.magnet = null;
+
     }
     public void VRExitTrigger()
     {
@@ -70,24 +70,7 @@ public class VRRayController : MonoBehaviour
     }
     public void VRTrigger()
     {
-        if (lastShoot)
-        {
-            if (!Trigger(CT))
-            {
-                //detach
-                RemoveChain();
-            }
-            else if (!connected)
-            {
-                //chain is extending
-                if (!chain.expanding)
-                {
-                    //chain done expanding
-                    connected = true;
-                }
-            }
-        }
-        else
+        if (!isTrigger)
         {
             if (hovering && Trigger(CT))
             {
@@ -96,16 +79,19 @@ public class VRRayController : MonoBehaviour
                 connected = false;
                 chain = ChainUtils.LineTarget(transform.position, magnet.gameObject);
             }
-        }
-
-        if (lastShoot && chain != null)
-        {
-            chain.transform.position = transform.position;
-            if (connected)
+            if (lastShoot && chain != null)
             {
-                UpdateChainLength(magnet);
-                PullTowards(magnet);
+                chain.transform.position = transform.position;
+                if (connected)
+                {
+
+                    UpdateChainLength(magnet);
+                    rc.Set(magnet.transform, true);
+                    //PullTowards(magnet);
+                }
             }
+
+            isTrigger = true;
         }
     }
     void Update()
@@ -116,9 +102,15 @@ public class VRRayController : MonoBehaviour
             transform.rotation = overrideRotation;
         }
 
+        //VR환경에서 키고
+        if (isTrigger && !IsTrigger(CT))
+        {
+            rc.isTriggerState = false;
+            isTrigger = false;
+        }
         #region 그립
         //grip
-        //if (lastShoot || (Grip(CT) && Physics.Raycast(transform.position, transform.forward, out hit, MAGNET_RANGE, 1 << MAGNET_LAYER) && IsValid(hit)))
+        //if (lastShoot || Physics.Raycast(transform.position, transform.forward, out hit, MAGNET_RANGE, 1 << MAGNET_LAYER) && IsValid(hit))
         //{
         //    if (!hovering)
         //    {
@@ -138,44 +130,48 @@ public class VRRayController : MonoBehaviour
         #endregion
 
         #region 트리거
-        //trigger
-        if (lastShoot)
-        {
-            if (!Trigger(CT))
-            {
-                //detach
-                RemoveChain();
-            }
-            else if (!connected)
-            {
-                //chain is extending
-                if (!chain.expanding)
-                {
-                    //chain done expanding
-                    connected = true;
-                }
-            }
-        }
-        else
-        {
-            if (hovering && Trigger(CT))
-            {
-                //shoot
-                lastShoot = true;
-                connected = false;
-                chain = ChainUtils.LineTarget(transform.position, magnet.gameObject);
-            }
-        }
+        ////trigger 이거는 PC환경
+        //if (lastShoot)
+        //{
+        //    if (!Trigger(CT))
+        //    {
+        //        //detach
+        //        RemoveChain();
+        //        rc.isTriggerState = false;
+        //        isTrigger = false;
+        //    }
+        //    else if (!connected)
+        //    {
+        //        //chain is extending
+        //        if (!chain.expanding)
+        //        {
+        //            //chain done expanding
+        //            connected = true;
+        //        }
+        //    }
+        //}
+        //else
+        //{
+        //    if (hovering && Trigger(CT))
+        //    {
+        //        //shoot
+        //        lastShoot = true;
+        //        connected = false;
+        //        chain = ChainUtils.LineTarget(transform.position, magnet.gameObject);
+        //    }
+        //}
 
-        if (lastShoot && chain != null)
-        {
-            chain.transform.position = transform.position;
-            if (connected)
-            {
-                UpdateChainLength(magnet);
-                PullTowards(magnet);
-            }
-        }
+        //if (lastShoot && chain != null)
+        //{
+        //    chain.transform.position = transform.position;
+        //    if (connected && !isTrigger)
+        //    {
+        //        isTrigger = true;
+        //        rc.Set(magnet.transform, true);
+        //        UpdateChainLength(magnet);
+        //        //PullTowards(magnet);
+        //    }
+        //}
         #endregion
 
         #region HoldingEffect
@@ -285,14 +281,27 @@ public class VRRayController : MonoBehaviour
         else return OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger);
     }
 
+
     public bool Trigger(ControllerType lr)
     { //Trigger: yeet chain
-        if (testTrigger) return true;
+        if (testTrigger)
+        {
+            return true;
+
+        }
         if (lr == ControllerType.Left) return OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger);
         else return OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger);
     }
 
-    IEnumerator RemoveChainI(ChainCore chain)
+    public bool IsTrigger(ControllerType lr)
+    { 
+        if (testTrigger) return true;
+        if (lr == ControllerType.Left) return OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger);
+        else return OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger);
+    }
+
+
+   public IEnumerator RemoveChainI(ChainCore chain)
     {
         while (chain != null && chain.gameObject != null)
         {
@@ -302,7 +311,7 @@ public class VRRayController : MonoBehaviour
         }
     }
 
-    IEnumerator RemoveChainPreI(ChainCore chain)
+    public IEnumerator RemoveChainPreI(ChainCore chain)
     {
         chain.enabled = false;
         float t = 0;
