@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GrabChessObjects : MonoBehaviour
 {
+
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("BISHOP") && OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
+        if (other.CompareTag("BISHOP") && OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger))
         {
-            GameManager.instance.SetUI(0, false);
-            GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(1);
+            GameManager.instance.OnCourtineFade();
         }
     }
 
@@ -17,7 +17,6 @@ public class GrabChessObjects : MonoBehaviour
     {
         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
         {
-            GameManager.instance.SetUI(0, false);
             GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(1);
         }
     }

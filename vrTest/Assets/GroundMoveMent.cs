@@ -5,7 +5,7 @@ using UnityEngine;
 public class GroundMoveMent : MonoBehaviour
 {
     public bool canMoving;
-    [SerializeField] float moveSpeed = 1f;
+    [SerializeField] float moveSpeed = 0.5f;
     Vector3 originPos;
     [SerializeField] Transform targetPos;
     private void Awake()
@@ -21,6 +21,7 @@ public class GroundMoveMent : MonoBehaviour
         else if(canMoving && isCrash)
         {
             transform.position = this.transform.position;
+         
         }
         else
         {

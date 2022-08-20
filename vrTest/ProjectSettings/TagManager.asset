@@ -10,6 +10,7 @@ TagManager:
   - SKY
   - WARNING
   - STOP
+  - CHESSBOARD
   layers:
   - Default
   - TransparentFX
