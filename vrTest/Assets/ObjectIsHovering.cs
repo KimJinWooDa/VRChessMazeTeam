@@ -15,7 +15,7 @@ public class ObjectIsHovering : MonoBehaviour
     {
         if (isHovering)
         {
-            renderer.materials[1].SetFloat("_Thickness", 1.02f);
+            renderer.materials[1].SetFloat("_Thickness", 1.05f);
         }
         else
         {

@@ -19,8 +19,8 @@ public class VRRayController : MonoBehaviour
 
 
     [Header("Tests/Overrides")]
-    public Quaternion overrideRotation;
-    public bool testGrip, testTrigger, overrideTarget = false;
+    [HideInInspector] public Quaternion overrideRotation;
+    [HideInInspector] public bool testGrip, testTrigger, overrideTarget = false;
 
     public enum ControllerType { Left = 0, Right = 1 };
     public ControllerType CT;
@@ -30,7 +30,7 @@ public class VRRayController : MonoBehaviour
     private bool holdb = false;
 
     [SerializeField] RotateCharacter rc;
-    public bool isTrigger = false;
+    public bool canTrigger;
 
     void Start()
     {
@@ -46,136 +46,77 @@ public class VRRayController : MonoBehaviour
     }
     public void VRHovering(Magnet magnet)
     {
-
-        if (!hovering)
-        {
-            hovering = true;
-            this.magnet = magnet;
-            this.magnet.Hover(CT);
-        }
-
+        this.magnet = magnet;
+        magnet.GetComponent<ObjectIsHovering>().IsHovering(true);
+        rc.targetMagnet = this.magnet.transform;
+        //this.magnet.Hover(CT);
     }
 
     public void VRExitHovering()
     {
-
-        hovering = false;
-        magnet.Unhover(CT);
-        this.magnet = null;
-
+        //hovering = false;
+        //magnet.Unhover(CT);
+        //this.magnet = null;
+        magnet.GetComponent<ObjectIsHovering>().IsHovering(false);
     }
     public void VRExitTrigger()
     {
-
+        //canTrigger = false;
     }
     public void VRTrigger()
     {
-        if (!isTrigger)
-        {
-            if (hovering && Trigger(CT))
-            {
-                //shoot
-                lastShoot = true;
-                connected = false;
-                chain = ChainUtils.LineTarget(transform.position, magnet.gameObject);
-            }
-            if (lastShoot && chain != null)
-            {
-                chain.transform.position = transform.position;
-                if (connected)
-                {
-
-                    UpdateChainLength(magnet);
-                    rc.Set(magnet.transform, true);
-                    //PullTowards(magnet);
-                }
-            }
-
-            isTrigger = true;
+        if ((OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))) {
+            canTrigger = true;
         }
     }
+    public bool isTest;
     void Update()
     {
-        //face towards override target (for testing)
         if (overrideTarget)
         {
             transform.rotation = overrideRotation;
         }
 
-        //VR환경에서 키고
-        if (isTrigger && !IsTrigger(CT))
+        if (lastShoot)
         {
-            rc.isTriggerState = false;
-            isTrigger = false;
+            if (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger) && !isTest)
+            {
+                rc.isTriggerState = false;
+                rc.StopUp();
+                this.magnet = null;
+                RemoveChain();
+                canTrigger = false;
+            }
+            else if (!connected)
+            {
+                if (!chain.expanding)
+                {
+                    rc.Set(this.magnet.transform, true);
+                    GetComponent<Rigidbody>().isKinematic = true;
+                    connected = true;
+                }
+            }
+            
         }
-        #region 그립
-        //grip
-        //if (lastShoot || Physics.Raycast(transform.position, transform.forward, out hit, MAGNET_RANGE, 1 << MAGNET_LAYER) && IsValid(hit))
-        //{
-        //    if (!hovering)
-        //    {
-        //        hovering = true;
-        //        magnet.Hover(CT);
-        //    }
-        //}
-        //else
-        //{
-        //    if (hovering)
-        //    {
-        //        hovering = false;
-        //        magnet.Unhover(CT);
-        //        magnet = null;
-        //    }
-        //}
-        #endregion
+        else
+        {
+            if (magnet!=null && (canTrigger || isTest))
+            {
+                lastShoot = true;
+                connected = false;
+                chain = ChainUtils.LineTarget(transform.position, magnet.gameObject);
+            }
+        }
 
-        #region 트리거
-        ////trigger 이거는 PC환경
-        //if (lastShoot)
-        //{
-        //    if (!Trigger(CT))
-        //    {
-        //        //detach
-        //        RemoveChain();
-        //        rc.isTriggerState = false;
-        //        isTrigger = false;
-        //    }
-        //    else if (!connected)
-        //    {
-        //        //chain is extending
-        //        if (!chain.expanding)
-        //        {
-        //            //chain done expanding
-        //            connected = true;
-        //        }
-        //    }
-        //}
-        //else
-        //{
-        //    if (hovering && Trigger(CT))
-        //    {
-        //        //shoot
-        //        lastShoot = true;
-        //        connected = false;
-        //        chain = ChainUtils.LineTarget(transform.position, magnet.gameObject);
-        //    }
-        //}
+        if (lastShoot && chain != null)
+        {
+            chain.transform.position = transform.position;
+            if (connected)
+            {
+                UpdateChainLength(magnet);
+            }
+        }
 
-        //if (lastShoot && chain != null)
-        //{
-        //    chain.transform.position = transform.position;
-        //    if (connected && !isTrigger)
-        //    {
-        //        isTrigger = true;
-        //        rc.Set(magnet.transform, true);
-        //        UpdateChainLength(magnet);
-        //        //PullTowards(magnet);
-        //    }
-        //}
-        #endregion
-
-        #region HoldingEffect
-        //holding effects
         holdf = Mathf.Clamp01(holdf + Time.deltaTime / HOLD_LINGER * (hovering ? 1 : -1));
         if (holdf > 0)
         {
@@ -194,7 +135,6 @@ public class VRRayController : MonoBehaviour
                 triggerEffectHolder.SetActive(false);
             }
         }
-        #endregion
     }
 
     public void RemoveChain()
@@ -209,33 +149,19 @@ public class VRRayController : MonoBehaviour
 
     private void UpdateChainLength(Magnet target)
     {
-        //rotate core: try to go to pos
         Vector3 pos = transform.position;
         float len = Vector3.Distance(pos, target.transform.position);
         if (len > chain.MaxLength())
         {
-            //try to move rigidbody closer
             pcon.rigid.MovePosition(pcon.rigid.position + (target.transform.position - pos).normalized * (len - chain.MaxLength()));
             if (Vector3.Distance(pos, target.transform.position) > chain.MaxLength() + 0.3f)
             {
                 //break the chain, the pull is obstructed and there is no hope whatsoever
-                RemoveChain();
+                //RemoveChain();
                 return;
             }
-            //wrong color
-            if (!target.hasColor) pcon.lastColorExists = false;
-            if (pcon.lastColorExists && target.white == pcon.lastWhite)
-            {
-                WrongColor(target);
-                StartCoroutine(RemoveChainI(chain));
-                chain = null;
-                return;
-            }
-            if (target.hasColor) pcon.lastWhite = target.white;
-
             len = chain.MaxLength();
         }
-        //chainge offset based on len
         chain.SetLength(len);
     }
 
@@ -283,12 +209,7 @@ public class VRRayController : MonoBehaviour
 
 
     public bool Trigger(ControllerType lr)
-    { //Trigger: yeet chain
-        if (testTrigger)
-        {
-            return true;
-
-        }
+    { 
         if (lr == ControllerType.Left) return OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger);
         else return OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger);
     }

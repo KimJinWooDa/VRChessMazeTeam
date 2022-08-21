@@ -14,7 +14,8 @@ public class FadeScreen : MonoBehaviour
         renderer = GetComponent<Renderer>();
         if (isFadeStart)
         {
-            FadeIn();
+            Color color = new Vector4(1, 1, 1, 0);
+            renderer.material.SetColor("_Color", color);
         }
     }
 

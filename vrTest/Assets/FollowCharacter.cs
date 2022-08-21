@@ -7,18 +7,12 @@ public class FollowCharacter : MonoBehaviour
     [SerializeField] Transform target;
     [SerializeField] Vector3 offset;
 
-    [SerializeField] Camera cameraToLookAt;
-    void Start()
-    {
-        //cameraToLookAt = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-    }
-
-
+    [SerializeField] float offsetZ = 1f;
     // Update is called once per frame
 
     void Update()
     {
-        transform.LookAt(transform.position + cameraToLookAt.transform.rotation * Vector3.back, cameraToLookAt.transform.rotation * Vector3.down);
-        transform.position = target.position + offset;
+        //Vector3 targetPos = new Vector3(target.position.x, target.position.y, offsetZ);
+        //transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * 2f);
     }
 }

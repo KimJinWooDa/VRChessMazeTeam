@@ -1575,6 +1575,9 @@ MonoBehaviour:
   testTrigger: 0
   overrideTarget: 0
   CT: 0
+  rc: {fileID: 0}
+  canTrigger: 0
+  isTest: 0
 --- !u!114 &6353379421834193238 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3827689620755440438, guid: fbfc588a949bb1a42b20e5bddc4cf8cf, type: 3}
@@ -1625,6 +1628,9 @@ MonoBehaviour:
   testTrigger: 0
   overrideTarget: 0
   CT: 1
+  rc: {fileID: 0}
+  canTrigger: 0
+  isTest: 0
 --- !u!1001 &7869217374545457295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1914,7 +1920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9040074458005239455, guid: ffe3be6b11cb93446bff4c254b6d9148, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: ControllerPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 9040074458005239455, guid: ffe3be6b11cb93446bff4c254b6d9148, type: 3}
       propertyPath: m_IsActive
@@ -2078,6 +2084,9 @@ MonoBehaviour:
   testTrigger: 0
   overrideTarget: 0
   CT: 1
+  rc: {fileID: 0}
+  canTrigger: 0
+  isTest: 0
 --- !u!1 &2987843117224181030 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6029929497368285308, guid: ffe3be6b11cb93446bff4c254b6d9148, type: 3}
@@ -2096,18 +2105,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2059791499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2987843117224181030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffe886ebd7adc5f48ad875bd3c676993, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2059791501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2132,6 +2129,9 @@ MonoBehaviour:
   testTrigger: 0
   overrideTarget: 0
   CT: 1
+  rc: {fileID: 0}
+  canTrigger: 0
+  isTest: 0
 --- !u!114 &3778655298894222235 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5667803682277408449, guid: ffe3be6b11cb93446bff4c254b6d9148, type: 3}

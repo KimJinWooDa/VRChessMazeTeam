@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChainUtils : MonoBehaviour {
     public const float LENGTH = 0.06f;
-    public const float SCALE = 5f;
+    public const float SCALE = 2f;
     public const float DELAY = 0.01f;
     public static ChainUtils main;
     public static GameObject chainPrefab;

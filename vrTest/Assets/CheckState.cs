@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckState : MonoBehaviour
 {
-   
+    bool isOnce;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("WARNING"))
@@ -14,9 +14,10 @@ public class CheckState : MonoBehaviour
             GameManager.instance.StartPingPong();
 
         }
-        if (other.CompareTag("CHESSBOARD"))
+        if (other.CompareTag("CHESSBOARD") && !isOnce)
         {
-            GameManager.instance.OnCourtineFade();
+            GameManager.instance.OnCourtineFade(1);
+            isOnce = true;
         }
     }
     void OnTriggerExit(Collider other)

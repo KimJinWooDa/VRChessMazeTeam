@@ -6,16 +6,6 @@ public class FadeManager : MonoBehaviour
 {
     public FadeScreen fadeScreen;
 
-
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            GoToScene(1);
-        }
-    }
-
     public void GoToScene(int index)
     {
         StartCoroutine(ChangeScene(index));

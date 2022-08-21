@@ -14,7 +14,14 @@ public class PlayerControl : MonoBehaviour {
     public VRRayController[] controller = { null, null }; //left, right
     public Rigidbody rigid;
 
-    private void Awake() {
+    bool canJump;
+    private void Update()
+    {
+        if(OVRInput.Get(OVRInput.Button.One) && canJump)  
+        {
+            rigid.AddForce(Vector3.up * 2f, ForceMode.Impulse);
+            canJump = false;
+        }
     }
 
     private void LateUpdate() {
@@ -34,5 +41,13 @@ public class PlayerControl : MonoBehaviour {
 
     public void WrongColor() {
         //display help: wrong color
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("GROUND"))
+        {
+            canJump = true;
+        }
     }
 }
