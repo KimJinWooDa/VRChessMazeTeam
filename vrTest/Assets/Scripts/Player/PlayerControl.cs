@@ -14,12 +14,13 @@ public class PlayerControl : MonoBehaviour {
     public VRRayController[] controller = { null, null }; //left, right
     public Rigidbody rigid;
 
-    bool canJump;
+    public bool canJump;
+    public bool isFlying;
     private void Update()
     {
         if(OVRInput.Get(OVRInput.Button.One) && canJump)  
         {
-            rigid.AddForce(Vector3.up * 2f, ForceMode.Impulse);
+            rigid.AddForce(Vector3.up * 5f, ForceMode.Impulse);
             canJump = false;
         }
     }
@@ -31,13 +32,13 @@ public class PlayerControl : MonoBehaviour {
 
     private void UpdateFlying()
     {
-        rigid.useGravity = !Chained();
+        rigid.useGravity = !isFlying;
     }
 
-    public bool Chained()
-    {
-        return controller[0].lastShoot || controller[1].lastShoot;
-    }
+    //public bool Chained()
+    //{
+    //    return controller[0].lastShoot || controller[1].lastShoot;
+    //}
 
     public void WrongColor() {
         //display help: wrong color

@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class VRRayController : MonoBehaviour
 {
     public const int MAGNET_LAYER = 6;
-    public const float PULL_STR = 50f, STALL_TIME = 3f, YEET_STR = 600f, HOLD_LINGER = 0.5f, MAGNET_RANGE = 40f;
+    public const float PULL_STR = 45f, STALL_TIME = 3f, YEET_STR = 600f, HOLD_LINGER = 0.5f, MAGNET_RANGE = 40f;
 
     [Header("Preset Values")]
     public PlayerControl pcon;
@@ -82,6 +82,7 @@ public class VRRayController : MonoBehaviour
                 this.magnet = null;
                 RemoveChain();
                 canTrigger = false;
+                pcon.isFlying = false;
             }
             else if (!connected)
             {
@@ -93,6 +94,7 @@ public class VRRayController : MonoBehaviour
                 }
                 if (!chain.expanding && BishopName == "WHITEBISHOP")
                 {
+                    pcon.isFlying = true;
                     connected = true;
                 }
             }
@@ -102,6 +104,7 @@ public class VRRayController : MonoBehaviour
         {
             if (magnet!=null && (canTrigger || isTest))
             {
+                pcon.canJump = false;
                 lastShoot = true;
                 connected = false;
                 chain = ChainUtils.LineTarget(chainTransform.position, magnet.gameObject);

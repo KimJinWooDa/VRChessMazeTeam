@@ -13,7 +13,9 @@ public class GrabChessObjects : MonoBehaviour
             if (isEnter)
             {
                 StartCoroutine(DissolveBishop(other.transform));
-                GameManager.instance.OnCourtineFade(3);
+                //GameManager.instance.OnCourtineFade(3);
+
+                GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(1);
                 isOnce = true;
             }
 
