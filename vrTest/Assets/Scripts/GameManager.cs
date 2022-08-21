@@ -17,6 +17,20 @@ public class GameManager : MonoBehaviour
     public bool isPingPong;
     bool isOnce;
     [SerializeField] RectTransform rectTrans;
+
+
+    float width;
+    float height;
+
+    [Space(10f)]
+    [Header("Áö¹Î´Ô ÀÌ°Å °Çµå½Ã¸é µÅ¿ë")]
+    [SerializeField] float ui2_Width_Scale = 1232f;
+    [SerializeField] float ui3_Width_Scale = 1381f;
+    [SerializeField] float ui4_Width_Scale = 1242f;
+    [Space (10f)]
+    [SerializeField] float ui2_Height_Scale = 340f;
+    [SerializeField] float ui3_Height_Scale = 289f;
+    [SerializeField] float ui4_Height_Scale = 299f;
     private void Awake()
     {
         if (Instance != null)
@@ -30,7 +44,7 @@ public class GameManager : MonoBehaviour
 
         }
         uiImage.gameObject.SetActive(false);
-        rectTrans = GetComponent<RectTransform>();
+        rectTrans = rectTrans.GetComponent<RectTransform>();
     }
 
     public static GameManager instance
@@ -70,6 +84,7 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator FadeOutImage(Image image)
     {
+        
 
         yield return new WaitForSeconds(3f);
 
@@ -80,12 +95,21 @@ public class GameManager : MonoBehaviour
             image.color = new Vector4(1, 1, 1, a.a);
             yield return null;
         }
+        
         imageCount++;
-        rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Width(imageCount));
-        rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Height(imageCount));
-        followImage.sprite = followSprites[imageCount];
-        followImage.color = new Vector4(1, 1, 1, 1);
-        StartCoroutine(FadeOutImage(followImage));
+        if (imageCount == 4)
+        {
+            StopCoroutine(FadeOutImage(followImage));
+            yield break;
+        }
+        else
+        {
+            rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Width(imageCount));
+            rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Height(imageCount));
+            followImage.sprite = followSprites[imageCount];
+            followImage.color = new Vector4(1, 1, 1, 1);
+            StartCoroutine(FadeOutImage(followImage));
+        }
     }
 
     public void SetUI(bool isOn)
@@ -108,7 +132,7 @@ public class GameManager : MonoBehaviour
         else StopCoroutine(PingPongAlpha());
     }
 
-    float width;
+    
     public float Width(int index)
     {
         switch (index)
@@ -116,13 +140,13 @@ public class GameManager : MonoBehaviour
             case 0:
                 break;
             case 1:
-                width = 1232f;
+                width = ui2_Width_Scale;
                 break;
             case 2:
-                width = 1381f;
+                width =ui3_Width_Scale ;
                 break;
             case 3:
-                width = 1242f;
+                width = ui4_Width_Scale;
                 break;
             default:
                 break;
@@ -130,7 +154,6 @@ public class GameManager : MonoBehaviour
         return width;
     }
 
-    float height;
     public float Height(int index)
     {
         
@@ -139,13 +162,13 @@ public class GameManager : MonoBehaviour
             case 0:
                 break;
             case 1:
-                height = 340f;
+                height =ui2_Height_Scale ;
                 break;
             case 2:
-                height =289f;
+                height =ui3_Height_Scale;
                 break;
             case 3:
-                height =299f;
+                height =ui4_Height_Scale;
                 break;
             default:
                 break;

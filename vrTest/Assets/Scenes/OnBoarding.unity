@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -315,6 +315,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &333895486 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 333895484, guid: 122b5381d79adb7438af2f44873cf80e, type: 3}
+  m_PrefabInstance: {fileID: 2721314150476114366}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &334862350 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4567363877799354318, guid: 1667ba613bb586a47865fc4ed9448ece, type: 3}
@@ -379,7 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiImage: {fileID: 1961089840}
   followSprites:
-  - {fileID: 21300000, guid: afe4acbc449d4b14bb2c56541badb839, type: 3}
+  - {fileID: 21300000, guid: 766990c8060840140bba8a15a6dd3e50, type: 3}
   - {fileID: 21300000, guid: 8b015ba78e097fa4a90441141c9e35c3, type: 3}
   - {fileID: 21300000, guid: 631b6e92d192ac94bb7c1f956f5500ae, type: 3}
   - {fileID: 21300000, guid: 7f307efb782ea7d40b1797e0edae3eae, type: 3}
@@ -388,6 +393,13 @@ MonoBehaviour:
   imageCount: 0
   needImageCount: 2
   isPingPong: 0
+  rectTrans: {fileID: 333895486}
+  ui2_Width_Scale: 0
+  ui3_Width_Scale: 0
+  ui4_Width_Scale: 0
+  ui2_Height_Scale: 0
+  ui3_Height_Scale: 0
+  ui4_Height_Scale: 0
 --- !u!1 &372245455
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,19 +2114,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 333895484, guid: 122b5381d79adb7438af2f44873cf80e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.78
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 333895484, guid: 122b5381d79adb7438af2f44873cf80e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.2076371
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 333895484, guid: 122b5381d79adb7438af2f44873cf80e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 333895485, guid: 122b5381d79adb7438af2f44873cf80e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 766990c8060840140bba8a15a6dd3e50, type: 3}
     - target: {fileID: 556976570, guid: 122b5381d79adb7438af2f44873cf80e, type: 3}
       propertyPath: m_Height
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 556976570, guid: 122b5381d79adb7438af2f44873cf80e, type: 3}
       propertyPath: m_Radius
@@ -2122,7 +2138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 556976570, guid: 122b5381d79adb7438af2f44873cf80e, type: 3}
       propertyPath: m_Center.y
-      value: -0.7
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 637425883, guid: 122b5381d79adb7438af2f44873cf80e, type: 3}
       propertyPath: m_Enabled
