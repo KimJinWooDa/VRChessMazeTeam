@@ -5,19 +5,23 @@ using UnityEngine;
 public class GetWeapon : MonoBehaviour
 {
     public bool getWeapon;
-    private void OnCollisionEnter(Collision collision)
+    [SerializeField] Transform swordPos;
+    private void OnTriggerStay(Collider other)
     {
-        if (collision.collider.CompareTag("WEAPON"))
+        if (other.CompareTag("WEAPON") && OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
         {
-            getWeapon = true;
+            other.transform.SetParent(swordPos);
+            other.GetComponent<Enemy>().StartAttack(true);
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.collider.CompareTag("WEAPON"))
+        if (other.CompareTag("WEAPON"))
         {
-            getWeapon = false;
+            swordPos.DetachChildren();
+            other.GetComponent<Enemy>().StartAttack(false);
         }
     }
 }

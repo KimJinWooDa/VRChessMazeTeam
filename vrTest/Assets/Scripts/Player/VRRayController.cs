@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class VRRayController : MonoBehaviour
 {
     public const int MAGNET_LAYER = 6;
-    public const float PULL_STR = 23f, STALL_TIME = 3f, YEET_STR = 600f, HOLD_LINGER = 0.5f, MAGNET_RANGE = 40f;
+    public const float PULL_STR = 50f, STALL_TIME = 3f, YEET_STR = 600f, HOLD_LINGER = 0.5f, MAGNET_RANGE = 40f;
 
     [Header("Preset Values")]
     public PlayerControl pcon;
@@ -33,7 +33,7 @@ public class VRRayController : MonoBehaviour
     public bool canTrigger;
 
     [SerializeField] Transform chainTransform;
-
+    public string BishopName;
     void Start()
     {
         holdb = false;
@@ -49,15 +49,14 @@ public class VRRayController : MonoBehaviour
     public void VRHovering(Magnet magnet)
     {
         this.magnet = magnet;
-        Transform targetMagnet = magnet.GetComponent<Transform>();
-        targetMagnet.GetComponent<ObjectIsHovering>().IsHovering(true);
+        this.magnet.GetComponent<ObjectIsHovering>().IsHovering(true);
         rc.targetMagnet = this.magnet.transform;
+        BishopName = this.magnet.name;
     }
 
     public void VRExitHovering()
     {
-        Transform targetMagnet = magnet.GetComponent<Transform>();
-        targetMagnet.GetComponent<ObjectIsHovering>().IsHovering(true);
+        this.magnet.GetComponent<ObjectIsHovering>().IsHovering(true);
     }
 
     public void VRTrigger()
@@ -73,7 +72,7 @@ public class VRRayController : MonoBehaviour
         {
             transform.rotation = overrideRotation;
         }
-
+        if(magnet != null) BishopName = magnet.name;
         if (lastShoot)
         {
             if (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger) && !isTest)
@@ -86,10 +85,14 @@ public class VRRayController : MonoBehaviour
             }
             else if (!connected)
             {
-                if (!chain.expanding)
+                if (!chain.expanding && BishopName == "BLACKBISHOP")
                 {
                     rc.Set(this.magnet.transform, true);
                     GetComponent<Rigidbody>().isKinematic = true;
+                    connected = true;
+                }
+                if (!chain.expanding && BishopName == "WHITEBISHOP")
+                {
                     connected = true;
                 }
             }
@@ -108,9 +111,14 @@ public class VRRayController : MonoBehaviour
         if (lastShoot && chain != null)
         {
             chain.transform.position = chainTransform.position;
-            if (connected)
+            if (connected && BishopName == "BLACKBISHOP")
             {
                 UpdateChainLength(magnet);
+            }
+            else if (connected && BishopName == "WHITEBISHOP")
+            {
+                UpdateChainLengthWhite(magnet);
+                PullTowards(magnet);
             }
         }
 
@@ -161,7 +169,23 @@ public class VRRayController : MonoBehaviour
         }
         chain.SetLength(len);
     }
-
+    private void UpdateChainLengthWhite(Magnet target)
+    {
+        Vector3 pos = chainTransform.position;
+        float len = Vector3.Distance(pos, target.transform.position);
+        if (len > chain.MaxLength())
+        {
+            pcon.rigid.MovePosition(pcon.rigid.position + (target.transform.position - pos).normalized * (len - chain.MaxLength()));
+            if (Vector3.Distance(pos, target.transform.position) > chain.MaxLength() + 0.3f)
+            {
+                //break the chain, the pull is obstructed and there is no hope whatsoever
+                RemoveChain();
+                return;
+            }
+            len = chain.MaxLength();
+        }
+        chain.SetLength(len);
+    }
     private void PullTowards(Magnet target)
     {
         float len = Vector3.Distance(target.transform.position, chainTransform.position);

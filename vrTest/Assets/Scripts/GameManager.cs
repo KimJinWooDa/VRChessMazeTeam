@@ -68,12 +68,12 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator FadeOutImage(Image image)
     {
-        yield return new WaitForSeconds(3f);
-
 
         if (imageCount < needImageCount)
         {
             myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = false;
+            yield return new WaitForSeconds(3f);
+
             while (image.color.a > 0)
             {
                 Color a = image.color;
@@ -94,8 +94,8 @@ public class GameManager : MonoBehaviour
                 yield break;
             }
 
-
-            followImage.sprite = followSprites[++imageCount];
+            imageCount++;
+            followImage.sprite = followSprites[imageCount];
             followImage.color = new Vector4(1, 1, 1, 1);
             StartCoroutine(FadeOutImage(followImage));
         }

@@ -8,7 +8,7 @@ public class GrabChessObjects : MonoBehaviour
     bool isEnter;
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("BISHOP") && OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger) && !isOnce)
+        if (other.CompareTag("BISHOP") && OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger) && !isOnce)
         {
             if (isEnter)
             {
@@ -33,12 +33,6 @@ public class GrabChessObjects : MonoBehaviour
         {
             GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(1);
         }
-
-        //if (Input.GetKeyDown(KeyCode.Tab) &&!isOnce)
-        //{
-        //    GameManager.instance.OnCourtineFade(3);
-        //    isOnce = true;
-        //}
     }
 
     IEnumerator DissolveBishop(Transform bishop)
@@ -46,7 +40,9 @@ public class GrabChessObjects : MonoBehaviour
         float value = bishop.GetComponent<Renderer>().material.GetFloat("_Alpha");
         while (value < 1)
         {
-            bishop.GetComponent<Renderer>().material.SetFloat("_Alpha", 0.3f * Time.deltaTime);
+            float t = 0;
+            t += 0.3f * Time.deltaTime;
+            bishop.GetComponent<Renderer>().material.SetFloat("_Alpha", t);
             yield return null;
         }
     }

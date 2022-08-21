@@ -26,7 +26,10 @@ public class Enemy : MonoBehaviour
         hpImage = GetComponentInChildren<Image>();
         rb = GetComponent<Rigidbody>();
     }
-
+    public void StartAttack(bool isOn)
+    {
+        isStart = isOn;
+    }
     public void GetDamage(float damage)
     {
         hp -= damage * 0.01f;
@@ -36,10 +39,9 @@ public class Enemy : MonoBehaviour
     public void Update()
     {
         hpImage.fillAmount = hp;
-        isStart = targetCharacter.GetComponent<GetWeapon>().getWeapon;
+       
         if (isStart || isTest)
         {
-            Vector3 dir = (targetCharacter.position - transform.position).normalized;
             transform.position = Vector3.MoveTowards(this.transform.position, targetCharacter.position, Time.deltaTime * speed);
             if (canJump)
             {
