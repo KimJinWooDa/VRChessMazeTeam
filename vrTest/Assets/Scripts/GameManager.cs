@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
             while (image.color.a > 0)
             {
                 Color a = image.color;
-                a.a -= 0.35f * Time.deltaTime;
+                a.a -= 0.35f * Time.deltaTime; //UI 사라지는 속도? 0.35f
                 image.color = new Vector4(1, 1, 1, a.a);
                 yield return null;
             }
