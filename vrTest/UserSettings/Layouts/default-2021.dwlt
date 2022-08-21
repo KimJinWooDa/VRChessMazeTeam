@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 17
+  controlID: 102
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 18
+  controlID: 103
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 105
+  controlID: 104
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 106
+  controlID: 105
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -293,8 +293,8 @@ MonoBehaviour:
     y: 0
     width: 300.80005
     height: 730.8
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -362,7 +362,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: f0e5ffffe2faffff
+      m_ExpandedIDs: fab8ffff92ccffff18ceffff92e1ffffbaf8ffff34fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -611,9 +611,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.5993125, y: -0.3556563, z: -0.847836}
+    m_Target: {x: -8.869541, y: 10.029221, z: 0.82608986}
     speed: 2
-    m_Value: {x: -1.5993125, y: -0.3556563, z: -0.847836}
+    m_Value: {x: -8.869541, y: 10.029221, z: 0.82608986}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -660,13 +660,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.072876275, y: -0.4330024, z: 0.03514914, w: 0.8977573}
+    m_Target: {x: 0.116210505, y: 0.2394797, z: -0.028741943, w: 0.9635043}
     speed: 2
-    m_Value: {x: 0.072876066, y: -0.43300116, z: 0.035149038, w: 0.8977547}
+    m_Value: {x: 0.11616599, y: 0.24092206, z: -0.02891591, w: 0.96313345}
   m_Size:
-    m_Target: 3.690957
+    m_Target: 14.028533
     speed: 2
-    m_Value: 3.5320163
+    m_Value: 13.424434
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -763,8 +763,8 @@ MonoBehaviour:
       y: 21
       width: 990.7999
       height: 479.59998
-    m_Scale: {x: 1.6230793, y: 1.6230793}
-    m_Translation: {x: 495.39993, y: 239.79994}
+    m_Scale: {x: 1.6230793, y: 1.6230792}
+    m_Translation: {x: 495.39993, y: 239.79991}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -774,7 +774,7 @@ MonoBehaviour:
       x: -305.22226
       y: -147.74382
       width: 610.4446
-      height: 295.4877
+      height: 295.48773
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1238.4999, y: 625.75}
@@ -824,22 +824,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Map/Modeling/Materials
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/Map/Modeling/Materials
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\15U480\Documents\GitHub\VRChessMazeTeam\vrTest
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 180}
-    m_SelectedIDs: a4d30000
-    m_LastClickedID: 54180
-    m_ExpandedIDs: 00000000749b0000829e0000869e0000e2d20000eed2000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 119.79999}
+    m_SelectedIDs: 98760000
+    m_LastClickedID: 30360
+    m_ExpandedIDs: 000000008c76000098760000e0760000e276000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -867,7 +867,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000749b0000
+    m_ExpandedIDs: 000000008c760000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
