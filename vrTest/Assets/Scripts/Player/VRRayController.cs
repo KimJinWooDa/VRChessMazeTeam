@@ -32,6 +32,8 @@ public class VRRayController : MonoBehaviour
     [SerializeField] RotateCharacter rc;
     public bool canTrigger;
 
+    [SerializeField] Transform chainTransform;
+
     void Start()
     {
         holdb = false;
@@ -47,25 +49,20 @@ public class VRRayController : MonoBehaviour
     public void VRHovering(Magnet magnet)
     {
         this.magnet = magnet;
-        magnet.GetComponent<ObjectIsHovering>().IsHovering(true);
+        Transform targetMagnet = magnet.GetComponent<Transform>();
+        targetMagnet.GetComponent<ObjectIsHovering>().IsHovering(true);
         rc.targetMagnet = this.magnet.transform;
-        //this.magnet.Hover(CT);
     }
 
     public void VRExitHovering()
     {
-        //hovering = false;
-        //magnet.Unhover(CT);
-        //this.magnet = null;
-        magnet.GetComponent<ObjectIsHovering>().IsHovering(false);
+        Transform targetMagnet = magnet.GetComponent<Transform>();
+        targetMagnet.GetComponent<ObjectIsHovering>().IsHovering(true);
     }
-    public void VRExitTrigger()
-    {
-        //canTrigger = false;
-    }
+
     public void VRTrigger()
     {
-        if ((OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))) {
+        if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger)) {
             canTrigger = true;
         }
     }
@@ -104,13 +101,13 @@ public class VRRayController : MonoBehaviour
             {
                 lastShoot = true;
                 connected = false;
-                chain = ChainUtils.LineTarget(transform.position, magnet.gameObject);
+                chain = ChainUtils.LineTarget(chainTransform.position, magnet.gameObject);
             }
         }
 
         if (lastShoot && chain != null)
         {
-            chain.transform.position = transform.position;
+            chain.transform.position = chainTransform.position;
             if (connected)
             {
                 UpdateChainLength(magnet);
@@ -149,7 +146,7 @@ public class VRRayController : MonoBehaviour
 
     private void UpdateChainLength(Magnet target)
     {
-        Vector3 pos = transform.position;
+        Vector3 pos = chainTransform.position;
         float len = Vector3.Distance(pos, target.transform.position);
         if (len > chain.MaxLength())
         {
@@ -167,7 +164,7 @@ public class VRRayController : MonoBehaviour
 
     private void PullTowards(Magnet target)
     {
-        float len = Vector3.Distance(target.transform.position, transform.position);
+        float len = Vector3.Distance(target.transform.position, chainTransform.position);
         //pull with force
         if (len > target.radius)
         {
@@ -184,7 +181,7 @@ public class VRRayController : MonoBehaviour
     private void WrongColor(Magnet target)
     {
         pcon.WrongColor();
-        pcon.rigid.AddExplosionForce(YEET_STR, target.transform.position, Vector3.Distance(target.transform.position, transform.position) * 2f);
+        pcon.rigid.AddExplosionForce(YEET_STR, target.transform.position, Vector3.Distance(target.transform.position, chainTransform.position) * 2f);
     }
 
     public static ControllerType Other(ControllerType type)
@@ -227,7 +224,7 @@ public class VRRayController : MonoBehaviour
         while (chain != null && chain.gameObject != null)
         {
             chain.offset += Time.deltaTime * 20f;
-            chain.transform.position += (chain.target.transform.position - transform.position).normalized * Time.deltaTime * 20f * ChainUtils.SCALE * ChainUtils.LENGTH;
+            chain.transform.position += (chain.target.transform.position - chainTransform.position).normalized * Time.deltaTime * 20f * ChainUtils.SCALE * ChainUtils.LENGTH;
             yield return null;
         }
     }

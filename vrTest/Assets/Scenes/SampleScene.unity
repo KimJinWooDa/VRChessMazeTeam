@@ -5360,6 +5360,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 827694294, guid: 88d15c56298901044a0e62ab4369c320, type: 3}
     - {fileID: 742567634, guid: 88d15c56298901044a0e62ab4369c320, type: 3}
+    - {fileID: 2059791501, guid: 88d15c56298901044a0e62ab4369c320, type: 3}
+    - {fileID: 1654034586, guid: 88d15c56298901044a0e62ab4369c320, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 88d15c56298901044a0e62ab4369c320, type: 3}
 --- !u!114 &2337301994235047351 stripped
 MonoBehaviour:
@@ -5407,7 +5409,9 @@ MonoBehaviour:
   overrideTarget: 0
   CT: 0
   rc: {fileID: 0}
-  isTrigger: 0
+  canTrigger: 0
+  chainTransform: {fileID: 0}
+  isTest: 0
 --- !u!114 &2337301994235047355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5433,7 +5437,9 @@ MonoBehaviour:
   overrideTarget: 0
   CT: 0
   rc: {fileID: 0}
-  isTrigger: 0
+  canTrigger: 0
+  chainTransform: {fileID: 0}
+  isTest: 0
 --- !u!1001 &6048638498760838860
 PrefabInstance:
   m_ObjectHideFlags: 0
