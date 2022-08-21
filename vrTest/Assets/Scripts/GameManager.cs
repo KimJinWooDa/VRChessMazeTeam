@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     static GameManager Instance = null;
     public bool isPingPong;
     bool isOnce;
+    [SerializeField] RectTransform rectTrans;
     private void Awake()
     {
         if (Instance != null)
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
 
         }
         uiImage.gameObject.SetActive(false);
+        rectTrans = GetComponent<RectTransform>();
     }
 
     public static GameManager instance
@@ -69,42 +71,23 @@ public class GameManager : MonoBehaviour
     IEnumerator FadeOutImage(Image image)
     {
 
-        if (imageCount < needImageCount)
-        {
-            myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = false;
-            yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3f);
 
-            while (image.color.a > 0)
-            {
-                Color a = image.color;
-                a.a -= 0.35f * Time.deltaTime; //UI 사라지는 속도? 0.35f
-                image.color = new Vector4(1, 1, 1, a.a);
-                yield return null;
-            }
-            if (imageCount == 2 && !isOnce)
-            {
-                isOnce = true;
-                StopCoroutine(FadeOutImage(followImage));
-            }
-            if (imageCount == 6)
-            {
-                myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = true;
-                GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(1);
-                StopCoroutine(FadeOutImage(followImage));
-                yield break;
-            }
-
-            imageCount++;
-            followImage.sprite = followSprites[imageCount];
-            followImage.color = new Vector4(1, 1, 1, 1);
-            StartCoroutine(FadeOutImage(followImage));
-        }
-        else
+        while (image.color.a > 0)
         {
-            myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = true;
-            StopCoroutine(FadeOutImage(followImage));
+            Color a = image.color;
+            a.a -= 0.35f * Time.deltaTime; //UI 사라지는 속도? 0.35f
+            image.color = new Vector4(1, 1, 1, a.a);
+            yield return null;
         }
+        imageCount++;
+        rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Width(imageCount));
+        rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Height(imageCount));
+        followImage.sprite = followSprites[imageCount];
+        followImage.color = new Vector4(1, 1, 1, 1);
+        StartCoroutine(FadeOutImage(followImage));
     }
+
     public void SetUI(bool isOn)
     {
         uiImage.gameObject.SetActive(isOn);
@@ -123,5 +106,50 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (isPingPong) StartCoroutine(PingPongAlpha());
         else StopCoroutine(PingPongAlpha());
+    }
+
+    float width;
+    public float Width(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                break;
+            case 1:
+                width = 1232f;
+                break;
+            case 2:
+                width = 1381f;
+                break;
+            case 3:
+                width = 1242f;
+                break;
+            default:
+                break;
+        }
+        return width;
+    }
+
+    float height;
+    public float Height(int index)
+    {
+        
+        switch (index)
+        {
+            case 0:
+                break;
+            case 1:
+                height = 340f;
+                break;
+            case 2:
+                height =289f;
+                break;
+            case 3:
+                height =299f;
+                break;
+            default:
+                break;
+        }
+        return height;
     }
 }
