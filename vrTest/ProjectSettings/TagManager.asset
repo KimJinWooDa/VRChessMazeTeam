@@ -11,6 +11,8 @@ TagManager:
   - WARNING
   - STOP
   - CHESSBOARD
+  - ENEMY
+  - WEAPON
   layers:
   - Default
   - TransparentFX

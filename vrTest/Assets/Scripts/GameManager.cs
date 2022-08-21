@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     static GameManager Instance = null;
     public bool isPingPong;
     bool isOnce;
-    //궁금한게 다른 씬 갔다가 다시 메인씬으로 가면 설정유지되나?
     private void Awake()
     {
         if (Instance != null)

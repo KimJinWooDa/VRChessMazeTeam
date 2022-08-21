@@ -9,6 +9,7 @@ public class GrabChessObjects : MonoBehaviour
     {
         if (other.CompareTag("BISHOP") && OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger) && !isOnce)
         {
+            StartCoroutine(DissolveBishop(other.transform));
             GameManager.instance.OnCourtineFade(3);
             isOnce = true;
         }
@@ -25,6 +26,16 @@ public class GrabChessObjects : MonoBehaviour
         {
             GameManager.instance.OnCourtineFade(3);
             isOnce = true;
+        }
+    }
+
+    IEnumerator DissolveBishop(Transform bishop)
+    {
+        float value = bishop.GetComponent<Renderer>().material.GetFloat("_Alpha");
+        while (value < 1)
+        {
+            bishop.GetComponent<Renderer>().material.SetFloat("_Alpha", 0.3f * Time.deltaTime);
+            yield return null;
         }
     }
 }
