@@ -2,19 +2,14 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 8
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: DistortionMesh_MeshEffect
   m_Shader: {fileID: 4800000, guid: f8f24f9fc62964844b4623f583f9aef6, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords:
-  - USE_CUTOUT
-  - USE_FRESNEL
-  - USE_HEIGHT
-  - USE_MAINTEX
+  m_ShaderKeywords: USE_CUTOUT USE_FRESNEL USE_HEIGHT USE_MAINTEX
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -76,7 +71,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Ints: []
     m_Floats:
     - _AlphaClip: 10
     - _BumpAmt: 250
@@ -116,7 +110,7 @@ Material:
     - _ZWrite: 1
     - _ZWriteMode: 0
     m_Colors:
-    - _BorderScale: {r: 0.3, g: 0.13, b: 0, a: 1.3}
+    - _BorderScale: {r: 0.14, g: 0.13, b: 0, a: 1.3}
     - _Color: {r: 0, g: 0.17241406, b: 1, a: 1}
     - _CutoutColor: {r: 0.102941155, g: 0.2204867, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
@@ -125,6 +119,5 @@ Material:
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 0.41911763, g: 0.41911763, b: 0.41911763, a: 0.5}
     - _Speed: {r: 0, g: 5, b: 0, a: 0}
-    - _TimeScale: {r: 4.5, g: -6.39, b: -5, a: -3}
+    - _TimeScale: {r: 4.3, g: -6.39, b: -5, a: -3}
     - _TintColor: {r: 2.1950572, g: 1.7960596, b: 2.779304, a: 1}
-  m_BuildTextureStacks: []

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.021663688, g: 0.01136612, b: 0.01931896, a: 1}
+  m_IndirectSpecularColor: {r: 0.021651568, g: 0.011369202, b: 0.019328503, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -507,9 +507,29 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: db6373ea0bc3c894b89034c7cd4d13ff, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: db6373ea0bc3c894b89034c7cd4d13ff, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2576956483768403278, guid: d64a64c9b1403994781c2983aad83ae3, type: 3}
+      objectReference: {fileID: 2100000, guid: a57ba3dc29fd2fd48bb90f3582226d8f, type: 2}
+    - target: {fileID: -7511558181221131132, guid: db6373ea0bc3c894b89034c7cd4d13ff, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00ac69db244ad3442b7bd458a78cc6c1, type: 2}
+    - target: {fileID: -7511558181221131132, guid: db6373ea0bc3c894b89034c7cd4d13ff, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c25b86c68be36e438e107e2fafb7dbd, type: 2}
+    - target: {fileID: -7511558181221131132, guid: db6373ea0bc3c894b89034c7cd4d13ff, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: c45bd59c9989c7446a8a7ab82fb62fca, type: 2}
+    - target: {fileID: -7511558181221131132, guid: db6373ea0bc3c894b89034c7cd4d13ff, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: c403de53b74144843bc6c0b9d4cf7013, type: 2}
     - target: {fileID: 919132149155446097, guid: db6373ea0bc3c894b89034c7cd4d13ff, type: 3}
       propertyPath: m_Name
       value: Rook 1 (10)
@@ -865,9 +885,29 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 5530773329964942759, guid: 3c530b9136977e34e839ae030366454c, type: 3}
+      objectReference: {fileID: 2100000, guid: a57ba3dc29fd2fd48bb90f3582226d8f, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00ac69db244ad3442b7bd458a78cc6c1, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c25b86c68be36e438e107e2fafb7dbd, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: c45bd59c9989c7446a8a7ab82fb62fca, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: c403de53b74144843bc6c0b9d4cf7013, type: 2}
     - target: {fileID: 919132149155446097, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
       propertyPath: m_Name
       value: Vishop (9)
@@ -2902,9 +2942,29 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 4145387956242784897, guid: 3c530b9136977e34e839ae030366454c, type: 3}
+      objectReference: {fileID: 2100000, guid: a57ba3dc29fd2fd48bb90f3582226d8f, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00ac69db244ad3442b7bd458a78cc6c1, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c25b86c68be36e438e107e2fafb7dbd, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: c45bd59c9989c7446a8a7ab82fb62fca, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: c403de53b74144843bc6c0b9d4cf7013, type: 2}
     - target: {fileID: 919132149155446097, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
       propertyPath: m_Name
       value: Vishop (7)
@@ -3793,9 +3853,29 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 4145387956242784897, guid: 3c530b9136977e34e839ae030366454c, type: 3}
+      objectReference: {fileID: 2100000, guid: a57ba3dc29fd2fd48bb90f3582226d8f, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00ac69db244ad3442b7bd458a78cc6c1, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c25b86c68be36e438e107e2fafb7dbd, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: c45bd59c9989c7446a8a7ab82fb62fca, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: c403de53b74144843bc6c0b9d4cf7013, type: 2}
     - target: {fileID: 919132149155446097, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
       propertyPath: m_Name
       value: Vishop (5)
@@ -4160,9 +4240,29 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 4145387956242784897, guid: 3c530b9136977e34e839ae030366454c, type: 3}
+      objectReference: {fileID: 2100000, guid: a57ba3dc29fd2fd48bb90f3582226d8f, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00ac69db244ad3442b7bd458a78cc6c1, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c25b86c68be36e438e107e2fafb7dbd, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: c45bd59c9989c7446a8a7ab82fb62fca, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: c403de53b74144843bc6c0b9d4cf7013, type: 2}
     - target: {fileID: 919132149155446097, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
       propertyPath: m_Name
       value: Vishop (6)
@@ -4465,9 +4565,29 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 4145387956242784897, guid: 3c530b9136977e34e839ae030366454c, type: 3}
+      objectReference: {fileID: 2100000, guid: a57ba3dc29fd2fd48bb90f3582226d8f, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00ac69db244ad3442b7bd458a78cc6c1, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c25b86c68be36e438e107e2fafb7dbd, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: c45bd59c9989c7446a8a7ab82fb62fca, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: c403de53b74144843bc6c0b9d4cf7013, type: 2}
     - target: {fileID: 919132149155446097, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
       propertyPath: m_Name
       value: Vishop
@@ -5085,9 +5205,29 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 5530773329964942759, guid: 3c530b9136977e34e839ae030366454c, type: 3}
+      objectReference: {fileID: 2100000, guid: a57ba3dc29fd2fd48bb90f3582226d8f, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00ac69db244ad3442b7bd458a78cc6c1, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c25b86c68be36e438e107e2fafb7dbd, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: c45bd59c9989c7446a8a7ab82fb62fca, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: c403de53b74144843bc6c0b9d4cf7013, type: 2}
     - target: {fileID: 919132149155446097, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
       propertyPath: m_Name
       value: Vishop (3)
@@ -5359,9 +5499,37 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 5530773329964942759, guid: 3c530b9136977e34e839ae030366454c, type: 3}
+      objectReference: {fileID: 2100000, guid: a57ba3dc29fd2fd48bb90f3582226d8f, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00ac69db244ad3442b7bd458a78cc6c1, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c25b86c68be36e438e107e2fafb7dbd, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: c45bd59c9989c7446a8a7ab82fb62fca, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: c403de53b74144843bc6c0b9d4cf7013, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[5]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00ac69db244ad3442b7bd458a78cc6c1, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[6]
+      value: 
+      objectReference: {fileID: 2100000, guid: c403de53b74144843bc6c0b9d4cf7013, type: 2}
     - target: {fileID: 919132149155446097, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
       propertyPath: m_Name
       value: Vishop (4)
@@ -5441,9 +5609,29 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 5530773329964942759, guid: 3c530b9136977e34e839ae030366454c, type: 3}
+      objectReference: {fileID: 2100000, guid: a57ba3dc29fd2fd48bb90f3582226d8f, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00ac69db244ad3442b7bd458a78cc6c1, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c25b86c68be36e438e107e2fafb7dbd, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: c45bd59c9989c7446a8a7ab82fb62fca, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: c403de53b74144843bc6c0b9d4cf7013, type: 2}
     - target: {fileID: 919132149155446097, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
       propertyPath: m_Name
       value: Vishop (8)
@@ -5554,6 +5742,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 96cd8af3d5a9f454d9dbc3d4e2aa6775, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 96cd8af3d5a9f454d9dbc3d4e2aa6775, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 923ddff5bb7b41e4ab0341e3982e0b3d, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 96cd8af3d5a9f454d9dbc3d4e2aa6775, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 086a514a3be4d4e5985fbea117424151, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 96cd8af3d5a9f454d9dbc3d4e2aa6775, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: c5d1122dc55014fa499112a1f1c8243a, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 96cd8af3d5a9f454d9dbc3d4e2aa6775, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: e555e1e3224d1490a946c7fd32d1fe52, type: 2}
     - target: {fileID: 919132149155446097, guid: 96cd8af3d5a9f454d9dbc3d4e2aa6775, type: 3}
       propertyPath: m_Name
       value: portal2_ring
@@ -6328,9 +6536,29 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 5530773329964942759, guid: 3c530b9136977e34e839ae030366454c, type: 3}
+      objectReference: {fileID: 2100000, guid: a57ba3dc29fd2fd48bb90f3582226d8f, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00ac69db244ad3442b7bd458a78cc6c1, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c25b86c68be36e438e107e2fafb7dbd, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: c45bd59c9989c7446a8a7ab82fb62fca, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: c403de53b74144843bc6c0b9d4cf7013, type: 2}
     - target: {fileID: 919132149155446097, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
       propertyPath: m_Name
       value: Vishop (1)
@@ -7506,9 +7734,29 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: db6373ea0bc3c894b89034c7cd4d13ff, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: db6373ea0bc3c894b89034c7cd4d13ff, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: -6165743452462810984, guid: ffbbefa980016094e9b3960be6a17e80, type: 3}
+      objectReference: {fileID: 2100000, guid: a57ba3dc29fd2fd48bb90f3582226d8f, type: 2}
+    - target: {fileID: -7511558181221131132, guid: db6373ea0bc3c894b89034c7cd4d13ff, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00ac69db244ad3442b7bd458a78cc6c1, type: 2}
+    - target: {fileID: -7511558181221131132, guid: db6373ea0bc3c894b89034c7cd4d13ff, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c25b86c68be36e438e107e2fafb7dbd, type: 2}
+    - target: {fileID: -7511558181221131132, guid: db6373ea0bc3c894b89034c7cd4d13ff, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: c45bd59c9989c7446a8a7ab82fb62fca, type: 2}
+    - target: {fileID: -7511558181221131132, guid: db6373ea0bc3c894b89034c7cd4d13ff, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: c403de53b74144843bc6c0b9d4cf7013, type: 2}
     - target: {fileID: 919132149155446097, guid: db6373ea0bc3c894b89034c7cd4d13ff, type: 3}
       propertyPath: m_Name
       value: Rook 1 (11)
@@ -7588,9 +7836,29 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 4145387956242784897, guid: 3c530b9136977e34e839ae030366454c, type: 3}
+      objectReference: {fileID: 2100000, guid: a57ba3dc29fd2fd48bb90f3582226d8f, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00ac69db244ad3442b7bd458a78cc6c1, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c25b86c68be36e438e107e2fafb7dbd, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: c45bd59c9989c7446a8a7ab82fb62fca, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: c403de53b74144843bc6c0b9d4cf7013, type: 2}
     - target: {fileID: 919132149155446097, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
       propertyPath: m_Name
       value: Vishop (2)
@@ -7938,7 +8206,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 84a7dfcbe1f4aad4d9577290f0c4706d, type: 2}
+  - {fileID: 2100000, guid: 019cee206b1007b45b650cf6eebf984d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
