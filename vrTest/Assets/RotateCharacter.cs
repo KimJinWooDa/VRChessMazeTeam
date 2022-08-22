@@ -28,10 +28,10 @@ public class RotateCharacter : MonoBehaviour
             angle += Time.deltaTime * 5f;
         }
 
-        if (stageOneRotate)
-        {
-            transform.RotateAround(targetMagnet.position, Vector3.up, angle * Time.deltaTime);
-        }
+        //if (stageOneRotate)
+        //{
+        //    transform.RotateAround(targetMagnet.position, Vector3.up, angle * Time.deltaTime);
+        //}
     }
     public void StopUp()
     {
@@ -52,10 +52,10 @@ public class RotateCharacter : MonoBehaviour
             if (GameManager.instance.stageNum == 1)
             {
                 targetMagnet = other.transform;
-                myCharacter.GetComponent<Rigidbody>().isKinematic = true;
-                myCharacter.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                stageOneRotate = true;
-                myCharacter.GetComponent<Rigidbody>().isKinematic = false;
+                //myCharacter.GetComponent<Rigidbody>().isKinematic = true;
+                //myCharacter.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                //stageOneRotate = true;
+                //myCharacter.GetComponent<Rigidbody>().isKinematic = false;
             }
         } 
     }

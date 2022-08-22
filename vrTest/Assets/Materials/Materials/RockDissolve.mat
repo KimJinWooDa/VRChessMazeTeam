@@ -35,15 +35,15 @@ Material:
     m_Ints: []
     m_Floats:
     - _Alpha: 0
-    - _NoiseScale: 30
+    - _NoiseScale: 70
     - _QueueControl: 0
     - _QueueOffset: 0
     - _TilingSpeed: 0
     - _Width: 0.01
     m_Colors:
-    - _BaseColor: {r: 5.289933, g: 4.020783, b: 0, a: 0}
-    - _ChessColor: {r: 0.5334976, g: 3.6392157, b: 2.575891, a: 0}
-    - _Color: {r: 0.09061256, g: 6.8606925, b: 0.43468493, a: 0}
+    - _BaseColor: {r: 6.5294585, g: 6.5294585, b: 6.5294585, a: 0}
+    - _ChessColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _TilingScale: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1093848707772611923

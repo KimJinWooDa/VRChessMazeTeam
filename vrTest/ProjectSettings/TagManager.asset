@@ -18,6 +18,7 @@ TagManager:
   - ROCK
   - TEST
   - SUPERJUMP
+  - KNIGHT
   layers:
   - Default
   - TransparentFX

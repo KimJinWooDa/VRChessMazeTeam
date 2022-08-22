@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     bool isOnce;
     [SerializeField] RectTransform rectTrans;
 
+    [SerializeField] GameObject[] chessState;
 
     float width;
     float height;
@@ -71,12 +72,27 @@ public class GameManager : MonoBehaviour
             StartCoroutine(FadeOutImage(followImage));
         }
     }
-
+    [SerializeField] GameObject frame;
+    [SerializeField] Material kingMaterial;
     private void Update()
     {
-        if (OVRInput.GetDown(OVRInput.Button.Start))
+        if (chessState != null)
         {
-            GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(0);
+            for (int i = 0; i < chessState.Length; i++)
+            {
+                if(i == stageNum -1)
+                {
+                    chessState[i].GetComponent<MeshRenderer>().material.SetColor("_ChessColor", Color.blue);
+                }
+                else
+                {
+                    chessState[i].GetComponent<MeshRenderer>().material.SetColor("_ChessColor", Color.white);  
+                }
+            }
+        }
+        if(stageNum > 3)
+        {
+            frame.GetComponent<MeshRenderer>().materials[2] = kingMaterial;
         }
     }
     public void OnCourtineFade(int plus)

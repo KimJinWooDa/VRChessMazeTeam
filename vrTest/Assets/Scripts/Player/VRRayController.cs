@@ -49,7 +49,7 @@ public class VRRayController : MonoBehaviour
         switch (stageNum)
         {
             case 1:
-                forwardPower = 30f;
+                forwardPower = 35f;
                 break;
 
             case 2:

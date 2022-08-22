@@ -5249,7 +5249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   t: 1
   time: 2.6
-  speed: 3
+  speed: 2
 --- !u!4 &6489998458614241361
 Transform:
   m_ObjectHideFlags: 0
@@ -5361,7 +5361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   t: 1
   time: 2.6
-  speed: 3
+  speed: 2
 --- !u!4 &6974443685635107578
 Transform:
   m_ObjectHideFlags: 0
@@ -5407,7 +5407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   t: -1
   time: 2.6
-  speed: 3
+  speed: 2
 --- !u!4 &7376869148056621771
 Transform:
   m_ObjectHideFlags: 0
@@ -5756,7 +5756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   t: -1
   time: 2.6
-  speed: 3
+  speed: 2
 --- !u!4 &8476488065325731963
 Transform:
   m_ObjectHideFlags: 0
