@@ -8,12 +8,24 @@ public class GrabChessObjects : MonoBehaviour
     bool isEnter;
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("BISHOP") && OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger) && !isOnce)
+        if (other.CompareTag("BISHOP"))
         {
-            if (isEnter)
+            isEnter = true;
+            if (isEnter && OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger) && !isOnce && GameManager.instance.stageNum == 2)
             {
-                StartCoroutine(DissolveBishop(other.transform));
-                //GameManager.instance.OnCourtineFade(3);
+                StartCoroutine(DissolveChess(other.transform));
+
+                GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(2);
+                isOnce = true;
+            }
+
+        }
+        if (other.CompareTag("ROCK"))
+        {
+            isEnter = true;
+            if (isEnter && OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger) && !isOnce && GameManager.instance.stageNum == 1)
+            {
+                StartCoroutine(DissolveChess(other.transform));
 
                 GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(1);
                 isOnce = true;
@@ -33,18 +45,24 @@ public class GrabChessObjects : MonoBehaviour
     {
         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
         {
+            GameManager.instance.stageNum = 2;
+            GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(2);
+        }
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger))
+        {
+            GameManager.instance.stageNum = 1;
             GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(1);
         }
     }
 
-    IEnumerator DissolveBishop(Transform bishop)
+    IEnumerator DissolveChess(Transform obj)
     {
-        float value = bishop.GetComponent<Renderer>().material.GetFloat("_Alpha");
+        float value = obj.GetComponent<Renderer>().material.GetFloat("_Alpha");
         while (value < 1)
         {
             float t = 0;
             t += 0.3f * Time.deltaTime;
-            bishop.GetComponent<Renderer>().material.SetFloat("_Alpha", t);
+            obj.GetComponent<Renderer>().material.SetFloat("_Alpha", t);
             yield return null;
         }
     }

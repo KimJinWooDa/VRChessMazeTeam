@@ -14,11 +14,6 @@ public class CheckState : MonoBehaviour
             GameManager.instance.StartPingPong();
 
         }
-        //if (other.CompareTag("CHESSBOARD") && !isOnce)
-        //{
-        //    GameManager.instance.OnCourtineFade(1);
-        //    isOnce = true;
-        //}
     }
     void OnTriggerExit(Collider other)
     {

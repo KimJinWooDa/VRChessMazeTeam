@@ -19,10 +19,11 @@ public class ReStart : MonoBehaviour
 
     public void ReStartGame()
     {
+        rc.stageOneRotate = false;
         transform.position = reStartPosition.position;
         rc.StopUp();
         rc.isTriggerState = false;
-        if(vc.lastShoot && vc.magnet != null)
+        if(GameManager.instance.stageNum == 2 && vc.lastShoot && vc.magnet != null)
         {
             vc.magnet = null;
             vc.RemoveChain();

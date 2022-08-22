@@ -43,8 +43,8 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
 
         }
-        uiImage.gameObject.SetActive(false);
-        rectTrans = rectTrans.GetComponent<RectTransform>();
+        if(uiImage != null) uiImage.gameObject.SetActive(false);
+        if(rectTrans != null) rectTrans = rectTrans.GetComponent<RectTransform>();
     }
 
     public static GameManager instance
@@ -65,8 +65,11 @@ public class GameManager : MonoBehaviour
     public int stageNum = 1;
     private void Start()
     {
-        followImage.sprite = followSprites[imageCount];
-        StartCoroutine(FadeOutImage(followImage));
+        if (followImage != null)
+        {
+            followImage.sprite = followSprites[imageCount];
+            StartCoroutine(FadeOutImage(followImage));
+        }
     }
 
     private void Update()

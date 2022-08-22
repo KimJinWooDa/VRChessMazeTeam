@@ -15,6 +15,9 @@ TagManager:
   - WEAPON
   - ITEM
   - GOALIN
+  - ROCK
+  - TEST
+  - SUPERJUMP
   layers:
   - Default
   - TransparentFX

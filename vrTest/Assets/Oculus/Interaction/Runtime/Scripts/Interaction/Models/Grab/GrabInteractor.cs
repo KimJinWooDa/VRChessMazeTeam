@@ -149,19 +149,14 @@ namespace Oculus.Interaction
                 item.GetComponent<Rigidbody>().useGravity = false;
             }
         }
-
         protected override void InteractableUnselected(GrabInteractable interactable)
         {
             base.InteractableUnselected(interactable);
-            if (interactable.CompareTag("ITEM"))
-            {
-                item.GetComponent<Rigidbody>().useGravity = true;
-            }
-            
+
             ReleaseVelocityInformation throwVelocity = VelocityCalculator != null ?
                 VelocityCalculator.CalculateThrowVelocity(interactable.transform) :
                 new ReleaseVelocityInformation(Vector3.zero, Vector3.zero, Vector3.zero);
-            interactable.ApplyVelocities(throwVelocity.LinearVelocity * 1.5f, throwVelocity.AngularVelocity);
+            interactable.ApplyVelocities(throwVelocity.LinearVelocity, throwVelocity.AngularVelocity);
         }
 
         protected override void HandlePointerEventRaised(PointerEvent evt)

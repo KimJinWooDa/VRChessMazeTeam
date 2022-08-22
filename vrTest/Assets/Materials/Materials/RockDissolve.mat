@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BishopDissolve
+  m_Name: RockDissolve
   m_Shader: {fileID: -6465566751694194690, guid: ab27b8ddb4b50a44f8290650caa4ab79, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -42,8 +42,8 @@ Material:
     - _Width: 0.01
     m_Colors:
     - _BaseColor: {r: 5.289933, g: 4.020783, b: 0, a: 0}
-    - _ChessColor: {r: 4.858639, g: 4.858639, b: 4.858639, a: 0}
-    - _Color: {r: 5.1387935, g: 3.7227952, b: 0.16482888, a: 0}
+    - _ChessColor: {r: 0.5334976, g: 3.6392157, b: 2.575891, a: 0}
+    - _Color: {r: 0.09061256, g: 6.8606925, b: 0.43468493, a: 0}
     - _TilingScale: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1093848707772611923

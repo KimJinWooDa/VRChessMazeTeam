@@ -32,13 +32,34 @@ public class VRRayController : MonoBehaviour
     [SerializeField] RotateCharacter rc;
     public bool canTrigger;
 
-    [SerializeField] Transform chainTransform;
+    [SerializeField] Transform rightChainTransform;
+    [SerializeField] Transform leftChainTransform;
     public string BishopName;
+
+    [SerializeField] int stageNum;
+    [SerializeField] float forwardPower;
+
+ 
     void Start()
     {
         holdb = false;
         holdf = 0;
         triggerEffectHolder.SetActive(false);
+        this.stageNum = GameManager.instance.stageNum;
+        switch (stageNum)
+        {
+            case 1:
+                forwardPower = 30f;
+                break;
+
+            case 2:
+                forwardPower = PULL_STR;
+                break;
+
+            default:
+                break;
+        }
+        //forwardPower = PULL_STR;
     }
     public void PullObject(GameObject ob)
     {
@@ -61,9 +82,7 @@ public class VRRayController : MonoBehaviour
 
     public void VRTrigger()
     {
-        if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger)) {
-            canTrigger = true;
-        }
+        canTrigger = true;
     }
     public bool isTest;
     void Update()
@@ -78,53 +97,87 @@ public class VRRayController : MonoBehaviour
         }
         if (lastShoot)
         {
-            if (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger) && !isTest)
+            if (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger) && !OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
             {
                 rc.isTriggerState = false;
                 rc.StopUp();
                 this.magnet = null;
                 RemoveChain();
                 canTrigger = false;
-                pcon.isFlying = false;
             }
             else if (!connected)
             {
-                if (!chain.expanding && BishopName == "BLACKBISHOP")
+                if (stageNum == 1)
                 {
-                    rc.Set(this.magnet.transform, true);
-                    GetComponent<Rigidbody>().isKinematic = true;
-                    connected = true;
+                    if (!chain.expanding)
+                    {
+                        pcon.isFlying = true;
+                        connected = true;
+                    }
                 }
-                if (!chain.expanding && BishopName == "WHITEBISHOP")
+                else if (stageNum == 2)
                 {
-                    pcon.isFlying = true;
-                    connected = true;
+                    if (!chain.expanding && BishopName == "BLACKBISHOP")
+                    {
+                        rc.Set(this.magnet.transform, true);
+                        GetComponent<Rigidbody>().isKinematic = true;
+                        connected = true;
+                    }
+                    if (!chain.expanding && BishopName == "WHITEBISHOP")
+                    {
+                        pcon.isFlying = true;
+                        connected = true;
+                    }
                 }
             }
-            
+
         }
         else
         {
-            if (magnet!=null && (canTrigger || isTest))
+            if (magnet != null && canTrigger)
             {
+                pcon.GetComponent<Rigidbody>().isKinematic = false;
                 pcon.canJump = false;
                 lastShoot = true;
                 connected = false;
-                chain = ChainUtils.LineTarget(chainTransform.position, magnet.gameObject);
+                chain = ChainUtils.LineTarget(leftChainTransform.position, magnet.gameObject);
             }
         }
 
         if (lastShoot && chain != null)
         {
-            chain.transform.position = chainTransform.position;
-            if (connected && BishopName == "BLACKBISHOP")
+            if (CT == ControllerType.Left)
             {
-                UpdateChainLength(magnet);
+                chain.transform.position = leftChainTransform.position;
             }
-            else if (connected && BishopName == "WHITEBISHOP")
+            else if (CT == ControllerType.Right)
             {
-                UpdateChainLengthWhite(magnet);
-                PullTowards(magnet);
+                chain.transform.position = rightChainTransform.position;
+            }
+            else
+            {
+                chain.transform.position = rightChainTransform.position;
+            }
+
+            if (stageNum == 1)
+            {
+                if (connected)
+                {
+                    UpdateChainLengthWhite(magnet);
+                    PullTowards(magnet);
+                }
+            }
+            else if (stageNum == 2)
+            {
+                if (connected && BishopName == "BLACKBISHOP")
+                {
+                    UpdateChainLength(magnet);
+                }
+                else if (connected && BishopName == "WHITEBISHOP")
+                {
+                    UpdateChainLengthWhite(magnet);
+                    PullTowards(magnet);
+                }
             }
         }
 
@@ -147,7 +200,6 @@ public class VRRayController : MonoBehaviour
             }
         }
     }
-
     public void RemoveChain()
     {
         if (!lastShoot) return;
@@ -160,7 +212,7 @@ public class VRRayController : MonoBehaviour
 
     private void UpdateChainLength(Magnet target)
     {
-        Vector3 pos = chainTransform.position;
+        Vector3 pos = rightChainTransform.position;
         float len = Vector3.Distance(pos, target.transform.position);
         if (len > chain.MaxLength())
         {
@@ -177,7 +229,7 @@ public class VRRayController : MonoBehaviour
     }
     private void UpdateChainLengthWhite(Magnet target)
     {
-        Vector3 pos = chainTransform.position;
+        Vector3 pos = rightChainTransform.position;
         float len = Vector3.Distance(pos, target.transform.position);
         if (len > chain.MaxLength())
         {
@@ -194,24 +246,23 @@ public class VRRayController : MonoBehaviour
     }
     private void PullTowards(Magnet target)
     {
-        float len = Vector3.Distance(target.transform.position, chainTransform.position);
+        float len = Vector3.Distance(target.transform.position, rightChainTransform.position);
         //pull with force
         if (len > target.radius)
         {
-            pcon.rigid.AddExplosionForce(PULL_STR * /*Mathf.Clamp01((len - target.radius) / (target.radius * 5f)) * */ -1, target.transform.position, len * 2f);
+            pcon.rigid.AddExplosionForce(forwardPower * -1f, target.transform.position, len * 1f);
         }
         else
         {
-            pcon.rigid.AddExplosionForce(PULL_STR * Mathf.Clamp01(1f - len / (target.radius)), target.transform.position, len * 2f);
+            pcon.rigid.AddExplosionForce(forwardPower * Mathf.Clamp01(1f - len / (target.radius)), target.transform.position, len * 1f);
+
         }
-        //open cage
-        //if (len < target.radius * 2f) target.CheckOpen();
     }
 
     private void WrongColor(Magnet target)
     {
         pcon.WrongColor();
-        pcon.rigid.AddExplosionForce(YEET_STR, target.transform.position, Vector3.Distance(target.transform.position, chainTransform.position) * 2f);
+        pcon.rigid.AddExplosionForce(YEET_STR, target.transform.position, Vector3.Distance(target.transform.position, rightChainTransform.position) * 2f);
     }
 
     public static ControllerType Other(ControllerType type)
@@ -254,7 +305,7 @@ public class VRRayController : MonoBehaviour
         while (chain != null && chain.gameObject != null)
         {
             chain.offset += Time.deltaTime * 20f;
-            chain.transform.position += (chain.target.transform.position - chainTransform.position).normalized * Time.deltaTime * 20f * ChainUtils.SCALE * ChainUtils.LENGTH;
+            chain.transform.position += (chain.target.transform.position - rightChainTransform.position).normalized * Time.deltaTime * 20f * ChainUtils.SCALE * ChainUtils.LENGTH;
             yield return null;
         }
     }

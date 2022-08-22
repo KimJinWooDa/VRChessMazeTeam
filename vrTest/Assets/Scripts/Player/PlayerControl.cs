@@ -13,14 +13,20 @@ public class PlayerControl : MonoBehaviour {
 
     public VRRayController[] controller = { null, null }; //left, right
     public Rigidbody rigid;
-
+    [SerializeField] CapsuleCollider cc;
+    public float jumpPower = 3f;
     public bool canJump;
     public bool isFlying;
+
+    private void Start()
+    {
+        cc = GetComponent<CapsuleCollider>();
+    }
     private void Update()
     {
         if(OVRInput.Get(OVRInput.Button.One) && canJump)  
         {
-            rigid.AddForce(Vector3.up * 5f, ForceMode.Impulse);
+            rigid.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
             canJump = false;
         }
     }
@@ -33,6 +39,7 @@ public class PlayerControl : MonoBehaviour {
     private void UpdateFlying()
     {
         rigid.useGravity = !isFlying;
+        cc.isTrigger = isFlying;
     }
 
     //public bool Chained()

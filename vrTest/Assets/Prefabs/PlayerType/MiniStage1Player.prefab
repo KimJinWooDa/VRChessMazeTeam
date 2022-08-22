@@ -2620,35 +2620,7 @@ MonoBehaviour:
   radius: 15
   vrRayController: {fileID: 0}
   myCharacter: {fileID: 11587046859000544}
---- !u!114 &1516515129344489942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 11587046859000545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: add247b1c61585d438a62d84253de4a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pcon: {fileID: 1516515130116308560}
-  triggerEffectHolder: {fileID: 3473858992073620695, guid: 198bb81b1eea479419f9f40ada2ce1f9, type: 3}
-  magnet: {fileID: 0}
-  hovering: 0
-  connected: 0
-  lastShoot: 0
-  chain: {fileID: 0}
-  overrideRotation: {x: 0, y: 0, z: 0, w: 0}
-  testGrip: 0
-  testTrigger: 0
-  overrideTarget: 0
-  CT: 1
-  rc: {fileID: 1516515129344489940}
-  canTrigger: 0
-  chainTransform: {fileID: 3383185627078115132}
-  BishopName: 
-  isTest: 0
+  stageOneRotate: 0
 --- !u!114 &1516515130116308560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2670,20 +2642,6 @@ MonoBehaviour:
   rigid: {fileID: 1516515128672219665}
   canJump: 0
   isFlying: 0
---- !u!114 &4521980662788665296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 11587046859000545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9719e9b4fe10f2f4bb207660d51bcef3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  getWeapon: 0
-  swordPos: {fileID: 1516515130071099979}
 --- !u!114 &326738417193438229 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8778975081405935723, guid: ffe3be6b11cb93446bff4c254b6d9148, type: 3}
