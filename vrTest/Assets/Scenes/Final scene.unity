@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.02931909, g: 0.0387526, b: 0.047147542, a: 1}
+  m_IndirectSpecularColor: {r: 0.029281585, g: 0.038718887, b: 0.047144875, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -186,6 +186,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 14.845
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 6289179276822149541, guid: 3c530b9136977e34e839ae030366454c, type: 3}
     - target: {fileID: 919132149155446097, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
       propertyPath: m_Name
       value: Pawn (12)
@@ -260,6 +264,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 14.845
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2576956483768403278, guid: d64a64c9b1403994781c2983aad83ae3, type: 3}
     - target: {fileID: 919132149155446097, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
       propertyPath: m_Name
       value: Pawn (8)
@@ -334,6 +342,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 14.845
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 6289179276822149541, guid: 3c530b9136977e34e839ae030366454c, type: 3}
     - target: {fileID: 919132149155446097, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
       propertyPath: m_Name
       value: Pawn (9)
@@ -408,6 +420,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 14.845
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 6289179276822149541, guid: 3c530b9136977e34e839ae030366454c, type: 3}
     - target: {fileID: 919132149155446097, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
       propertyPath: m_Name
       value: Pawn (5)
@@ -482,6 +498,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 14.845
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2576956483768403278, guid: d64a64c9b1403994781c2983aad83ae3, type: 3}
     - target: {fileID: 919132149155446097, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
       propertyPath: m_Name
       value: Pawn (6)
@@ -556,6 +576,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 6289179276822149541, guid: 3c530b9136977e34e839ae030366454c, type: 3}
     - target: {fileID: 919132149155446097, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
       propertyPath: m_Name
       value: Pawn (3)
@@ -630,6 +654,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 14.845
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2576956483768403278, guid: d64a64c9b1403994781c2983aad83ae3, type: 3}
     - target: {fileID: 919132149155446097, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
       propertyPath: m_Name
       value: Pawn (10)
@@ -704,6 +732,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 14.845
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 6289179276822149541, guid: 3c530b9136977e34e839ae030366454c, type: 3}
     - target: {fileID: 919132149155446097, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
       propertyPath: m_Name
       value: Pawn (11)
@@ -896,6 +928,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2576956483768403278, guid: d64a64c9b1403994781c2983aad83ae3, type: 3}
     - target: {fileID: 919132149155446097, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
       propertyPath: m_Name
       value: Pawn
@@ -1027,6 +1063,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 14.845
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2576956483768403278, guid: d64a64c9b1403994781c2983aad83ae3, type: 3}
     - target: {fileID: 919132149155446097, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
       propertyPath: m_Name
       value: Pawn (13)
@@ -1101,6 +1141,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 14.845
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 6289179276822149541, guid: 3c530b9136977e34e839ae030366454c, type: 3}
     - target: {fileID: 919132149155446097, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
       propertyPath: m_Name
       value: Pawn (7)
@@ -1175,6 +1219,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 6289179276822149541, guid: 3c530b9136977e34e839ae030366454c, type: 3}
     - target: {fileID: 919132149155446097, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
       propertyPath: m_Name
       value: Pawn (1)
@@ -1249,6 +1297,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 14.845
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 6289179276822149541, guid: 3c530b9136977e34e839ae030366454c, type: 3}
     - target: {fileID: 919132149155446097, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
       propertyPath: m_Name
       value: Pawn (15)
@@ -1323,6 +1375,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 6289179276822149541, guid: 96c75bb9a3ba3004c932e9f77de2c515, type: 3}
     - target: {fileID: 919132149155446097, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
       propertyPath: m_Name
       value: Pawn (4)
@@ -1515,6 +1571,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2576956483768403278, guid: d64a64c9b1403994781c2983aad83ae3, type: 3}
     - target: {fileID: 919132149155446097, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
       propertyPath: m_Name
       value: Pawn (2)
@@ -1646,6 +1706,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 14.845
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 6289179276822149541, guid: 3c530b9136977e34e839ae030366454c, type: 3}
     - target: {fileID: 919132149155446097, guid: ace4b7481c4b9a24f9b0e8b475c64efc, type: 3}
       propertyPath: m_Name
       value: Pawn (14)
