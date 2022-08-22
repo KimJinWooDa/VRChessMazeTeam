@@ -131,8 +131,10 @@ namespace Oculus.Interaction
             return closestInteractable;
         }
 
+        GameObject item;
         protected override void InteractableSelected(GrabInteractable interactable)
         {
+
             Pose target = _grabTarget.GetPose();
             Pose source = _interactable.GetGrabSourceForTarget(target);
 
@@ -140,16 +142,26 @@ namespace Oculus.Interaction
             base.InteractableSelected(interactable);
 
             _tween.MoveTo(target);
+            if (interactable.CompareTag("ITEM"))
+            {
+                item = GameObject.FindGameObjectWithTag("ITEM");
+                item.SendMessage("Assemble", SendMessageOptions.DontRequireReceiver);
+                item.GetComponent<Rigidbody>().useGravity = false;
+            }
         }
 
         protected override void InteractableUnselected(GrabInteractable interactable)
         {
             base.InteractableUnselected(interactable);
-
+            if (interactable.CompareTag("ITEM"))
+            {
+                item.GetComponent<Rigidbody>().useGravity = true;
+            }
+            
             ReleaseVelocityInformation throwVelocity = VelocityCalculator != null ?
                 VelocityCalculator.CalculateThrowVelocity(interactable.transform) :
                 new ReleaseVelocityInformation(Vector3.zero, Vector3.zero, Vector3.zero);
-            interactable.ApplyVelocities(throwVelocity.LinearVelocity, throwVelocity.AngularVelocity);
+            interactable.ApplyVelocities(throwVelocity.LinearVelocity * 1.5f, throwVelocity.AngularVelocity);
         }
 
         protected override void HandlePointerEventRaised(PointerEvent evt)

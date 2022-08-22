@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    public int stageNum = 1;
     private void Start()
     {
         followImage.sprite = followSprites[imageCount];

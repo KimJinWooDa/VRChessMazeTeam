@@ -14,6 +14,7 @@ TagManager:
   - ENEMY
   - WEAPON
   - ITEM
+  - GOALIN
   layers:
   - Default
   - TransparentFX
