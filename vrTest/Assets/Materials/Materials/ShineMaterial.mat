@@ -49,10 +49,10 @@ Material:
     m_Floats:
     - _FresnelPower: 1
     - _OutLine_Thickness: 0
-    - _Power: 0
+    - _Power: 3
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _InnerShineColor: {r: 2.3503904, g: 1.9430852, b: 1.8492696, a: 1}
-    - _OutShineColor: {r: 1, g: 0, b: 0, a: 0}
+    - _InnerShineColor: {r: 0.7819755, g: 0.80518776, b: 0.94730747, a: 1}
+    - _OutShineColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -14,9 +14,9 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
+  m_FogMode: 2
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 1cc6e6796f833a94f94e6d794ca654c3, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 7a8675eb396637d43b4ba0a69cc715a5, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0034717766, g: 0.024900146, b: 0.15363325, a: 1}
+  m_IndirectSpecularColor: {r: 0.02931909, g: 0.0387526, b: 0.047147542, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 630bde5ee28ec4ba4a759e5d56ef8242, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1438,6 +1438,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72fa01d414b76eb47860fcf244e9695a, type: 3}
+--- !u!1 &1700236305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 736934442596610697, guid: 72fa01d414b76eb47860fcf244e9695a, type: 3}
+  m_PrefabInstance: {fileID: 1700236304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!45 &1700236306
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700236305}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 0}
 --- !u!1001 &1945453091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4635,6 +4649,10 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 7f6cf5dae11251b4381212a77442e06e, type: 2}
+  - {fileID: 2100000, guid: a94a4c589197f314089eecdcf7b25424, type: 2}
+  - {fileID: 2100000, guid: 54624a8f34e7c154eb7ad5f7f7b003f9, type: 2}
+  - {fileID: 2100000, guid: 4d2bd79e04349da49b1f1c4046e33799, type: 2}
+  - {fileID: 2100000, guid: bc92ed8818b855c43b7a7b24eff2d193, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
