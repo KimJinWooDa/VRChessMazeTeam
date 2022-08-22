@@ -13,6 +13,7 @@ TagManager:
   - CHESSBOARD
   - ENEMY
   - WEAPON
+  - ITEM
   layers:
   - Default
   - TransparentFX

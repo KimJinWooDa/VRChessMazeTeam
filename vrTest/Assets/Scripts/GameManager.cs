@@ -84,9 +84,7 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator FadeOutImage(Image image)
     {
-        
-
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3f); //씬 나오는 시간 Delay
 
         while (image.color.a > 0)
         {
@@ -97,7 +95,7 @@ public class GameManager : MonoBehaviour
         }
         
         imageCount++;
-        if (imageCount == 4)
+        if (imageCount == 3) //4는 이제 마지막 UI나오기
         {
             StopCoroutine(FadeOutImage(followImage));
             yield break;
@@ -109,6 +107,29 @@ public class GameManager : MonoBehaviour
             followImage.sprite = followSprites[imageCount];
             followImage.color = new Vector4(1, 1, 1, 1);
             StartCoroutine(FadeOutImage(followImage));
+        }
+    }
+
+    public void FinalUI()
+    {
+        StartCoroutine(FinalSceneUI());
+    }
+
+    IEnumerator FinalSceneUI()
+    {
+        rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Width(4));
+        rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Height(4));
+        followImage.sprite = followSprites[4];
+        followImage.color = new Vector4(1, 1, 1, 1);
+        yield return new WaitForSeconds(3f);
+
+
+        while (followImage.color.a > 0)
+        {
+            Color a = followImage.color;
+            a.a -= 0.35f * Time.deltaTime; //UI 사라지는 속도? 0.35f
+            followImage.color = new Vector4(1, 1, 1, a.a);
+            yield return null;
         }
     }
 

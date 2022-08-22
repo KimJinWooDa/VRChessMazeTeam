@@ -72,7 +72,10 @@ public class VRRayController : MonoBehaviour
         {
             transform.rotation = overrideRotation;
         }
-        if(magnet != null) BishopName = magnet.name;
+        if (magnet != null)
+        {
+            BishopName = magnet.name;
+        }
         if (lastShoot)
         {
             if (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger) && !isTest)
