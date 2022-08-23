@@ -136,6 +136,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator FinalSceneUI()
     {
+        yield return new WaitForSeconds(2f);
         rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Width(4));
         rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Height(4));
         followImage.sprite = followSprites[4];

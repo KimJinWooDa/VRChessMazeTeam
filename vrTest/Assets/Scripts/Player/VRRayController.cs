@@ -107,11 +107,11 @@ public class VRRayController : MonoBehaviour
             }
             else if (!connected)
             {
-                if (stageNum == 1)
+                if (stageNum == 1 && stageNum == 3)
                 {
                     if (!chain.expanding)
                     {
-                        pcon.isFlying = true;
+                        //pcon.isFlying = true; //중력을 받아야 데롱데롱 가능할듯
                         connected = true;
                     }
                 }
@@ -159,7 +159,7 @@ public class VRRayController : MonoBehaviour
                 chain.transform.position = rightChainTransform.position;
             }
 
-            if (stageNum == 1)
+            if (stageNum == 1 && stageNum ==3)
             {
                 if (connected)
                 {
@@ -236,7 +236,6 @@ public class VRRayController : MonoBehaviour
             pcon.rigid.MovePosition(pcon.rigid.position + (target.transform.position - pos).normalized * (len - chain.MaxLength()));
             if (Vector3.Distance(pos, target.transform.position) > chain.MaxLength() + 0.3f)
             {
-                //break the chain, the pull is obstructed and there is no hope whatsoever
                 RemoveChain();
                 return;
             }
@@ -285,20 +284,11 @@ public class VRRayController : MonoBehaviour
         else return OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger);
     }
 
-
     public bool Trigger(ControllerType lr)
     { 
         if (lr == ControllerType.Left) return OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger);
         else return OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger);
     }
-
-    public bool IsTrigger(ControllerType lr)
-    { 
-        if (testTrigger) return true;
-        if (lr == ControllerType.Left) return OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger);
-        else return OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger);
-    }
-
 
    public IEnumerator RemoveChainI(ChainCore chain)
     {

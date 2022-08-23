@@ -42,7 +42,7 @@ Material:
     - _Width: 0.01
     m_Colors:
     - _BaseColor: {r: 5.289933, g: 4.020783, b: 0, a: 0}
-    - _ChessColor: {r: 15.436254, g: 15.436254, b: 15.436254, a: 1}
+    - _ChessColor: {r: 5.992157, g: 5.992157, b: 5.992157, a: 1}
     - _Color: {r: 6.8606925, g: 6.8606925, b: 6.8606925, a: 0}
     - _TilingScale: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

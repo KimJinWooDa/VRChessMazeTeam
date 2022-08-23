@@ -157,6 +157,8 @@ namespace Oculus.Interaction
                 VelocityCalculator.CalculateThrowVelocity(interactable.transform) :
                 new ReleaseVelocityInformation(Vector3.zero, Vector3.zero, Vector3.zero);
             interactable.ApplyVelocities(throwVelocity.LinearVelocity, throwVelocity.AngularVelocity);
+
+            interactable.Rigidbody.AddForce(throwVelocity.LinearVelocity , ForceMode.Impulse); //Å×½ºÆ®
         }
 
         protected override void HandlePointerEventRaised(PointerEvent evt)
