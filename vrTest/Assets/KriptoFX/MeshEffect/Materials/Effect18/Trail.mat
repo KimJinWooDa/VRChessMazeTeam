@@ -19,7 +19,7 @@ Material:
   - SoftParticles_OFF
   - VertLight_OFF
   m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -120,5 +120,5 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FogColorMultiplier: {r: 0, g: 0, b: 0, a: 0}
     - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}
-    - _TintColor: {r: 0.38278544, g: 0.70023316, b: 1.6268382, a: 1}
+    - _TintColor: {r: 1.6268382, g: 0.38328648, b: 0.39585036, a: 1}
   m_BuildTextureStacks: []
