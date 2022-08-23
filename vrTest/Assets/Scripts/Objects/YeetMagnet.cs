@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class YeetMagnet : Magnet {
+    //@JUNWOO edit this if the magnets lack power in general
+    private const float POWER_MULT = 1f;
+
     public static Rigidbody prigid;
     public static VRRayController[] vrrc;
     public float power = 10f;
@@ -14,7 +17,7 @@ public class YeetMagnet : Magnet {
     }
 
     public override void Open() {
-        Vector3 tv = transform.forward * power;
+        Vector3 tv = transform.forward * power * POWER_MULT;
 
         //unchain everything
         foreach (VRRayController vr in vrrc) {
