@@ -11,7 +11,8 @@ public class Magnet : MonoBehaviour {
     public bool opened;
     public bool hasColor = true;
     public bool white = true;
-    public float radius = 1f;
+    public float radius = 0.1f;
+    public float openRadius = 1f;
 
     public bool[] hoveredBy = { false, false };
 

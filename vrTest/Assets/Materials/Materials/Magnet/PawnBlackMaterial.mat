@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ShineMaterial 1
+  m_Name: PawnBlackMaterial
   m_Shader: {fileID: -6465566751694194690, guid: b833f5f8616c56448888c2ddd3fc19a7, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -53,6 +53,6 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _InnerShineColor: {r: 2.3503904, g: 1.9430852, b: 1.8492696, a: 1}
-    - _OutShineColor: {r: 1, g: 0, b: 0, a: 0}
+    - _InnerShineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutShineColor: {r: 0, g: 0.36163354, b: 1, a: 0}
   m_BuildTextureStacks: []
