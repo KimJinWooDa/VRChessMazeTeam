@@ -99,15 +99,11 @@ public class VRRayController : MonoBehaviour
         {
             if (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger) && !OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
             {
-                rc.isTriggerState = false;
-                rc.StopUp();
-                this.magnet = null;
-                RemoveChain();
-                canTrigger = false;
+                Detach();
             }
             else if (!connected)
             {
-                if (stageNum == 1 && stageNum == 3)
+                if (stageNum == 1 || stageNum == 3)
                 {
                     if (!chain.expanding)
                     {
@@ -159,7 +155,7 @@ public class VRRayController : MonoBehaviour
                 chain.transform.position = rightChainTransform.position;
             }
 
-            if (stageNum == 1 && stageNum ==3)
+            if (stageNum == 1 || stageNum ==3)
             {
                 if (connected)
                 {
@@ -210,6 +206,14 @@ public class VRRayController : MonoBehaviour
         chain = null;
     }
 
+    public void Detach() {
+        rc.isTriggerState = false;
+        rc.StopUp();
+        magnet = null;
+        RemoveChain();
+        canTrigger = false;
+    }
+
     private void UpdateChainLength(Magnet target)
     {
         Vector3 pos = rightChainTransform.position;
@@ -250,11 +254,11 @@ public class VRRayController : MonoBehaviour
         if (len > target.radius)
         {
             pcon.rigid.AddExplosionForce(forwardPower * -1f, target.transform.position, len * 1f);
+            if (len < target.openRadius) target.CheckOpen();
         }
         else
         {
             pcon.rigid.AddExplosionForce(forwardPower * Mathf.Clamp01(1f - len / (target.radius)), target.transform.position, len * 1f);
-
         }
     }
 
