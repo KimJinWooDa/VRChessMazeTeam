@@ -115,7 +115,7 @@ Transform:
   m_GameObject: {fileID: 6943977983461612500}
   m_LocalRotation: {x: 0.000000059604638, y: 0.000000015805067, z: 0.000000015805066, w: 1}
   m_LocalPosition: {x: -0.83000004, y: 2.0820003, z: 1.2899997}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1424285408851755573}
@@ -259,6 +259,7 @@ MonoBehaviour:
   hasColor: 1
   white: 1
   radius: 0.1
+  openRadius: 1
   hoveredBy: 0000
 --- !u!198 &7244775738129962585
 ParticleSystem:
@@ -276,7 +277,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
