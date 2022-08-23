@@ -9,27 +9,24 @@ public class SuperJump : MonoBehaviour
     {
         originPos = this.transform.position;
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.CompareTag("Player"))
-        {
-            collision.collider.GetComponent<PlayerControl>().jumpPower *= 3f;
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.collider.CompareTag("Player"))
-        {
-            collision.collider.GetComponent<PlayerControl>().jumpPower = 4f;
-        }
-    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("SKY"))
         {
             transform.position = originPos;
+        }
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerControl>().jumpPower *= 3f;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerControl>().jumpPower = 4f;
         }
     }
 }

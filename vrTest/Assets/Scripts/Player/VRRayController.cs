@@ -70,14 +70,14 @@ public class VRRayController : MonoBehaviour
     public void VRHovering(Magnet magnet)
     {
         this.magnet = magnet;
-        this.magnet.GetComponent<ObjectIsHovering>().IsHovering(true);
+        //this.magnet.GetComponent<ObjectIsHovering>().IsHovering(true);
         rc.targetMagnet = this.magnet.transform;
         BishopName = this.magnet.name;
     }
 
     public void VRExitHovering()
     {
-        this.magnet.GetComponent<ObjectIsHovering>().IsHovering(true);
+        //this.magnet.GetComponent<ObjectIsHovering>().IsHovering(true);
     }
 
     public void VRTrigger()
