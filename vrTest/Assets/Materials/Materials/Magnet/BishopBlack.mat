@@ -114,7 +114,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _StarsTexture:
-        m_Texture: {fileID: 8900000, guid: b33597a62276e9b48bdf823018ec1c52, type: 3}
+        m_Texture: {fileID: 8900000, guid: 399d11aecb04914488a63bbf3cc1223b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SunDistortionTexture:
@@ -314,7 +314,7 @@ Material:
     - _SrcBlend: 1
     - _StarsEmissionPower: 3
     - _StarsHueShift: 0
-    - _StarsRotationSpeed: 0.2
+    - _StarsRotationSpeed: 0.02
     - _SunDistortionPower: -0.25
     - _SunDistortionScrollSpeed: -0.75
     - _SunDistortionTilingU: 3
@@ -336,7 +336,7 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _CloudsRampColorTint: {r: 0.6347368, g: 0, b: 0.6698113, a: 1}
+    - _CloudsRampColorTint: {r: 0.67058825, g: 0.20490038, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 1, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
