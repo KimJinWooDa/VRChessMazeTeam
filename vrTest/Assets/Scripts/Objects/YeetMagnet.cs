@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class YeetMagnet : Magnet {
     //@JUNWOO edit this if the magnets lack power in general
-    private const float POWER_MULT = 2f;
+    private const float POWER_MULT = 1f;
 
     public static Rigidbody prigid;
     public static VRRayController[] vrrc;
