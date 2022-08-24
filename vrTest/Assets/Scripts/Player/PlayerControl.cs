@@ -56,6 +56,7 @@ public class PlayerControl : MonoBehaviour {
         if (collision.collider.CompareTag("GROUND"))
         {
             canJump = true;
+            isFlying = false;
         }
     }
 }

@@ -44,6 +44,18 @@ public class GrabChessObjects : MonoBehaviour
             }
 
         }
+        if (other.CompareTag("PAWN"))
+        {
+            isEnter = true;
+            if (isEnter && OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger) && !isOnce && GameManager.instance.stageNum == 4)
+            {
+                StartCoroutine(DissolveChess(other.transform));
+
+                GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(4);
+                isOnce = true;
+            }
+
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -56,6 +68,10 @@ public class GrabChessObjects : MonoBehaviour
             isEnter = false;
         }
         if (other.CompareTag("KNIGHT"))
+        {
+            isEnter = false;
+        }
+        if (other.CompareTag("PAWN"))
         {
             isEnter = false;
         }
@@ -81,7 +97,7 @@ public class GrabChessObjects : MonoBehaviour
         while (value < 1)
         {
             float t = 0;
-            t += 1.2f * Time.deltaTime;
+            t += 0.2f * Time.deltaTime;
             obj.GetComponent<Renderer>().material.SetFloat("_Alpha", t);
             yield return null;
         }

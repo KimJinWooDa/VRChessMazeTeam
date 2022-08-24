@@ -39,9 +39,11 @@ public class VRRayController : MonoBehaviour
     [SerializeField] int stageNum;
     [SerializeField] float forwardPower;
 
- 
+    [SerializeField] bool isTest;
+    Transform myCharacter;
     void Start()
     {
+        myCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(); 
         holdb = false;
         holdf = 0;
         triggerEffectHolder.SetActive(false);
@@ -56,7 +58,6 @@ public class VRRayController : MonoBehaviour
                 forwardPower = PULL_STR;
                 break;
         }
-        //forwardPower = PULL_STR;
     }
     public void PullObject(GameObject ob)
     {
@@ -81,7 +82,7 @@ public class VRRayController : MonoBehaviour
     {
         canTrigger = true;
     }
-    public bool isTest;
+
     void Update()
     {
         if (overrideTarget)
@@ -94,21 +95,13 @@ public class VRRayController : MonoBehaviour
         }
         if (lastShoot)
         {
-            if (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger) && !OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
+            if ((!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger) && !OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger)) && !isTest) // 
             {
                 Detach();
             }
             else if (!connected)
             {
-                if (stageNum == 1 || stageNum == 3)
-                {
-                    if (!chain.expanding)
-                    {
-                        //pcon.isFlying = true; //중력을 받아야 데롱데롱 가능할듯
-                        connected = true;
-                    }
-                }
-                else if (stageNum == 2)
+                if (stageNum == 2)
                 {
                     if (!chain.expanding && BishopName == "BLACKBISHOP")
                     {
@@ -122,18 +115,33 @@ public class VRRayController : MonoBehaviour
                         connected = true;
                     }
                 }
+                else
+                {
+                    if (!chain.expanding)
+                    {
+                        pcon.isFlying = true;
+                        connected = true;
+                    }
+                }
             }
 
         }
         else
         {
-            if (magnet != null && canTrigger)
+            if (magnet != null && (canTrigger || isTest)) //
             {
                 pcon.GetComponent<Rigidbody>().isKinematic = false;
                 pcon.canJump = false;
                 lastShoot = true;
                 connected = false;
-                chain = ChainUtils.LineTarget(leftChainTransform.position, magnet.gameObject);
+                if (CT == ControllerType.Left)
+                {
+                    chain = ChainUtils.LineTarget(leftChainTransform.position, magnet.gameObject);
+                }
+                else
+                {
+                    chain = ChainUtils.LineTarget(rightChainTransform.position, magnet.gameObject);
+                }
             }
         }
 
@@ -152,16 +160,10 @@ public class VRRayController : MonoBehaviour
                 chain.transform.position = rightChainTransform.position;
             }
 
-            if (stageNum == 1 || stageNum ==3)
+
+            if (stageNum == 2)
             {
-                if (connected)
-                {
-                    UpdateChainLengthWhite(magnet);
-                    PullTowards(magnet);
-                }
-            }
-            else if (stageNum == 2)
-            {
+                myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = false;
                 if (connected && BishopName == "BLACKBISHOP")
                 {
                     UpdateChainLength(magnet);
@@ -169,6 +171,15 @@ public class VRRayController : MonoBehaviour
                 else if (connected && BishopName == "WHITEBISHOP")
                 {
                     UpdateChainLengthWhite(magnet);
+                    PullTowards(magnet);
+                }
+            }
+            else
+            {
+                if (connected)
+                {
+                    myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = false;
+                    UpdateChainLength(magnet);
                     PullTowards(magnet);
                 }
             }
@@ -204,8 +215,16 @@ public class VRRayController : MonoBehaviour
     }
 
     public void Detach() {
-        rc.isTriggerState = false;
-        rc.StopUp();
+        if(stageNum == 2)
+        {
+            rc.isTriggerState = false;
+            rc.StopUp();
+        }
+        myCharacter.GetComponent<PlayerControl>().isFlying = false; //테스트할땐 주석처리해야함
+        pcon.rigid.drag = 0f;
+        pcon.rigid.angularDrag = 0.05f;
+        myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = true;
+ 
         magnet = null;
         RemoveChain();
         canTrigger = false;
@@ -213,7 +232,16 @@ public class VRRayController : MonoBehaviour
 
     private void UpdateChainLength(Magnet target)
     {
-        Vector3 pos = rightChainTransform.position;
+        Vector3 pos;
+        if (CT == ControllerType.Left)
+        {
+            pos = leftChainTransform.position;
+        }
+        else
+        {
+            pos = rightChainTransform.position;
+        }
+       
         float len = Vector3.Distance(pos, target.transform.position);
         if (len > chain.MaxLength())
         {
@@ -246,11 +274,13 @@ public class VRRayController : MonoBehaviour
     }
     private void PullTowards(Magnet target)
     {
+        pcon.rigid.drag = 0.4f;
+        pcon.rigid.angularDrag = 0.35f;
         float len = Vector3.Distance(target.transform.position, rightChainTransform.position);
         //pull with force
         if (true)
         {
-            pcon.rigid.AddExplosionForce(forwardPower * Mathf.Clamp01(len / (target.radius * 5f)) * -1f, target.transform.position, len * 1f);
+            pcon.rigid.AddExplosionForce(forwardPower * Time.deltaTime * 60f * Mathf.Clamp01(len / (target.radius * 5f)) * -1f, target.transform.position, len * 1f);
         }
         else
         {

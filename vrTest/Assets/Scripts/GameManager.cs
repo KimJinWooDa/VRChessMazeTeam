@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour
     }
     [SerializeField] GameObject frame;
     [SerializeField] Material kingMaterial;
+    [SerializeField] GameObject door;
     private void Update()
     {
         if (chessState != null)
@@ -90,7 +91,7 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-        if(stageNum > 3)
+        if(stageNum > 4)
         {
             frame.GetComponent<MeshRenderer>().materials[2] = kingMaterial;
         }
@@ -98,6 +99,7 @@ public class GameManager : MonoBehaviour
         if(OVRInput.GetDown(OVRInput.Button.Start)){
             GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(0);
         }
+
     }
     public void OnCourtineFade(int plus)
     {

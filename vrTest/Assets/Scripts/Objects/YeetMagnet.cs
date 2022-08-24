@@ -8,21 +8,25 @@ public class YeetMagnet : Magnet {
 
     public static Rigidbody prigid;
     public static VRRayController[] vrrc;
-    public float power = 10f;
+    public float power;
 
     public override void Awake() {
         base.Awake();
-        if(prigid == null) prigid = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
+
+        if (prigid == null) prigid = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
         if (vrrc == null || vrrc.Length == 0) vrrc = GameObject.FindObjectsOfType<VRRayController>();
     }
 
     public override void Open() {
-        Debug.Log("YEET");
         Vector3 tv = transform.forward * power * POWER_MULT;
 
         //unchain everything
         foreach (VRRayController vr in vrrc) {
-            if(vr.lastShoot) vr.Detach();
+            if (vr.lastShoot)
+            {
+                vr.Detach();
+
+            }
         }
 
         //yeet

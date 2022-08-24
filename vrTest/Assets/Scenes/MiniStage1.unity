@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.02920554, g: 0.03863617, b: 0.047038265, a: 1}
+  m_IndirectSpecularColor: {r: 0.029076597, g: 0.038473852, b: 0.047079213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,28 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &10 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 10, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+  m_PrefabInstance: {fileID: 9076776619995806859}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add247b1c61585d438a62d84253de4a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+  m_PrefabInstance: {fileID: 9076776619995806859}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add247b1c61585d438a62d84253de4a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &38314794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,9 +152,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 494545582}
     m_Modifications:
+    - target: {fileID: 5731848436691147853, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
+      propertyPath: power
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6943977983461612500, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: m_Name
-      value: RookBlack
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: m_RootOrder
@@ -181,19 +207,19 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: _interactableView
       value: 
-      objectReference: {fileID: 2072337801}
+      objectReference: {fileID: 38314797}
     - target: {fileID: 7826305070009139776, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713610}
+      objectReference: {fileID: 11}
     - target: {fileID: 7826305070009139776, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713610}
+      objectReference: {fileID: 11}
     - target: {fileID: 7826305070009139776, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713610}
+      objectReference: {fileID: 11}
     - target: {fileID: 7826305070009139776, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -201,7 +227,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 2072337802}
+      objectReference: {fileID: 38314796}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
 --- !u!4 &38314795 stripped
@@ -209,6 +235,136 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7716398459215708526, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
   m_PrefabInstance: {fileID: 38314794}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &38314796 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5731848436691147853, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
+  m_PrefabInstance: {fileID: 38314794}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97f3b5b28226e848959125f0aaaa2c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &38314797 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7826305070009139779, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
+  m_PrefabInstance: {fileID: 38314794}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb86ba9d4c5126e48bfef9b0c9550e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &40808047
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 494545582}
+    m_Modifications:
+    - target: {fileID: 6369319044010995400, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: power
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943977983461612500, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: m_Name
+      value: RookWhite (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.23946348
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6624134
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6675548
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.24132212
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -140.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90.443
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: _interactableView
+      value: 
+      objectReference: {fileID: 40808050}
+    - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 10}
+    - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 10}
+    - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 10}
+    - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 40808049}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+--- !u!4 &40808048 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+  m_PrefabInstance: {fileID: 40808047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &40808049 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6369319044010995400, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+  m_PrefabInstance: {fileID: 40808047}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97f3b5b28226e848959125f0aaaa2c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &40808050 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7826305070009139779, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+  m_PrefabInstance: {fileID: 40808047}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb86ba9d4c5126e48bfef9b0c9550e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &100388109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -418,7 +574,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -433,7 +589,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -448,7 +604,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -718,7 +874,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -733,7 +889,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -748,7 +904,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -1298,7 +1454,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6943977983461612500, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: m_Name
-      value: PawnWhite (1)
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: m_RootOrder
@@ -1306,15 +1462,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.48
+      value: -24.204
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.75
+      value: 5.96
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.88
+      value: 2.554
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1347,23 +1503,23 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _interactableView
       value: 
-      objectReference: {fileID: 1790196562}
+      objectReference: {fileID: 308371719}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713611}
+      objectReference: {fileID: 10}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713611}
+      objectReference: {fileID: 10}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713611}
+      objectReference: {fileID: 10}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 1790196563}
+      objectReference: {fileID: 308371718}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
 --- !u!4 &308371717 stripped
@@ -1371,6 +1527,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7716398459215708526, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
   m_PrefabInstance: {fileID: 308371716}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &308371718 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7826305070009139778, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
+  m_PrefabInstance: {fileID: 308371716}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18bf5253e750e424c82d6323c196d490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &308371719 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7826305070009139779, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
+  m_PrefabInstance: {fileID: 308371716}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb86ba9d4c5126e48bfef9b0c9550e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &337648510 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7060263212010285867, guid: c1f571e01c871d44680977a90ff8560a, type: 3}
@@ -1500,7 +1678,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -1515,7 +1693,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -1530,7 +1708,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -1771,7 +1949,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -1786,7 +1964,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -1801,7 +1979,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -1915,23 +2093,23 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _interactableView
       value: 
-      objectReference: {fileID: 1790196562}
+      objectReference: {fileID: 380577975}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713611}
+      objectReference: {fileID: 10}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713611}
+      objectReference: {fileID: 10}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713611}
+      objectReference: {fileID: 10}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 1790196563}
+      objectReference: {fileID: 380577974}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
 --- !u!4 &380577973 stripped
@@ -1939,6 +2117,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7716398459215708526, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
   m_PrefabInstance: {fileID: 380577972}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &380577974 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7826305070009139778, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
+  m_PrefabInstance: {fileID: 380577972}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18bf5253e750e424c82d6323c196d490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &380577975 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7826305070009139779, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
+  m_PrefabInstance: {fileID: 380577972}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb86ba9d4c5126e48bfef9b0c9550e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &382420917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1956,11 +2156,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4271052592921846920, guid: c1f571e01c871d44680977a90ff8560a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.36860758
+      value: 0.49475545
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271052592921846920, guid: c1f571e01c871d44680977a90ff8560a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3125849
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271052592921846920, guid: c1f571e01c871d44680977a90ff8560a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.55533385
       objectReference: {fileID: 0}
     - target: {fileID: 4271052592921846920, guid: c1f571e01c871d44680977a90ff8560a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.9976
+      value: -5.0826
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271052592921846920, guid: c1f571e01c871d44680977a90ff8560a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.13651
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271052592921846920, guid: c1f571e01c871d44680977a90ff8560a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.5124
       objectReference: {fileID: 0}
     - target: {fileID: 5385119200090548677, guid: c1f571e01c871d44680977a90ff8560a, type: 3}
       propertyPath: m_TagString
@@ -2131,6 +2347,7 @@ Transform:
   - {fileID: 380577973}
   - {fileID: 1061453967}
   - {fileID: 497835434}
+  - {fileID: 40808048}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2141,6 +2358,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 494545582}
     m_Modifications:
+    - target: {fileID: 6369319044010995400, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: power
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6943977983461612500, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_Name
       value: RookWhite (1)
@@ -2151,35 +2372,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.83
+      value: -12.61
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.637
+      value: 11.75
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.01
+      value: -2.8
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70021254
+      value: 0.6413588
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.70021254
+      value: -0.63903755
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.098500885
+      value: 0.3027063
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.098500885
+      value: -0.29775655
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -106.015
+      value: -140.25
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -2187,28 +2408,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
+      value: 90.443
       objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _interactableView
       value: 
-      objectReference: {fileID: 1790196562}
+      objectReference: {fileID: 497835436}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713611}
+      objectReference: {fileID: 10}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713611}
+      objectReference: {fileID: 10}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713611}
+      objectReference: {fileID: 10}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 1790196563}
+      objectReference: {fileID: 497835435}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
 --- !u!4 &497835434 stripped
@@ -2216,6 +2437,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
   m_PrefabInstance: {fileID: 497835433}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &497835435 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6369319044010995400, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+  m_PrefabInstance: {fileID: 497835433}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97f3b5b28226e848959125f0aaaa2c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &497835436 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7826305070009139779, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+  m_PrefabInstance: {fileID: 497835433}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb86ba9d4c5126e48bfef9b0c9550e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &526158035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2466,7 +2709,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -2481,7 +2724,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -2496,7 +2739,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -2975,7 +3218,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -2990,7 +3233,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -3005,7 +3248,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -3294,7 +3537,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -3309,7 +3552,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -3324,7 +3567,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -3630,19 +3873,19 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _interactableView
       value: 
-      objectReference: {fileID: 2072337801}
+      objectReference: {fileID: 1061453969}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713610}
+      objectReference: {fileID: 11}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713610}
+      objectReference: {fileID: 11}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713610}
+      objectReference: {fileID: 11}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -3650,7 +3893,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 2072337802}
+      objectReference: {fileID: 1061453968}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
 --- !u!4 &1061453967 stripped
@@ -3658,6 +3901,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7716398459215708526, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
   m_PrefabInstance: {fileID: 1061453966}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1061453968 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7826305070009139778, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+  m_PrefabInstance: {fileID: 1061453966}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18bf5253e750e424c82d6323c196d490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1061453969 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7826305070009139779, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+  m_PrefabInstance: {fileID: 1061453966}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb86ba9d4c5126e48bfef9b0c9550e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1125460239 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: db6373ea0bc3c894b89034c7cd4d13ff, type: 3}
@@ -3672,7 +3937,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6943977983461612500, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: m_Name
-      value: PawnBlack (1)
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: m_RootOrder
@@ -3721,19 +3986,19 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _interactableView
       value: 
-      objectReference: {fileID: 2072337801}
+      objectReference: {fileID: 1147708244}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713610}
+      objectReference: {fileID: 11}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713610}
+      objectReference: {fileID: 11}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713610}
+      objectReference: {fileID: 11}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -3741,7 +4006,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 2072337802}
+      objectReference: {fileID: 1147708243}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
 --- !u!4 &1147708242 stripped
@@ -3749,6 +4014,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7716398459215708526, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
   m_PrefabInstance: {fileID: 1147708241}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1147708243 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7826305070009139778, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+  m_PrefabInstance: {fileID: 1147708241}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18bf5253e750e424c82d6323c196d490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1147708244 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7826305070009139779, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+  m_PrefabInstance: {fileID: 1147708241}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb86ba9d4c5126e48bfef9b0c9550e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1157284104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3848,7 +4135,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6943977983461612500, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: m_Name
-      value: PawnBlack
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: m_RootOrder
@@ -3897,19 +4184,19 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _interactableView
       value: 
-      objectReference: {fileID: 2072337801}
+      objectReference: {fileID: 1214902743}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713610}
+      objectReference: {fileID: 11}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713610}
+      objectReference: {fileID: 11}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713610}
+      objectReference: {fileID: 11}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -3917,7 +4204,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 2072337802}
+      objectReference: {fileID: 1214902742}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
 --- !u!4 &1214902741 stripped
@@ -3925,6 +4212,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7716398459215708526, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
   m_PrefabInstance: {fileID: 1214902740}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1214902742 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7826305070009139778, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+  m_PrefabInstance: {fileID: 1214902740}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18bf5253e750e424c82d6323c196d490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1214902743 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7826305070009139779, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+  m_PrefabInstance: {fileID: 1214902740}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb86ba9d4c5126e48bfef9b0c9550e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1243408298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4193,7 +4502,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -4208,7 +4517,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -4223,7 +4532,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -4288,7 +4597,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6943977983461612500, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: m_Name
-      value: PawnWhite
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: m_RootOrder
@@ -4337,23 +4646,23 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _interactableView
       value: 
-      objectReference: {fileID: 1790196562}
+      objectReference: {fileID: 1296560384}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713611}
+      objectReference: {fileID: 10}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713611}
+      objectReference: {fileID: 10}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713611}
+      objectReference: {fileID: 10}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 1790196563}
+      objectReference: {fileID: 1296560383}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
 --- !u!4 &1296560382 stripped
@@ -4361,6 +4670,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7716398459215708526, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
   m_PrefabInstance: {fileID: 1296560381}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1296560383 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7826305070009139778, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
+  m_PrefabInstance: {fileID: 1296560381}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18bf5253e750e424c82d6323c196d490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1296560384 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7826305070009139779, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
+  m_PrefabInstance: {fileID: 1296560381}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb86ba9d4c5126e48bfef9b0c9550e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1317063403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4611,7 +4942,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -4626,7 +4957,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -4641,7 +4972,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -4808,7 +5139,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -4823,7 +5154,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -4838,7 +5169,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -5018,7 +5349,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -5033,7 +5364,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -5048,7 +5379,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -5170,19 +5501,19 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _interactableView
       value: 
-      objectReference: {fileID: 2072337801}
+      objectReference: {fileID: 1526237388}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713610}
+      objectReference: {fileID: 11}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713610}
+      objectReference: {fileID: 11}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713610}
+      objectReference: {fileID: 11}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -5190,7 +5521,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 2072337802}
+      objectReference: {fileID: 1526237387}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
 --- !u!4 &1526237386 stripped
@@ -5198,6 +5529,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7716398459215708526, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
   m_PrefabInstance: {fileID: 1526237385}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1526237387 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7826305070009139778, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+  m_PrefabInstance: {fileID: 1526237385}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18bf5253e750e424c82d6323c196d490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1526237388 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7826305070009139779, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+  m_PrefabInstance: {fileID: 1526237385}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb86ba9d4c5126e48bfef9b0c9550e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1536721330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5423,7 +5776,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -5438,7 +5791,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -5453,7 +5806,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -5665,7 +6018,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -5680,7 +6033,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -5695,7 +6048,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -5842,7 +6195,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -5857,7 +6210,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -5872,7 +6225,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -6184,7 +6537,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -6199,7 +6552,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -6214,7 +6567,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713611}
+      - m_Target: {fileID: 10}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -6418,7 +6771,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -6433,7 +6786,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -6448,7 +6801,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -6696,7 +7049,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -6711,7 +7064,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -6726,7 +7079,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -6925,7 +7278,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -6940,7 +7293,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -6955,7 +7308,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -7154,7 +7507,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -7169,7 +7522,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -7184,7 +7537,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -7513,7 +7866,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -7528,7 +7881,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -7543,7 +7896,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -7657,7 +8010,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -7672,7 +8025,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -7687,7 +8040,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -7891,23 +8244,23 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _interactableView
       value: 
-      objectReference: {fileID: 1790196562}
+      objectReference: {fileID: 2103776355}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713611}
+      objectReference: {fileID: 10}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713611}
+      objectReference: {fileID: 10}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4126638041175713611}
+      objectReference: {fileID: 10}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 1790196563}
+      objectReference: {fileID: 2103776354}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
 --- !u!4 &2103776353 stripped
@@ -7915,6 +8268,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
   m_PrefabInstance: {fileID: 2103776352}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2103776354 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6369319044010995400, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+  m_PrefabInstance: {fileID: 2103776352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97f3b5b28226e848959125f0aaaa2c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2103776355 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7826305070009139779, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+  m_PrefabInstance: {fileID: 2103776352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb86ba9d4c5126e48bfef9b0c9550e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2140653846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8063,7 +8438,7 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRHovering
         m_Mode: 2
@@ -8078,7 +8453,7 @@ MonoBehaviour:
   _whenUnhover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRExitHovering
         m_Mode: 1
@@ -8093,7 +8468,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4126638041175713610}
+      - m_Target: {fileID: 11}
         m_TargetAssemblyTypeName: VRRayController, Assembly-CSharp
         m_MethodName: VRTrigger
         m_Mode: 1
@@ -8149,79 +8524,10 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!1001 &4126638041175713601
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -34.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.87
-      objectReference: {fileID: 0}
-    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.92387956
-      objectReference: {fileID: 0}
-    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.38268343
-      objectReference: {fileID: 0}
-    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11587046859000545, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
-      propertyPath: m_Name
-      value: MiniStage1Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4126638041175713604, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
-      propertyPath: reStartPosition
-      value: 
-      objectReference: {fileID: 2002609714}
-    - target: {fileID: 4126638041175713610, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
-      propertyPath: magnet
-      value: 
-      objectReference: {fileID: 2072337802}
-    - target: {fileID: 4126638041175713611, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
-      propertyPath: magnet
-      value: 
-      objectReference: {fileID: 1790196563}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
 --- !u!114 &4126638041175713602 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4449215033374039038, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
-  m_PrefabInstance: {fileID: 4126638041175713601}
+  m_CorrespondingSourceObject: {fileID: 8722692022614982708, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+  m_PrefabInstance: {fileID: 9076776619995806859}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -8229,25 +8535,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de3820b671281a4e95eafd6a5c4e9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4126638041175713610 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4126638041175713610, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
-  m_PrefabInstance: {fileID: 4126638041175713601}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: add247b1c61585d438a62d84253de4a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4126638041175713611 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4126638041175713611, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
-  m_PrefabInstance: {fileID: 4126638041175713601}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: add247b1c61585d438a62d84253de4a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+--- !u!1001 &9076776619995806859
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: reStartPosition
+      value: 
+      objectReference: {fileID: 2002609714}
+    - target: {fileID: 10, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: isTest
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 10, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: magnet
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: isTest
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: magnet
+      value: 
+      objectReference: {fileID: 497835435}
+    - target: {fileID: 3192908197591979344, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192908197591979344, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -34.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943502179719254315, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: m_Name
+      value: MiniStage1Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7188414328729654944, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.28
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}

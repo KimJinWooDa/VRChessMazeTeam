@@ -19,6 +19,7 @@ TagManager:
   - TEST
   - SUPERJUMP
   - KNIGHT
+  - PAWN
   layers:
   - Default
   - TransparentFX
