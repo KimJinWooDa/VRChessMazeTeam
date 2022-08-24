@@ -94,6 +94,10 @@ public class GameManager : MonoBehaviour
         {
             frame.GetComponent<MeshRenderer>().materials[2] = kingMaterial;
         }
+
+        if(OVRInput.GetDown(OVRInput.Button.Start)){
+            GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(0);
+        }
     }
     public void OnCourtineFade(int plus)
     {

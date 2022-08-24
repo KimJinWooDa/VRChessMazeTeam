@@ -10,9 +10,9 @@ public class ClearStage : MonoBehaviour
         {
             GameObject fadeManager = GameObject.Find("Fade Manager");
             GameManager.instance.stageNum++;
+            fadeManager.GetComponent<FadeManager>().GoToScene(0);
             if (GameManager.instance.stageNum == 4)
             {
-                fadeManager.GetComponent<FadeManager>().GoToScene(0);
                 GameManager.instance.FinalUI();
             }
             

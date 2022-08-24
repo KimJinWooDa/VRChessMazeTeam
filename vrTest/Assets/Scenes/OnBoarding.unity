@@ -1074,6 +1074,7 @@ GameObject:
   m_Component:
   - component: {fileID: 826991584}
   - component: {fileID: 826991583}
+  - component: {fileID: 826991585}
   m_Layer: 0
   m_Name: Volume
   m_TagString: Untagged
@@ -1093,9 +1094,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IsGlobal: 1
+  m_IsGlobal: 0
   priority: 0
-  blendDistance: 0
+  blendDistance: 2
   weight: 1
   sharedProfile: {fileID: 11400000, guid: c27239040d644204eae8df92524aa644, type: 2}
 --- !u!4 &826991584
@@ -1106,13 +1107,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826991582}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.15769134, y: -0.5728757, z: -0.5666406}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 718269814}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &826991585
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826991582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8503015, y: 3, z: 4.5835676}
+  m_Center: {x: -0.13892603, y: 0, z: 0.20821619}
 --- !u!1 &1147327223 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 915074810086624320, guid: 122b5381d79adb7438af2f44873cf80e, type: 3}
@@ -1151,7 +1165,7 @@ MonoBehaviour:
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
   _resetGrabOnGrabsUpdated: 1
-  _physicsGrabbable: {fileID: 0}
+  _physicsGrabbable: {fileID: 7566677731908757894}
 --- !u!114 &1255617380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2767,6 +2781,7 @@ GameObject:
   - component: {fileID: 1255617382}
   - component: {fileID: 1255617379}
   - component: {fileID: 1255617380}
+  - component: {fileID: 7566677731908757894}
   m_Layer: 0
   m_Name: Chair 02
   m_TagString: Untagged
@@ -4909,6 +4924,21 @@ Transform:
   m_Father: {fileID: 4629211978674999791}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7566677731908757894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713384418393371586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bedaac29a943f844a7074b53c8bdf9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _grabbable: {fileID: 1255617380}
+  _rigidbody: {fileID: 1255617381}
+  _scaleMassWithSize: 1
 --- !u!33 &7597706638540046981
 MeshFilter:
   m_ObjectHideFlags: 0
