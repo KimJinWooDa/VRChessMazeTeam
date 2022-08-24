@@ -22,32 +22,25 @@ public class ChaseToPlayer : MonoBehaviour
 
     IEnumerator WaitForMoveMent()
     {
-        yield return new WaitForSeconds(waitTime);
         Vector3 dir = (target.position - transform.position).normalized;
         transform.forward = dir;
         Vector3 originPos = transform.position;
         Vector3 targetPos = transform.position + dir * dashLength;
+
         float t = 0f;
-        float y, z;
-        Color redColor = new Color();
-        redColor = new Vector4(1f, 1f, 1f, 1f);
-        renderer.material.SetColor("_BaseColor", redColor);
         while (t < waitTime)
         {
+            float count = renderer.material.GetFloat("_FinalPower");
             t += Time.deltaTime;
             if (t >= 2)
             {
                 ps.gameObject.SetActive(false);
-                redColor = new Vector4(1, 0, 0, 1f);
-                renderer.material.SetColor("_BaseColor", redColor);
+  
+                renderer.material.SetFloat("_FinalPower", 10);
             }
             else
             {
-                y = (1 / Time.deltaTime);
-                z = (1 / Time.deltaTime);
-                
-                redColor = new Vector4(1, 1 - y, 1 - z, 1f);
-                renderer.material.SetColor("_BaseColor", redColor);
+                renderer.material.SetFloat("_FinalPower",  (int)count + 1);
                 ps.gameObject.SetActive(true);
             }
             transform.rotation = Quaternion.LookRotation(targetPos - transform.position);
@@ -55,6 +48,7 @@ public class ChaseToPlayer : MonoBehaviour
             yield return null;
         }
         transform.position = targetPos;
+        yield return new WaitForSeconds(waitTime);
         StartCoroutine(WaitForMoveMent());
     }
 
