@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class VRRayController : MonoBehaviour
 {
     public const int MAGNET_LAYER = 6;
-    public const float PULL_STR = 15f, STALL_TIME = 3f, YEET_STR = 600f, HOLD_LINGER = 0.5f, MAGNET_RANGE = 25f, PULL_STR2 = 45f;
+    public const float PULL_STR = 23f, STALL_TIME = 3f, YEET_STR = 600f, HOLD_LINGER = 0.5f, MAGNET_RANGE = 25f, PULL_STR2 = 45f;
 
     [Header("Preset Values")]
     public PlayerControl pcon;
@@ -274,8 +274,8 @@ public class VRRayController : MonoBehaviour
     }
     private void PullTowards(Magnet target)
     {
-        pcon.rigid.drag = 0.4f;
-        pcon.rigid.angularDrag = 0.35f;
+        pcon.rigid.drag = 0.37f;
+        pcon.rigid.angularDrag = 0.3f;
         float len = Vector3.Distance(target.transform.position, rightChainTransform.position);
         //pull with force
         if (true)

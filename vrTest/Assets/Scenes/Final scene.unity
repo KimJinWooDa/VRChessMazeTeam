@@ -2871,9 +2871,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.0603773, b: 0.0603773, a: 1}
+      minMaxState: 2
+      minColor: {r: 0.37763962, g: 0.04150939, b: 1, a: 1}
+      maxColor: {r: 1, g: 0, b: 0.5215688, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -2935,8 +2935,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.17
-      minScalar: 0.01
+      scalar: 0.3
+      minScalar: 0.23
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3517,7 +3517,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 300
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -7717,6 +7717,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb86ba9d4c5126e48bfef9b0c9550e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1901832677 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4943502179719254315, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+  m_PrefabInstance: {fileID: 2452236363302430621}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1901832686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901832677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2425aa957bb22b849b647a24847ae743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1961995212
@@ -12172,8 +12189,9 @@ MonoBehaviour:
   speed: 0
   waitTime: 3
   target: {fileID: 0}
-  dashLength: 7
+  dashLength: 15
   ps: {fileID: 0}
+  startPos: {x: -25.52, y: -6.29, z: -0.1246}
 --- !u!65 &8875127579490461551
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12201,7 +12219,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1001 &8980301899680900353
 PrefabInstance:

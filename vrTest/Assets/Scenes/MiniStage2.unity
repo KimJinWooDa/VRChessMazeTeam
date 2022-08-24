@@ -4881,7 +4881,7 @@ PrefabInstance:
     - target: {fileID: 1159040875, guid: a7071c3873bac1447a6b5644859f10b8, type: 3}
       propertyPath: magnet
       value: 
-      objectReference: {fileID: 897581078}
+      objectReference: {fileID: 0}
     - target: {fileID: 1159040875, guid: a7071c3873bac1447a6b5644859f10b8, type: 3}
       propertyPath: leftChainTransform
       value: 

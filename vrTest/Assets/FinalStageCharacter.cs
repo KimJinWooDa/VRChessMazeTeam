@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClearStage : MonoBehaviour
+public class FinalStageCharacter : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
@@ -11,8 +11,11 @@ public class ClearStage : MonoBehaviour
             GameObject fadeManager = GameObject.Find("Fade Manager");
             GameManager.instance.stageNum++;
             fadeManager.GetComponent<FadeManager>().GoToScene(0);
+            if (GameManager.instance.stageNum == 4)
+            {
+                GameManager.instance.FinalUI();
+            }
 
-            Destroy(this.gameObject);
         }
     }
 }
