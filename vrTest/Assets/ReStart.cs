@@ -4,23 +4,28 @@ using UnityEngine;
 
 public class ReStart : MonoBehaviour
 {
-    [SerializeField] Transform reStartPosition;
+    //[SerializeField] Transform reStartPosition;
     [SerializeField] RotateCharacter rc;
     [SerializeField] VRRayController vc;
     [SerializeField] PlayerControl pcon;
 
+    Vector3 reStartPosition;
+    private void Awake()
+    {
+        reStartPosition = transform.position;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("SKY"))
         {
-            transform.position = reStartPosition.position;
+            transform.position = reStartPosition;
         }
     }
 
     public void ReStartGame()
     {
         rc.stageOneRotate = false;
-        transform.position = reStartPosition.position;
+        transform.position = reStartPosition;
         rc.StopUp();
         rc.isTriggerState = false;
         if(GameManager.instance.stageNum == 2 && vc.lastShoot && vc.magnet != null)

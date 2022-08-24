@@ -309,7 +309,7 @@ public class VRRayController : MonoBehaviour
     }
 
     public bool Grip(ControllerType lr)
-    { //Grip: activate chain yeet mode
+    { 
         if (testGrip) return true;
         if (lr == ControllerType.Left) return OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger);
         else return OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger);

@@ -20,7 +20,6 @@ public class YeetMagnet : Magnet {
     public override void Open() {
         Vector3 tv = transform.forward * power * POWER_MULT;
 
-        //unchain everything
         foreach (VRRayController vr in vrrc) {
             if (vr.lastShoot)
             {
