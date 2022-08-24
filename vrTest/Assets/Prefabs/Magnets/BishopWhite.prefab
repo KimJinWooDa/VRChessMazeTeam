@@ -147,7 +147,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6943977983461612500}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.2
@@ -259,8 +259,8 @@ MonoBehaviour:
   opened: 0
   hasColor: 1
   white: 1
-  radius: 0.1
-  openRadius: 1
+  radius: 1
+  openRadius: 3
   hoveredBy: 0000
   power: 10
 --- !u!198 &7244775738129962585

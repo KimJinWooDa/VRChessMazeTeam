@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class YeetMagnet : Magnet {
     //@JUNWOO edit this if the magnets lack power in general
-    private const float POWER_MULT = 1f;
+    private const float POWER_MULT = 2f;
 
     public static Rigidbody prigid;
     public static VRRayController[] vrrc;
@@ -17,6 +17,7 @@ public class YeetMagnet : Magnet {
     }
 
     public override void Open() {
+        Debug.Log("YEET");
         Vector3 tv = transform.forward * power * POWER_MULT;
 
         //unchain everything
@@ -26,5 +27,11 @@ public class YeetMagnet : Magnet {
 
         //yeet
         prigid.velocity = tv;
+        StartCoroutine(IReset(1));
+    }
+
+    IEnumerator IReset(float duration) {
+        yield return new WaitForSeconds(duration);
+        opened = false;
     }
 }

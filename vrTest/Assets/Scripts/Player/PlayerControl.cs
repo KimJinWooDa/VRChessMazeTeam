@@ -31,7 +31,7 @@ public class PlayerControl : MonoBehaviour {
         }
     }
 
-    private void LateUpdate() {
+    protected virtual void LateUpdate() {
         UpdateFlying();
     }
 

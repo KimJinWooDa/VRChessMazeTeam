@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class VRRayController : MonoBehaviour
 {
     public const int MAGNET_LAYER = 6;
-    public const float PULL_STR = 45f, STALL_TIME = 3f, YEET_STR = 600f, HOLD_LINGER = 0.5f, MAGNET_RANGE = 25f;
+    public const float PULL_STR = 15f, STALL_TIME = 3f, YEET_STR = 600f, HOLD_LINGER = 0.5f, MAGNET_RANGE = 25f, PULL_STR2 = 45f;
 
     [Header("Preset Values")]
     public PlayerControl pcon;
@@ -48,15 +48,12 @@ public class VRRayController : MonoBehaviour
         this.stageNum = GameManager.instance.stageNum;
         switch (stageNum)
         {
-            case 1:
-                forwardPower = 35f;
-                break;
-
             case 2:
-                forwardPower = PULL_STR;
+                forwardPower = PULL_STR2;
                 break;
 
             default:
+                forwardPower = PULL_STR;
                 break;
         }
         //forwardPower = PULL_STR;
@@ -251,15 +248,15 @@ public class VRRayController : MonoBehaviour
     {
         float len = Vector3.Distance(target.transform.position, rightChainTransform.position);
         //pull with force
-        if (len > target.radius)
+        if (true)
         {
-            pcon.rigid.AddExplosionForce(forwardPower * -1f, target.transform.position, len * 1f);
-            if (len < target.openRadius) target.CheckOpen();
+            pcon.rigid.AddExplosionForce(forwardPower * Mathf.Clamp01(len / (target.radius * 5f)) * -1f, target.transform.position, len * 1f);
         }
         else
         {
-            pcon.rigid.AddExplosionForce(forwardPower * Mathf.Clamp01(1f - len / (target.radius)), target.transform.position, len * 1f);
+            //pcon.rigid.AddExplosionForce(forwardPower * Mathf.Clamp01(1f - len / (target.radius)), target.transform.position, len * 1f);
         }
+        if (len < target.openRadius) target.CheckOpen();
     }
 
     private void WrongColor(Magnet target)
