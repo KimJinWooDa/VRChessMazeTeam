@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class DroneRotateFollow : MonoBehaviour {
     public float spinSpeed = 90f;
+    public float upSpeed = 0f;
 
     void Update() {
         transform.rotation *= Quaternion.Euler(0, spinSpeed * Time.deltaTime, 0);
+        transform.position += Vector3.up * Time.deltaTime * upSpeed;
     }
 
 #if UNITY_EDITOR
