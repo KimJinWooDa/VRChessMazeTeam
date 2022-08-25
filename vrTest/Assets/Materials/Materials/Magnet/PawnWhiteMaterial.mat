@@ -279,9 +279,9 @@ Material:
     - _RefractionIOR: 1.5
     - _RefrectionCASecondMode: 1
     - _RimAddOrMultiply: 0
-    - _RimEmissionPower: 3
-    - _RimExp: 6
-    - _RimExp2: 2
+    - _RimEmissionPower: 1
+    - _RimExp: 6.09
+    - _RimExp2: 3.21
     - _RimNoiseAmount: -0.75
     - _RimNoiseCAAmount: 0.1
     - _RimNoiseCARimMaskExp: 4
@@ -336,12 +336,12 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _CloudsRampColorTint: {r: 0, g: 0.6727638, b: 1, a: 1}
+    - _CloudsRampColorTint: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 1, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FresnelGlowColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimColor: {r: 0, g: 0.7115383, b: 1, a: 1}
+    - _RimColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimEmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimNoiseSpherizeCenter: {r: 0, g: 0, b: 0, a: 0}
     - _RimNoiseSpherizePosition: {r: 0, g: 0, b: 0, a: 0}
