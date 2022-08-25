@@ -114,7 +114,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _StarsTexture:
-        m_Texture: {fileID: 8900000, guid: 9708633a9f5c57e4da4c142c85e63c9e, type: 3}
+        m_Texture: {fileID: 8900000, guid: 39a681cee714bae4a827582c94451331, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SunDistortionTexture:
@@ -280,8 +280,8 @@ Material:
     - _RefrectionCASecondMode: 1
     - _RimAddOrMultiply: 0
     - _RimEmissionPower: 2
-    - _RimExp: 4
-    - _RimExp2: 2
+    - _RimExp: 4.88
+    - _RimExp2: 1.31
     - _RimNoiseAmount: -0.75
     - _RimNoiseCAAmount: 0.1
     - _RimNoiseCARimMaskExp: 4
@@ -341,7 +341,7 @@ Material:
     - _Color0: {r: 1, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FresnelGlowColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimColor: {r: 0.21176466, g: 0.51633537, b: 1, a: 1}
+    - _RimColor: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
     - _RimEmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimNoiseSpherizeCenter: {r: 0, g: 0, b: 0, a: 0}
     - _RimNoiseSpherizePosition: {r: 0, g: 0, b: 0, a: 0}

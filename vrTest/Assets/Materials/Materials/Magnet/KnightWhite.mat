@@ -42,7 +42,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CloudsRamp:
-        m_Texture: {fileID: 2800000, guid: c77c7c9ced805ce4a8ac5df9c422f69e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 17b45ecaf579c0b4998d2c399d58e172, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CloudsTexture:
@@ -194,7 +194,7 @@ Material:
     - _ChomaticAberration: 0
     - _CloudOpacityExp: 2
     - _CloudsEmissionPower: 10
-    - _CloudsOpacityExp: 2
+    - _CloudsOpacityExp: 0.96
     - _CloudsOpacityPower: 1
     - _CloudsRampOffsetExp: 1
     - _CloudsRampOffsetExp2: 8
@@ -206,7 +206,7 @@ Material:
     - _Cutoff: 0.5
     - _DARKCLOUDSENABLED: 0
     - _DarkCloudsEdgesGlowClamp: 4
-    - _DarkCloudsEdgesGlowExp: 1
+    - _DarkCloudsEdgesGlowExp: 0.87
     - _DarkCloudsEdgesGlowGB: 0
     - _DarkCloudsEdgesGlowPower: 10
     - _DarkCloudsEdgesGlowStyle: 0
@@ -280,7 +280,7 @@ Material:
     - _RefrectionCASecondMode: 1
     - _RimAddOrMultiply: 0
     - _RimEmissionPower: 4
-    - _RimExp: 6
+    - _RimExp: 3.66
     - _RimExp2: 2
     - _RimNoiseAmount: -0.75
     - _RimNoiseCAAmount: 0.1
@@ -336,12 +336,12 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _CloudsRampColorTint: {r: 1, g: 0.3537736, b: 0.94760334, a: 1}
+    - _CloudsRampColorTint: {r: 0, g: 0.14281559, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 1, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FresnelGlowColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimColor: {r: 0.9631507, g: 0.15686274, b: 1, a: 1}
+    - _RimColor: {r: 0.15686274, g: 0.2775396, b: 1, a: 1}
     - _RimEmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimNoiseSpherizeCenter: {r: 0, g: 0, b: 0, a: 0}
     - _RimNoiseSpherizePosition: {r: 0, g: 0, b: 0, a: 0}
