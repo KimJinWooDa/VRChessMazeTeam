@@ -197,7 +197,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -205,11 +205,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -245,6 +245,10 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139778, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+      propertyPath: openRadius
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
@@ -349,7 +353,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -357,11 +361,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -389,6 +393,10 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139778, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+      propertyPath: openRadius
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
@@ -429,6 +437,10 @@ PrefabInstance:
     - target: {fileID: 6369319044010995400, guid: 3a10fe4b60449bc48969acad3febe5b6, type: 3}
       propertyPath: power
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369319044010995400, guid: 3a10fe4b60449bc48969acad3febe5b6, type: 3}
+      propertyPath: openRadius
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6943977983461612500, guid: 3a10fe4b60449bc48969acad3febe5b6, type: 3}
       propertyPath: m_Name
@@ -493,7 +505,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 3a10fe4b60449bc48969acad3febe5b6, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 3a10fe4b60449bc48969acad3febe5b6, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -501,18 +513,18 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 3a10fe4b60449bc48969acad3febe5b6, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430625}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 3a10fe4b60449bc48969acad3febe5b6, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 3a10fe4b60449bc48969acad3febe5b6, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
       objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139776, guid: 3a10fe4b60449bc48969acad3febe5b6, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: VRTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139776, guid: 3a10fe4b60449bc48969acad3febe5b6, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
@@ -570,6 +582,10 @@ PrefabInstance:
     - target: {fileID: 5731848436691147853, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: power
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5731848436691147853, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
+      propertyPath: openRadius
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6943977983461612500, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: m_Name
@@ -638,7 +654,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -646,11 +662,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -739,6 +755,10 @@ PrefabInstance:
       propertyPath: ColorModule.gradient.maxGradient.key1.r
       value: 0.053933144
       objectReference: {fileID: 0}
+    - target: {fileID: 5731848436691147853, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
+      propertyPath: openRadius
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6943977983461612500, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: m_Name
       value: RookBlack (2)
@@ -806,7 +826,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -814,11 +834,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -927,6 +947,10 @@ PrefabInstance:
       propertyPath: power
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 6369319044010995400, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: openRadius
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6943977983461612500, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_Name
       value: RookWhite (2)
@@ -990,7 +1014,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430623}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -998,11 +1022,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430623}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -1168,7 +1192,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &620701146
 PrefabInstance:
@@ -1244,7 +1268,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -1252,11 +1276,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -1292,6 +1316,10 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139778, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+      propertyPath: openRadius
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
@@ -1396,7 +1424,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -1404,11 +1432,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -1444,6 +1472,10 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139778, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+      propertyPath: openRadius
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
@@ -1548,7 +1580,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -1556,11 +1588,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -1596,6 +1628,10 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139778, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+      propertyPath: openRadius
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
@@ -1700,7 +1736,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -1708,11 +1744,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -1748,6 +1784,10 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139778, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+      propertyPath: openRadius
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
@@ -1848,7 +1888,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430623}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -1856,11 +1896,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430623}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -1897,6 +1937,10 @@ PrefabInstance:
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139778, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
+      propertyPath: openRadius
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
 --- !u!4 &1082734131 stripped
@@ -1925,6 +1969,10 @@ PrefabInstance:
     - target: {fileID: 5731848436691147853, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: power
       value: 6.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5731848436691147853, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
+      propertyPath: openRadius
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6943977983461612500, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: m_Name
@@ -1993,7 +2041,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -2001,11 +2049,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -2098,6 +2146,10 @@ PrefabInstance:
       propertyPath: power
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5731848436691147853, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
+      propertyPath: openRadius
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6943977983461612500, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: m_Name
       value: RookBlack (1)
@@ -2165,7 +2217,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430623}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -2173,11 +2225,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430623}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -2329,7 +2381,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430623}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -2337,11 +2389,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430623}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -2377,6 +2429,10 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139778, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
+      propertyPath: openRadius
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
@@ -2535,7 +2591,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -2543,11 +2599,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -2575,6 +2631,10 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139778, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+      propertyPath: openRadius
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
@@ -2745,7 +2805,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1390560703
 MonoBehaviour:
@@ -2860,7 +2920,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430623}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -2868,11 +2928,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430623}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -2908,6 +2968,10 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139778, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
+      propertyPath: openRadius
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
@@ -3001,7 +3065,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430623}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -3009,11 +3073,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430623}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -3050,6 +3114,10 @@ PrefabInstance:
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139778, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
+      propertyPath: openRadius
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
 --- !u!4 &1473941776 stripped
@@ -3078,6 +3146,10 @@ PrefabInstance:
     - target: {fileID: 6369319044010995400, guid: 3a10fe4b60449bc48969acad3febe5b6, type: 3}
       propertyPath: power
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369319044010995400, guid: 3a10fe4b60449bc48969acad3febe5b6, type: 3}
+      propertyPath: openRadius
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6943977983461612500, guid: 3a10fe4b60449bc48969acad3febe5b6, type: 3}
       propertyPath: m_Name
@@ -3142,7 +3214,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 3a10fe4b60449bc48969acad3febe5b6, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 3a10fe4b60449bc48969acad3febe5b6, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -3150,11 +3222,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 3a10fe4b60449bc48969acad3febe5b6, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 3a10fe4b60449bc48969acad3febe5b6, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 3a10fe4b60449bc48969acad3febe5b6, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -3279,7 +3351,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430623}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -3287,11 +3359,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430623}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -3328,6 +3400,10 @@ PrefabInstance:
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139778, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
+      propertyPath: openRadius
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
 --- !u!4 &1494973040 stripped
@@ -3356,6 +3432,10 @@ PrefabInstance:
     - target: {fileID: 5731848436691147853, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: power
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5731848436691147853, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
+      propertyPath: openRadius
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6943977983461612500, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: m_Name
@@ -3424,7 +3504,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -3432,11 +3512,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -3606,6 +3686,89 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.0414915, y: 5.7481933, z: 6.018924}
   m_Center: {x: 2.0155504, y: -1.1017284, z: -2.0193465}
+--- !u!1001 &1601029673
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.795
+      objectReference: {fileID: 0}
+    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7511946
+      objectReference: {fileID: 0}
+    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6600808
+      objectReference: {fileID: 0}
+    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 82.612
+      objectReference: {fileID: 0}
+    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11587046859000544, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11587046859000545, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
+      propertyPath: m_Name
+      value: MiniStage1Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
+--- !u!114 &1601029674 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4126638041175713610, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
+  m_PrefabInstance: {fileID: 1601029673}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add247b1c61585d438a62d84253de4a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1601029675 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4126638041175713611, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
+  m_PrefabInstance: {fileID: 1601029673}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add247b1c61585d438a62d84253de4a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1708276917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3632,6 +3795,10 @@ PrefabInstance:
     - target: {fileID: 6369319044010995400, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: power
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369319044010995400, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: openRadius
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6943977983461612500, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_Name
@@ -3688,7 +3855,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -3696,11 +3863,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -3833,7 +4000,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -3841,11 +4008,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -3873,6 +4040,10 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139778, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+      propertyPath: openRadius
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
@@ -3917,10 +4088,10 @@ PrefabInstance:
     - target: {fileID: 1594643428610613101, guid: 571cc808999f301409f2c1bdb4cb8adc, type: 3}
       propertyPath: fadeScreen
       value: 
-      objectReference: {fileID: 2452236363302430624}
+      objectReference: {fileID: 0}
     - target: {fileID: 1594643428610613106, guid: 571cc808999f301409f2c1bdb4cb8adc, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1594643428610613106, guid: 571cc808999f301409f2c1bdb4cb8adc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8851,7 +9022,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -8859,11 +9030,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -8899,6 +9070,10 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139778, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+      propertyPath: openRadius
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
@@ -8999,7 +9174,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430623}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -9007,11 +9182,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430623}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -9047,6 +9222,10 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139778, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
+      propertyPath: openRadius
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
@@ -9151,7 +9330,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -9159,11 +9338,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -9200,6 +9379,10 @@ PrefabInstance:
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139778, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+      propertyPath: openRadius
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
 --- !u!4 &1894766517 stripped
@@ -9227,23 +9410,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb86ba9d4c5126e48bfef9b0c9550e9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1901832677 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4943502179719254315, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
-  m_PrefabInstance: {fileID: 2452236363302430621}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1901832686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1901832677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2425aa957bb22b849b647a24847ae743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1979489291
@@ -9393,7 +9559,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430623}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -9401,11 +9567,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430623}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -9441,6 +9607,10 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139778, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
+      propertyPath: openRadius
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
@@ -9486,6 +9656,10 @@ PrefabInstance:
     - target: {fileID: 6369319044010995400, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: power
       value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369319044010995400, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: openRadius
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6943977983461612500, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_Name
@@ -9542,7 +9716,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430623}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -9550,11 +9724,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430623}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029675}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -9620,6 +9794,10 @@ PrefabInstance:
       propertyPath: power
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5731848436691147853, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
+      propertyPath: openRadius
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6943977983461612500, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: m_Name
       value: KnightBlack
@@ -9679,7 +9857,7 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -9687,11 +9865,11 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2452236363302430622}
+      objectReference: {fileID: 1601029674}
     - target: {fileID: 7826305070009139776, guid: 733b32142333d754d970ef52ce8c861a, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
@@ -10321,110 +10499,6 @@ Transform:
   m_Father: {fileID: 8875127579217691603}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2452236363302430621
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 10, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
-      propertyPath: rc
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
-      propertyPath: rc
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -13.81
-      objectReference: {fileID: 0}
-    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -7.795
-      objectReference: {fileID: 0}
-    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7511946
-      objectReference: {fileID: 0}
-    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.6600808
-      objectReference: {fileID: 0}
-    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 82.612
-      objectReference: {fileID: 0}
-    - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4943502179719254315, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
-      propertyPath: m_Name
-      value: FinalStagePlayer
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3192908198263725717, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
---- !u!114 &2452236363302430622 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 11, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
-  m_PrefabInstance: {fileID: 2452236363302430621}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2452236363302430625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: add247b1c61585d438a62d84253de4a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2452236363302430623 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 10, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
-  m_PrefabInstance: {fileID: 2452236363302430621}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: add247b1c61585d438a62d84253de4a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2452236363302430624 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8722692022614982708, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
-  m_PrefabInstance: {fileID: 2452236363302430621}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1de3820b671281a4e95eafd6a5c4e9d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &2452236363302430625 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3981725203286534261, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
-  m_PrefabInstance: {fileID: 2452236363302430621}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2456766479488270467
 Transform:
   m_ObjectHideFlags: 0
