@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.09589707, g: 0.09589707, b: 0.09589707, a: 1}
+  m_IndirectSpecularColor: {r: 0.09582684, g: 0.09582684, b: 0.09582684, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -634,7 +634,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 495841.75
+  m_Radius: 49578
   m_Center: {x: 0.171875, y: -30592.238, z: -0.8437501}
 --- !u!1 &195654658
 GameObject:
@@ -1495,7 +1495,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9916.836, y: 9916.818, z: 611.8543}
+  m_Size: {x: 18000, y: 18000, z: 700}
   m_Center: {x: 0.0019531252, y: 0.007812499, z: -305.92227}
 --- !u!1001 &707196123
 PrefabInstance:
@@ -1680,7 +1680,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770071344}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.000640825
@@ -2918,24 +2918,6 @@ PrefabInstance:
       objectReference: {fileID: 75789202}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
---- !u!1 &1667384215 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5385119200090548677, guid: c1f571e01c871d44680977a90ff8560a, type: 3}
-  m_PrefabInstance: {fileID: 382420917}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1667384219
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1667384215}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 14895.774, y: 14982.771, z: 37000.105}
-  m_Center: {x: -12.862299, y: 161.46289, z: -27.0205}
 --- !u!1 &1697614998 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2368052119287057687, guid: c1f571e01c871d44680977a90ff8560a, type: 3}

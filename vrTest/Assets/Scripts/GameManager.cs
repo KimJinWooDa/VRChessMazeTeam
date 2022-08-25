@@ -47,7 +47,6 @@ public class GameManager : MonoBehaviour
         if(uiImage != null) uiImage.gameObject.SetActive(false);
         if(rectTrans != null) rectTrans = rectTrans.GetComponent<RectTransform>();
     }
-    bool justOnce;
     public static GameManager instance
     {
         get
@@ -69,9 +68,8 @@ public class GameManager : MonoBehaviour
         if (followImage != null)
         {
             followImage.sprite = followSprites[imageCount];
-            if (!justOnce)
+            if (stageNum == 1)
             {
-                justOnce = true;
                 StartCoroutine(FadeOutImage(followImage));
             }
         }
@@ -153,7 +151,7 @@ public class GameManager : MonoBehaviour
         while (followImage.color.a > 0)
         {
             Color a = followImage.color;
-            a.a -= 0.35f * Time.deltaTime; //UI 사라지는 속도? 0.35f
+            a.a -= 0.35f * Time.deltaTime; 
             followImage.color = new Vector4(1, 1, 1, a.a);
             yield return null;
         }

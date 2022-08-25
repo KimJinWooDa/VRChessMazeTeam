@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.021774586, g: 0.011438508, b: 0.019364383, a: 1}
+  m_IndirectSpecularColor: {r: 0.02169926, g: 0.011392501, b: 0.019264732, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4113,9 +4113,10 @@ GameObject:
   - component: {fileID: 1324080725116120705}
   - component: {fileID: 1324080725116120704}
   - component: {fileID: 1324080725116120711}
+  - component: {fileID: 1324080725116120712}
   m_Layer: 0
   m_Name: ministage_portal (1)
-  m_TagString: Untagged
+  m_TagString: GOALIN
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4162,6 +4163,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &1324080725116120712
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324080725116120710}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4958.4175
+  m_Center: {x: 0.009765625, y: 0.0043945275, z: -305.9217}
 --- !u!1 &1388797955612037904
 GameObject:
   m_ObjectHideFlags: 0
