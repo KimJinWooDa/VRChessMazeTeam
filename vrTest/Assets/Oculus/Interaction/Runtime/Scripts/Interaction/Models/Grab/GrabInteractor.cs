@@ -146,7 +146,7 @@ namespace Oculus.Interaction
             {
                 item = GameObject.FindGameObjectWithTag("ITEM");
                 item.SendMessage("Assemble", SendMessageOptions.DontRequireReceiver);
-                item.GetComponent<Rigidbody>().useGravity = false;
+                item.GetComponent<Rigidbody>().useGravity = true;
             }
         }
         protected override void InteractableUnselected(GrabInteractable interactable)
@@ -158,7 +158,7 @@ namespace Oculus.Interaction
                 new ReleaseVelocityInformation(Vector3.zero, Vector3.zero, Vector3.zero);
             interactable.ApplyVelocities(throwVelocity.LinearVelocity, throwVelocity.AngularVelocity);
 
-            interactable.GetComponent<Rigidbody>().AddForce(throwVelocity.LinearVelocity * 3f , ForceMode.Impulse); //테스트 앞으로 안던져지네 ㅠ
+            if(throwVelocity.LinearVelocity == Vector3.zero) interactable.GetComponent<Rigidbody>().AddForce(Vector3.forward * 3f , ForceMode.Impulse); //테스트 앞으로 안던져지네 ㅠ
         }
 
         protected override void HandlePointerEventRaised(PointerEvent evt)

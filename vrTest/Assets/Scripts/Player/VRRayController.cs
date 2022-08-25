@@ -213,7 +213,7 @@ public class VRRayController : MonoBehaviour
 
     IEnumerator DragScaleUp()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.23f);
         pcon.rigid.drag = 0.9f;
         pcon.rigid.angularDrag = 0.9f;
     }
