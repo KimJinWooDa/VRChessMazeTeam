@@ -97,7 +97,7 @@ public class GrabChessObjects : MonoBehaviour
         while (value < 1)
         {
             float t = 0;
-            t += 0.2f * Time.deltaTime;
+            t += 0.35f * Time.deltaTime;
             obj.GetComponent<Renderer>().material.SetFloat("_Alpha", t);
             yield return null;
         }

@@ -23,7 +23,7 @@ public class YeetMagnet : Magnet {
         foreach (VRRayController vr in vrrc) {
             if (vr.lastShoot)
             {
-                vr.Detach();
+                vr.CompletelyDetach();
 
             }
         }

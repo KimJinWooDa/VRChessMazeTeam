@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class VRRayController : MonoBehaviour
 {
     public const int MAGNET_LAYER = 6;
-    public const float PULL_STR = 23f, STALL_TIME = 3f, YEET_STR = 600f, HOLD_LINGER = 0.5f, MAGNET_RANGE = 25f, PULL_STR2 = 45f;
+    public const float PULL_STR = 20f, STALL_TIME = 3f, YEET_STR = 600f, HOLD_LINGER = 0.5f, MAGNET_RANGE = 25f, PULL_STR2 = 45f;
 
     [Header("Preset Values")]
     public PlayerControl pcon;
@@ -41,6 +41,8 @@ public class VRRayController : MonoBehaviour
 
     [SerializeField] bool isTest;
     Transform myCharacter;
+
+    [SerializeField] VRRayController otherController;
     void Start()
     {
         myCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(); 
@@ -85,6 +87,7 @@ public class VRRayController : MonoBehaviour
 
     void Update()
     {
+        stageNum = GameManager.instance.stageNum;
         if (overrideTarget)
         {
             transform.rotation = overrideRotation;
@@ -95,9 +98,17 @@ public class VRRayController : MonoBehaviour
         }
         if (lastShoot)
         {
-            if ((!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger) && !OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger)) && !isTest) // 
+            if ((!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger) ) && CT ==ControllerType.Right && otherController != null && otherController.connected) // 
             {
                 Detach();
+            }
+            else if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && CT == ControllerType.Left && otherController != null && otherController.connected)
+            {
+                Detach();
+            }
+            else if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger)) && !isTest)
+            {
+                CompletelyDetach();
             }
             else if (!connected)
             {
@@ -105,6 +116,7 @@ public class VRRayController : MonoBehaviour
                 {
                     if (!chain.expanding && BishopName == "BLACKBISHOP")
                     {
+                        Debug.Log("실행118");
                         rc.Set(this.magnet.transform, true);
                         GetComponent<Rigidbody>().isKinematic = true;
                         connected = true;
@@ -130,7 +142,7 @@ public class VRRayController : MonoBehaviour
         {
             if (magnet != null && (canTrigger || isTest)) //
             {
-                pcon.GetComponent<Rigidbody>().isKinematic = false;
+                //pcon.GetComponent<Rigidbody>().isKinematic = false;
                 pcon.canJump = false;
                 lastShoot = true;
                 connected = false;
@@ -155,21 +167,18 @@ public class VRRayController : MonoBehaviour
             {
                 chain.transform.position = rightChainTransform.position;
             }
-            else
-            {
-                chain.transform.position = rightChainTransform.position;
-            }
-
 
             if (stageNum == 2)
             {
                 myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = false;
                 if (connected && BishopName == "BLACKBISHOP")
                 {
+                    Debug.Log("실행180");
                     UpdateChainLength(magnet);
                 }
                 else if (connected && BishopName == "WHITEBISHOP")
                 {
+                    Debug.Log("실행85");
                     UpdateChainLengthWhite(magnet);
                     PullTowards(magnet);
                 }
@@ -178,6 +187,7 @@ public class VRRayController : MonoBehaviour
             {
                 if (connected)
                 {
+                    Debug.Log("실행194");
                     myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = false;
                     UpdateChainLength(magnet);
                     PullTowards(magnet);
@@ -215,16 +225,29 @@ public class VRRayController : MonoBehaviour
     }
 
     public void Detach() {
-        if(stageNum == 2)
+
+        //myCharacter.GetComponent<PlayerControl>().isFlying = false; //테스트할땐 주석처리해야함
+        //pcon.rigid.drag = 0f;
+        //pcon.rigid.angularDrag = 0.05f;
+        //myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = true;
+ 
+        magnet = null;
+        RemoveChain();
+        canTrigger = false;
+    }
+
+    public void CompletelyDetach()
+    {
+        if (stageNum == 2)
         {
             rc.isTriggerState = false;
             rc.StopUp();
         }
-        myCharacter.GetComponent<PlayerControl>().isFlying = false; //테스트할땐 주석처리해야함
+        myCharacter.GetComponent<PlayerControl>().isFlying = false;
         pcon.rigid.drag = 0f;
         pcon.rigid.angularDrag = 0.05f;
         myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = true;
- 
+
         magnet = null;
         RemoveChain();
         canTrigger = false;
@@ -274,9 +297,18 @@ public class VRRayController : MonoBehaviour
     }
     private void PullTowards(Magnet target)
     {
-        pcon.rigid.drag = 0.37f;
-        pcon.rigid.angularDrag = 0.3f;
-        float len = Vector3.Distance(target.transform.position, rightChainTransform.position);
+        pcon.rigid.drag = 0.42f;
+        pcon.rigid.angularDrag = 0.35f;
+        Vector3 pos;
+        if (CT == ControllerType.Left)
+        {
+            pos = leftChainTransform.position;
+        }
+        else
+        {
+            pos = rightChainTransform.position;
+        }
+        float len = Vector3.Distance(target.transform.position, pos);
         //pull with force
         if (true)
         {
