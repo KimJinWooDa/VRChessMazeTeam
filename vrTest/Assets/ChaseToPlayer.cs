@@ -11,6 +11,8 @@ public class ChaseToPlayer : MonoBehaviour
     [SerializeField] ParticleSystem ps;
     Renderer renderer;
     [SerializeField] Vector3 startPos;
+
+    public bool reStart;
     private void Awake()
     {
         startPos = transform.position;
@@ -64,15 +66,26 @@ public class ChaseToPlayer : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<ReStart>().ReStartGame();
-            this.transform.rotation = Quaternion.Euler(90f, 90f, 90f);
-            this.transform.position = startPos; //왜안되지?
+
             ReStart();
         }
     }
 
     void ReStart()
     {
+        this.transform.rotation = Quaternion.Euler(90f, 90f, 90f);
+        this.transform.position = startPos; //왜안되지?
         StopCoroutine(WaitForMoveMent());
+        StartCoroutine(WaitForMoveMent());
+    }
+
+    public void OffMovement()
+    {
+        StopCoroutine(WaitForMoveMent());
+    }
+
+    public void OnMoveMent()
+    {
         StartCoroutine(WaitForMoveMent());
     }
 }

@@ -322,24 +322,44 @@ PrefabInstance:
       objectReference: {fileID: 40808050}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 10}
+      objectReference: {fileID: 11}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 10}
+      objectReference: {fileID: 11}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 10}
+      objectReference: {fileID: 11}
+    - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VRHovering
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VRTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VRExitHovering
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VRRayController, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 40808049}
+    - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
 --- !u!4 &40808048 stripped
@@ -882,8 +902,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.011624, y: 1.7833555, z: 2.007621}
-  m_Center: {x: 0.0058118696, y: -0.10832214, z: 0.00011181831}
+  m_Size: {x: 3.1605153, y: 1.7833554, z: 3.0638254}
+  m_Center: {x: 0.58025736, y: -0.10832213, z: 0.5282141}
 --- !u!1001 &380577972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1053,19 +1073,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6000917664772175109, guid: c1f571e01c871d44680977a90ff8560a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.7012506
+      value: 0.6494523
       objectReference: {fileID: 0}
     - target: {fileID: 6000917664772175109, guid: c1f571e01c871d44680977a90ff8560a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.71803737
+      value: 0.6376545
       objectReference: {fileID: 0}
     - target: {fileID: 6000917664772175109, guid: c1f571e01c871d44680977a90ff8560a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.3186
+      value: -1.3704
       objectReference: {fileID: 0}
     - target: {fileID: 6000917664772175109, guid: c1f571e01c871d44680977a90ff8560a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.9398
+      value: 1.0205
       objectReference: {fileID: 0}
     - target: {fileID: 6063294386021930206, guid: c1f571e01c871d44680977a90ff8560a, type: 3}
       propertyPath: m_TagString
@@ -2386,7 +2406,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6369319044010995400, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: power
-      value: 11
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6943977983461612500, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_Name
@@ -2398,7 +2418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.15
+      value: -12.57
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2443,15 +2463,27 @@ PrefabInstance:
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 10}
+      objectReference: {fileID: 11}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 10}
+      objectReference: {fileID: 11}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 10}
+      objectReference: {fileID: 11}
+    - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VRHovering
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VRTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VRExitHovering
+      objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 

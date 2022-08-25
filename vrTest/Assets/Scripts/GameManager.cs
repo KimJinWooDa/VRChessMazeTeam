@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         if(uiImage != null) uiImage.gameObject.SetActive(false);
         if(rectTrans != null) rectTrans = rectTrans.GetComponent<RectTransform>();
     }
-
+    bool justOnce;
     public static GameManager instance
     {
         get
@@ -69,7 +69,11 @@ public class GameManager : MonoBehaviour
         if (followImage != null)
         {
             followImage.sprite = followSprites[imageCount];
-            StartCoroutine(FadeOutImage(followImage));
+            if (!justOnce)
+            {
+                justOnce = true;
+                StartCoroutine(FadeOutImage(followImage));
+            }
         }
     }
     [SerializeField] GameObject frame;
