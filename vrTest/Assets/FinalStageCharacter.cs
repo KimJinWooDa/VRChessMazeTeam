@@ -11,7 +11,7 @@ public class FinalStageCharacter : MonoBehaviour
             GameObject fadeManager = GameObject.Find("Fade Manager");
             GameManager.instance.stageNum++;
             fadeManager.GetComponent<FadeManager>().GoToScene(0);
-            if (GameManager.instance.stageNum == 4)
+            if (GameManager.instance.stageNum == 5)
             {
                 GameManager.instance.FinalUI();
             }

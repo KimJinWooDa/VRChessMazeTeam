@@ -89,6 +89,16 @@ public class GrabChessObjects : MonoBehaviour
             GameManager.instance.stageNum = 1;
             GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(1);
         }
+        if (OVRInput.GetDown(OVRInput.Button.Three))
+        {
+            GameManager.instance.stageNum = 3;
+            GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(3);
+        }
+        if (OVRInput.GetDown(OVRInput.Button.Four))
+        {
+            GameManager.instance.stageNum = 4;
+            GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(4);
+        }
     }
 
     IEnumerator DissolveChess(Transform obj)
