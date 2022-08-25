@@ -95,9 +95,14 @@ public class GameManager : MonoBehaviour
         }
         if(stageNum > 4)
         {
+            followImage.gameObject.SetActive(true);
             frame.GetComponent<MeshRenderer>().materials[2] = kingMaterial;
         }
-
+        if(stageNum > 1 && stageNum <= 4)
+        {
+            StopCoroutine(FadeOutImage(followImage));
+            followImage.gameObject.SetActive(false);
+        }
     }
     public void OnCourtineFade(int plus)
     {
@@ -118,7 +123,7 @@ public class GameManager : MonoBehaviour
         }
         
         imageCount++;
-        if (imageCount == 3) //4는 이제 마지막 UI나오기
+        if (imageCount == 3)
         {
             StopCoroutine(FadeOutImage(followImage));
             yield break;
@@ -135,6 +140,7 @@ public class GameManager : MonoBehaviour
 
     public void FinalUI()
     {
+        if(followImage == null) followImage.gameObject.SetActive(true);
         StartCoroutine(FinalSceneUI());
     }
 
