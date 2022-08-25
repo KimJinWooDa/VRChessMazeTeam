@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.029076597, g: 0.038473852, b: 0.047079213, a: 1}
+  m_IndirectSpecularColor: {r: 0.029175695, g: 0.038573388, b: 0.047172807, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -533,6 +533,7 @@ Transform:
   - {fileID: 473741742}
   - {fileID: 6033264398859748658}
   - {fileID: 7525885661577619255}
+  - {fileID: 1644029793}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -553,10 +554,10 @@ GameObject:
   - component: {fileID: 473741748}
   - component: {fileID: 473741747}
   - component: {fileID: 473741746}
-  - component: {fileID: 473741745}
   - component: {fileID: 473741744}
   - component: {fileID: 473741743}
   - component: {fileID: 473741749}
+  - component: {fileID: 473741750}
   m_Layer: 0
   m_Name: Rook
   m_TagString: ROCK
@@ -619,19 +620,6 @@ MonoBehaviour:
   _oneGrabTransformer: {fileID: 0}
   _twoGrabTransformer: {fileID: 0}
   _maxGrabPoints: -1
---- !u!65 &473741745
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 473741741}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.13054681, y: 0.13054699, z: 0.32348895}
-  m_Center: {x: 0.000009000301, y: -0.000025019046, z: -0.013366831}
 --- !u!54 &473741746
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -713,6 +701,19 @@ MonoBehaviour:
   _grabbable: {fileID: 473741744}
   _rigidbody: {fileID: 473741746}
   _scaleMassWithSize: 1
+--- !u!65 &473741750
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473741741}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1305468, y: 0.323489, z: 0.13054702}
+  m_Center: {x: 0.000008881092, y: -0.01336612, z: 0.000025019053}
 --- !u!1 &487897755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,7 +1338,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4629211978674999791}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1301048774
 MonoBehaviour:
@@ -1714,10 +1715,10 @@ GameObject:
   - component: {fileID: 1644029800}
   - component: {fileID: 1644029799}
   - component: {fileID: 1644029798}
-  - component: {fileID: 1644029797}
   - component: {fileID: 1644029796}
   - component: {fileID: 1644029795}
   - component: {fileID: 1644029794}
+  - component: {fileID: 1644029801}
   m_Layer: 0
   m_Name: Queen (1)
   m_TagString: Untagged
@@ -1732,13 +1733,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1644029792}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.44, y: -68.79327, z: 25.93}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.1192548, y: 0.45593587, z: 0.5504173}
+  m_LocalScale: {x: 0.025, y: 0.025, z: 0.025}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4629211978674999791}
-  m_RootOrder: 22
+  m_Father: {fileID: 423563846}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1644029794
 MonoBehaviour:
@@ -1795,19 +1796,6 @@ MonoBehaviour:
   _releaseDistance: 0
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 1644029794}
---- !u!65 &1644029797
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1644029792}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1769781, y: 0.17795093, z: 0.38691974}
-  m_Center: {x: -0.0014667659, y: -0.0000015236435, z: -0.008507369}
 --- !u!54 &1644029798
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1874,6 +1862,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1644029792}
   m_Mesh: {fileID: -7696507639337603356, guid: 3af69665e7507bd47989bd249c62cba5, type: 3}
+--- !u!65 &1644029801
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644029792}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3730183, y: 6.0630083, z: 2.373018}
+  m_Center: {x: 0.0000009536743, y: 0.18996942, z: -0.0000019073486}
 --- !u!114 &1810655708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3693,7 +3694,6 @@ Transform:
   - {fileID: 5354286927136469105}
   - {fileID: 3494726863696879842}
   - {fileID: 4344043155380676058}
-  - {fileID: 1644029793}
   - {fileID: 1301048773}
   m_Father: {fileID: 0}
   m_RootOrder: 0
