@@ -9068,7 +9068,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: FinalStagePlayer
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3192908198263725717, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
 --- !u!114 &2452236363302430622 stripped
 MonoBehaviour:

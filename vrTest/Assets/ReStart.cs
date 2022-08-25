@@ -24,20 +24,25 @@ public class ReStart : MonoBehaviour
 
     public void ReStartGame()
     {
-        //rc.stageOneRotate = false;
         transform.position = reStartPosition;
-        //rc.StopUp();
-        //rc.isTriggerState = false;
+
+        if(GameManager.instance.stageNum == 2)
+        {
+            rc.StopUp();
+            rc.isTriggerState = false;
+        }
         foreach (VRRayController vr in FindObjectsOfType<VRRayController>())
         {
             if (vr.lastShoot)
             {
                 vr.CompletelyDetach();
-
             }
         }
+        if (vc != null)
+        { 
         vc.magnet = null;
-        vc.canTrigger = false;
+        vc.canTrigger = false; 
+        }
 
         pcon.canJump = true;
         pcon.isFlying = false;

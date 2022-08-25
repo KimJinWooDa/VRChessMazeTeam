@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &811883766
 Transform:
   m_ObjectHideFlags: 0
@@ -2030,20 +2030,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3155601728883448176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!4 &197032971441937092 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6029929497368704838, guid: ffe3be6b11cb93446bff4c254b6d9148, type: 3}
+  m_PrefabInstance: {fileID: 5841903875524242818}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 197032971441602046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9719e9b4fe10f2f4bb207660d51bcef3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  getWeapon: 0
-  swordPos: {fileID: 811883766}
 --- !u!4 &197032971441942208 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6029929497368691522, guid: ffe3be6b11cb93446bff4c254b6d9148, type: 3}
@@ -2135,6 +2126,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rigid: {fileID: 1828947116}
+  cc: {fileID: 857114833}
+  jumpPower: 3
   canJump: 0
   isFlying: 0
 --- !u!114 &1159040873
@@ -2153,7 +2146,7 @@ MonoBehaviour:
   targetMagnet: {fileID: 0}
   angle: 20
   radius: 15
-  vrRayController: {fileID: 0}
+  vrRayController: {fileID: 1159040875}
   myCharacter: {fileID: 3199340574538881820}
 --- !u!114 &1159040874
 MonoBehaviour:
@@ -2167,7 +2160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adab77359c088fe42a67628516e03928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reStartPosition: {fileID: 0}
+  rc: {fileID: 1159040873}
+  vc: {fileID: 1159040875}
+  pcon: {fileID: 857114861}
 --- !u!114 &1159040875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2194,9 +2189,13 @@ MonoBehaviour:
   CT: 1
   rc: {fileID: 1159040873}
   canTrigger: 0
-  chainTransform: {fileID: 197032971441942208}
+  rightChainTransform: {fileID: 197032971441942208}
+  leftChainTransform: {fileID: 197032971441937092}
   BishopName: 
+  stageNum: 0
+  forwardPower: 0
   isTest: 0
+  otherController: {fileID: 0}
 --- !u!114 &1828947106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2216,20 +2215,19 @@ MonoBehaviour:
   RotationAngle: 30
   Speed: 2
   CameraRig: {fileID: 2286291445974438723}
---- !u!114 &3155601728883448173
-MonoBehaviour:
+--- !u!65 &3155601728883448175
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3199340574538881821}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9719e9b4fe10f2f4bb207660d51bcef3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  getWeapon: 0
-  swordPos: {fileID: 811883766}
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.7, z: 0.2}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!4 &4844562808236001856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1308793406996113346, guid: ffe3be6b11cb93446bff4c254b6d9148, type: 3}

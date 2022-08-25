@@ -64,14 +64,14 @@ public class ChaseToPlayer : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<ReStart>().ReStartGame();
+            this.transform.rotation = Quaternion.Euler(90f, 90f, 90f);
+            this.transform.position = startPos; //왜안되지?
             ReStart();
         }
     }
 
     void ReStart()
     {
-        this.transform.rotation = Quaternion.Euler(90f,90f,90f);
-        this.transform.position = startPos; //왜안되지?
         StopCoroutine(WaitForMoveMent());
         StartCoroutine(WaitForMoveMent());
     }

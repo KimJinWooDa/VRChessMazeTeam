@@ -98,11 +98,11 @@ public class VRRayController : MonoBehaviour
         }
         if (lastShoot)
         {
-            if ((!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger) ) && CT ==ControllerType.Right && otherController != null && otherController.connected) // 
+            if ((!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger) ) && CT ==ControllerType.Right && otherController != null && otherController.connected && !isTest) // 
             {
                 Detach();
             }
-            else if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && CT == ControllerType.Left && otherController != null && otherController.connected)
+            else if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && CT == ControllerType.Left && otherController != null && otherController.connected && !isTest)
             {
                 Detach();
             }
@@ -116,7 +116,6 @@ public class VRRayController : MonoBehaviour
                 {
                     if (!chain.expanding && BishopName == "BLACKBISHOP")
                     {
-                        Debug.Log("실행118");
                         rc.Set(this.magnet.transform, true);
                         GetComponent<Rigidbody>().isKinematic = true;
                         connected = true;
@@ -142,7 +141,6 @@ public class VRRayController : MonoBehaviour
         {
             if (magnet != null && (canTrigger || isTest)) //
             {
-                //pcon.GetComponent<Rigidbody>().isKinematic = false;
                 pcon.canJump = false;
                 lastShoot = true;
                 connected = false;
@@ -173,12 +171,10 @@ public class VRRayController : MonoBehaviour
                 myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = false;
                 if (connected && BishopName == "BLACKBISHOP")
                 {
-                    Debug.Log("실행180");
                     UpdateChainLength(magnet);
                 }
                 else if (connected && BishopName == "WHITEBISHOP")
                 {
-                    Debug.Log("실행85");
                     UpdateChainLengthWhite(magnet);
                     PullTowards(magnet);
                 }
@@ -187,10 +183,10 @@ public class VRRayController : MonoBehaviour
             {
                 if (connected)
                 {
-                    Debug.Log("실행194");
                     myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = false;
                     UpdateChainLength(magnet);
                     PullTowards(magnet);
+                    StartCoroutine(DragScaleUp());
                 }
             }
         }
@@ -214,9 +210,17 @@ public class VRRayController : MonoBehaviour
             }
         }
     }
+
+    IEnumerator DragScaleUp()
+    {
+        yield return new WaitForSeconds(0.2f);
+        pcon.rigid.drag = 0.9f;
+        pcon.rigid.angularDrag = 0.9f;
+    }
     public void RemoveChain()
     {
         if (!lastShoot) return;
+
         lastShoot = false;
         connected = false;
         if (chain.expanding) StartCoroutine(RemoveChainPreI(chain));
@@ -225,12 +229,6 @@ public class VRRayController : MonoBehaviour
     }
 
     public void Detach() {
-
-        //myCharacter.GetComponent<PlayerControl>().isFlying = false; //테스트할땐 주석처리해야함
-        //pcon.rigid.drag = 0f;
-        //pcon.rigid.angularDrag = 0.05f;
-        //myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = true;
- 
         magnet = null;
         RemoveChain();
         canTrigger = false;
@@ -271,8 +269,7 @@ public class VRRayController : MonoBehaviour
             pcon.rigid.MovePosition(pcon.rigid.position + (target.transform.position - pos).normalized * (len - chain.MaxLength()));
             if (Vector3.Distance(pos, target.transform.position) > chain.MaxLength() + 0.3f)
             {
-                //break the chain, the pull is obstructed and there is no hope whatsoever
-                //RemoveChain();
+ 
                 return;
             }
             len = chain.MaxLength();
@@ -295,10 +292,9 @@ public class VRRayController : MonoBehaviour
         }
         chain.SetLength(len);
     }
+    [SerializeField] float pullSpeed = 2f;
     private void PullTowards(Magnet target)
     {
-        pcon.rigid.drag = 0.42f;
-        pcon.rigid.angularDrag = 0.35f;
         Vector3 pos;
         if (CT == ControllerType.Left)
         {
@@ -312,12 +308,9 @@ public class VRRayController : MonoBehaviour
         //pull with force
         if (true)
         {
-            pcon.rigid.AddExplosionForce(forwardPower * Time.deltaTime * 60f * Mathf.Clamp01(len / (target.radius * 5f)) * -1f, target.transform.position, len * 1f);
+            pcon.rigid.AddExplosionForce(forwardPower * Time.deltaTime * pullSpeed * 60f * Mathf.Clamp01(len / (target.radius * 5f)) * -1f, target.transform.position, len * 1f);
         }
-        else
-        {
-            //pcon.rigid.AddExplosionForce(forwardPower * Mathf.Clamp01(1f - len / (target.radius)), target.transform.position, len * 1f);
-        }
+
         if (len < target.openRadius) target.CheckOpen();
     }
 

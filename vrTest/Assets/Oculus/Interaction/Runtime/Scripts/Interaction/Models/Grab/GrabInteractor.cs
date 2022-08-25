@@ -158,7 +158,7 @@ namespace Oculus.Interaction
                 new ReleaseVelocityInformation(Vector3.zero, Vector3.zero, Vector3.zero);
             interactable.ApplyVelocities(throwVelocity.LinearVelocity, throwVelocity.AngularVelocity);
 
-            interactable.GetComponent<Rigidbody>().AddForce(throwVelocity.LinearVelocity * 2f); //테스트
+            interactable.GetComponent<Rigidbody>().AddForce(throwVelocity.LinearVelocity * 3f , ForceMode.Impulse); //테스트 앞으로 안던져지네 ㅠ
         }
 
         protected override void HandlePointerEventRaised(PointerEvent evt)
