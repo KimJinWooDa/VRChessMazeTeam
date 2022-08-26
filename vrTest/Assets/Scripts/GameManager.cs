@@ -65,78 +65,72 @@ public class GameManager : MonoBehaviour
     public int stageNum = 1;
     private void Start()
     {
-        if (followImage != null)
-        {
-            followImage.sprite = followSprites[imageCount];
-            if (stageNum == 1)
-            {
-                StartCoroutine(FadeOutImage(followImage));
-            }
-        }
+        //if (followImage != null)
+        //{
+        //    followImage.sprite = followSprites[imageCount];
+        //    if (stageNum == 1)
+        //    {
+        //        //StartCoroutine(FadeOutImage(followImage));
+        //    }
+        //}
     }
     [SerializeField] GameObject frame;
     [SerializeField] Material kingMaterial;
     [SerializeField] GameObject door;
-    private void Update()
-    {
-        if (chessState != null)
-        {
-            for (int i = 0; i < chessState.Length; i++)
-            {
-                if(i == stageNum -1)
-                {
-                    chessState[i].GetComponent<MeshRenderer>().material.SetColor("_ChessColor", Color.blue);
-                }
-                else
-                {
-                    chessState[i].GetComponent<MeshRenderer>().material.SetColor("_ChessColor", Color.white);  
-                }
-            }
-        }
-        if(stageNum > 4)
-        {
-            followImage.gameObject.SetActive(true);
-            frame.GetComponent<MeshRenderer>().materials[2] = kingMaterial;
-        }
-        if(stageNum > 1 && stageNum <= 4)
-        {
-            StopCoroutine(FadeOutImage(followImage));
-            followImage.gameObject.SetActive(false);
-        }
-    }
-    public void OnCourtineFade(int plus)
-    {
-        needImageCount = plus == 1 ? 3 : 7;
-        StopCoroutine(FadeOutImage(followImage));
-        StartCoroutine(FadeOutImage(followImage));
-    }
-    IEnumerator FadeOutImage(Image image)
-    {
-        yield return new WaitForSeconds(3f); //씬 나오는 시간 Delay
+    //private void Update()
+    //{
+    //    if (chessState != null) {
+    //        for (int i = 0; i < chessState.Length; i++) {
+    //            if (i == stageNum - 1) {
+    //                chessState[i].GetComponent<MeshRenderer>().material.SetColor("_ChessColor", Color.blue);
+    //            }
+    //            else {
+    //                chessState[i].GetComponent<MeshRenderer>().material.SetColor("_ChessColor", Color.white);
+    //            }
+    //        }
+    //    }
+    //    if (stageNum > 4) {
+    //        followImage.gameObject.SetActive(true);
+    //        frame.GetComponent<MeshRenderer>().materials[2] = kingMaterial;
+    //    }
+    //    if (stageNum > 1 && stageNum <= 4) {
+    //        StopCoroutine(FadeOutImage(followImage));
+    //        followImage.gameObject.SetActive(false);
+    //    }
+    //}
+    //public void OnCourtineFade(int plus)
+    //{
+    //    needImageCount = plus == 1 ? 3 : 7;
+    //    StopCoroutine(FadeOutImage(followImage));
+    //    StartCoroutine(FadeOutImage(followImage));
+    //}
+    //IEnumerator FadeOutImage(Image image)
+    //{
+    //    yield return new WaitForSeconds(3f); //씬 나오는 시간 Delay
 
-        while (image.color.a > 0)
-        {
-            Color a = image.color;
-            a.a -= 0.35f * Time.deltaTime; //UI 사라지는 속도? 0.35f
-            image.color = new Vector4(1, 1, 1, a.a);
-            yield return null;
-        }
+    //    while (image.color.a > 0)
+    //    {
+    //        Color a = image.color;
+    //        a.a -= 0.35f * Time.deltaTime; //UI 사라지는 속도? 0.35f
+    //        image.color = new Vector4(1, 1, 1, a.a);
+    //        yield return null;
+    //    }
         
-        imageCount++;
-        if (imageCount == 3)
-        {
-            StopCoroutine(FadeOutImage(followImage));
-            yield break;
-        }
-        else
-        {
-            rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Width(imageCount));
-            rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Height(imageCount));
-            followImage.sprite = followSprites[imageCount];
-            followImage.color = new Vector4(1, 1, 1, 1);
-            StartCoroutine(FadeOutImage(followImage));
-        }
-    }
+    //    imageCount++;
+    //    if (imageCount == 3)
+    //    {
+    //        StopCoroutine(FadeOutImage(followImage));
+    //        yield break;
+    //    }
+    //    else
+    //    {
+    //        rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Width(imageCount));
+    //        rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Height(imageCount));
+    //        followImage.sprite = followSprites[imageCount];
+    //        followImage.color = new Vector4(1, 1, 1, 1);
+         // StartCoroutine(FadeOutImage(followImage));
+    //    }
+    //}
 
     public void FinalUI()
     {

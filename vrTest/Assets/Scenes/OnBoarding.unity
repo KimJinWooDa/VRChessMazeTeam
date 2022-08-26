@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.029175695, g: 0.038573388, b: 0.047172807, a: 1}
+  m_IndirectSpecularColor: {r: 0.02920554, g: 0.03863617, b: 0.047038265, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -362,7 +362,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 333895485, guid: 122b5381d79adb7438af2f44873cf80e, type: 3}
   m_PrefabInstance: {fileID: 2721314150476114366}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2721314150476114367}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -558,6 +558,7 @@ GameObject:
   - component: {fileID: 473741743}
   - component: {fileID: 473741749}
   - component: {fileID: 473741750}
+  - component: {fileID: 473741751}
   m_Layer: 0
   m_Name: Rook
   m_TagString: ROCK
@@ -656,7 +657,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e2051a96949ac4448b93f2573fd66fd3, type: 2}
+  - {fileID: 2100000, guid: 92a7b222c6e0f6644b2fbc4002a8bb13, type: 2}
+  - {fileID: 2100000, guid: 122d36a1f759fba4986a7539dc551356, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -714,6 +716,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1305468, y: 0.323489, z: 0.13054702}
   m_Center: {x: 0.000008881092, y: -0.01336612, z: 0.000025019053}
+--- !u!114 &473741751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473741741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6ba9d5f558edb49ac34fe70b5491cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chessState: 1
 --- !u!1 &487897755
 GameObject:
   m_ObjectHideFlags: 0
@@ -2510,7 +2525,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b58db9e67461a7d4aa04371ed50f5c1f, type: 2}
+  - {fileID: 2100000, guid: 92a7b222c6e0f6644b2fbc4002a8bb13, type: 2}
+  - {fileID: 2100000, guid: 2e4141273b8b28248a3d1dad037f9387, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3070,6 +3086,25 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 637425883, guid: 122b5381d79adb7438af2f44873cf80e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 122b5381d79adb7438af2f44873cf80e, type: 3}
+--- !u!1 &2721314150476114367 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 333895483, guid: 122b5381d79adb7438af2f44873cf80e, type: 3}
+  m_PrefabInstance: {fileID: 2721314150476114366}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2721314150476114368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2721314150476114367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b4c21dc39de344c98f8502953435f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followImage: {fileID: 0}
+  followSprites: []
 --- !u!23 &2863248566024615806
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4209,6 +4244,7 @@ GameObject:
   - component: {fileID: 1810655708}
   - component: {fileID: 1810655709}
   - component: {fileID: 8280915939447526084}
+  - component: {fileID: 8280915939447526085}
   m_Layer: 0
   m_Name: Vishop
   m_TagString: BISHOP
@@ -4259,7 +4295,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1a7c101795199c94b9209defb8d3e040, type: 2}
+  - {fileID: 2100000, guid: 92a7b222c6e0f6644b2fbc4002a8bb13, type: 2}
+  - {fileID: 2100000, guid: 2e185f5430f03414789f7203c03f9e4f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4711,6 +4748,7 @@ GameObject:
   - component: {fileID: 1264448513}
   - component: {fileID: 1264448514}
   - component: {fileID: 7525885661577619256}
+  - component: {fileID: 7525885661577619257}
   m_Layer: 0
   m_Name: Pawn
   m_TagString: PAWN
@@ -4734,6 +4772,7 @@ GameObject:
   - component: {fileID: 1564013601}
   - component: {fileID: 1564013602}
   - component: {fileID: 6966062160064495757}
+  - component: {fileID: 6966062160064495758}
   m_Layer: 0
   m_Name: Knight
   m_TagString: KNIGHT
@@ -4813,6 +4852,19 @@ MonoBehaviour:
   _grabbable: {fileID: 1564013602}
   _rigidbody: {fileID: 1564013600}
   _scaleMassWithSize: 1
+--- !u!114 &6966062160064495758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6761824039790858642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6ba9d5f558edb49ac34fe70b5491cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chessState: 3
 --- !u!1 &7294151775305732370
 GameObject:
   m_ObjectHideFlags: 0
@@ -4869,6 +4921,19 @@ MonoBehaviour:
   _grabbable: {fileID: 1264448514}
   _rigidbody: {fileID: 1264448512}
   _scaleMassWithSize: 1
+--- !u!114 &7525885661577619257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6588701535592213059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6ba9d5f558edb49ac34fe70b5491cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chessState: 4
 --- !u!4 &7566677731908757893
 Transform:
   m_ObjectHideFlags: 0
@@ -5079,7 +5144,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f2f1fef0cb3eb4b4097d52196fd4fbf0, type: 2}
+  - {fileID: 2100000, guid: 92a7b222c6e0f6644b2fbc4002a8bb13, type: 2}
+  - {fileID: 2100000, guid: 34108f4858c8ced458262d752e633fde, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5116,6 +5182,19 @@ MonoBehaviour:
   _grabbable: {fileID: 1810655709}
   _rigidbody: {fileID: 1810655711}
   _scaleMassWithSize: 1
+--- !u!114 &8280915939447526085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5214897266170555189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6ba9d5f558edb49ac34fe70b5491cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chessState: 2
 --- !u!4 &8381169591590914698
 Transform:
   m_ObjectHideFlags: 0
