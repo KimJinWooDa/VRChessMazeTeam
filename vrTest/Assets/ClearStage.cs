@@ -20,7 +20,7 @@ public class ClearStage : MonoBehaviour
             GameManager.instance.stageNum++;
             fadeManager.GetComponent<FadeManager>().GoToScene(0);
 
-            Destroy(this.gameObject);
+            if(this.gameObject != null) Destroy(this.gameObject);
         }
 
         if (other.CompareTag("SKY"))

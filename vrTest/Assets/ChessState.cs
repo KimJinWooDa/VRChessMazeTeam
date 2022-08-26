@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class ChessState : MonoBehaviour {
     [SerializeField] private int chessState;
-    
-    private void Start() {
+
+    private void Start()
+    {
         Material[] mats = GetComponent<MeshRenderer>().materials;
-        if (chessState == GameManager.instance.stageNum) {
-            mats[1].SetFloat("_Thickness", 1.1f);
-        }
-        else {
-            mats[0].SetColor("_BaseColor", Color.black);
-            mats[1].SetFloat("_Thickness", 0f);
-        }
+
+        mats[0].SetColor("_BaseColor", Color.black);
+        mats[1].SetFloat("_Thickness", 0f);
+    }
+
+    public void TriggerState()
+    {
+        Material[] mats = GetComponent<MeshRenderer>().materials;
+        Color color = new Color(62f,58f,128f,255f);
+        mats[0].SetColor("_BaseColor", color);
+        mats[1].SetFloat("_Thickness", 1.1f);
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.02920554, g: 0.03863617, b: 0.047038265, a: 1}
+  m_IndirectSpecularColor: {r: 0.029076597, g: 0.038473852, b: 0.047079213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -447,11 +447,13 @@ MonoBehaviour:
   - {fileID: 5214897266170555189}
   - {fileID: 6761824039790858642}
   ui2_Width_Scale: 1100
-  ui3_Width_Scale: 650
+  ui3_Width_Scale: 1281
   ui4_Width_Scale: 1100
+  ui5_Width_Scale: 1132
   ui2_Height_Scale: 160
-  ui3_Height_Scale: 120
+  ui3_Height_Scale: 189
   ui4_Height_Scale: 150
+  ui5_Height_Scale: 189
   stageNum: 1
   frame: {fileID: 5437414202038184866}
   kingMaterial: {fileID: 2100000, guid: 163463d32cd9c7741bbb11cf24ef1252, type: 2}
@@ -3103,8 +3105,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b4c21dc39de344c98f8502953435f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followImage: {fileID: 0}
-  followSprites: []
+  followImage: {fileID: 333895485}
+  followSprites:
+  - {fileID: 21300000, guid: 766990c8060840140bba8a15a6dd3e50, type: 3}
+  - {fileID: 21300000, guid: 8b015ba78e097fa4a90441141c9e35c3, type: 3}
+  - {fileID: 21300000, guid: 631b6e92d192ac94bb7c1f956f5500ae, type: 3}
+  - {fileID: 21300000, guid: 4ea08d3b57f9ba74599d15ae110a7cef, type: 3}
+  finalSprite: {fileID: 21300000, guid: 4ea08d3b57f9ba74599d15ae110a7cef, type: 3}
 --- !u!23 &2863248566024615806
 MeshRenderer:
   m_ObjectHideFlags: 0
