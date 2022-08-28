@@ -16,6 +16,8 @@ public class Magnet : MonoBehaviour {
 
     public bool[] hoveredBy = { false, false };
 
+    public enum ChainPosition { left, right };
+    public ChainPosition cp;
     public virtual void Awake() {
         SetLayerRecursively(gameObject, MAGNET_LAYER);
     }
@@ -30,7 +32,11 @@ public class Magnet : MonoBehaviour {
             opened = true;
         }
     }
-
+    public int CheckChainPosition()
+    {
+        if (cp == ChainPosition.left) return 0;
+        else return 1;
+    }
     public virtual void Open() {
     }
 

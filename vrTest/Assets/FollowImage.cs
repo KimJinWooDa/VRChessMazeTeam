@@ -7,12 +7,10 @@ public class FollowImage : MonoBehaviour {
     [SerializeField] Image followImage;
     [SerializeField] Sprite[] followSprites;
     [SerializeField] Sprite finalSprite;
-    int imageCount;
 
     void Start() {
-        imageCount = followSprites.Length;
         if (followImage != null) {
-            followImage.sprite = followSprites[num];
+            followImage.sprite = followSprites[0];
             if (GameManager.instance.stageNum == 1) {
                 StartCoroutine(FadeOutImage(followImage));
             }
@@ -24,13 +22,12 @@ public class FollowImage : MonoBehaviour {
 
         if (GameManager.instance.stageNum == 5) {
             this.gameObject.SetActive(true);
-            followImage.sprite = followSprites[imageCount];
+            followImage.sprite = finalSprite;
             StartCoroutine(FadeOutFinalImage(followImage));
         }
 
     }
-
-    int num = 0;
+    int number = 0;
     IEnumerator FadeOutImage(Image image)
     {
 
@@ -45,25 +42,25 @@ public class FollowImage : MonoBehaviour {
             image.color = new Vector4(1, 1, 1, a.a);
             yield return null;
         }
-        num++;
-        if (num == imageCount)
+        number++;
+        if (number == followSprites.Length)
         {
             StopCoroutine(FadeOutImage(image));
-            yield return null;
         }
-        GameManager.instance.rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, GameManager.instance.Width(num));
-        GameManager.instance.rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, GameManager.instance.Height(num));
+        else
+        {
+            GameManager.instance.rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, GameManager.instance.Width(number));
+            GameManager.instance.rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, GameManager.instance.Height(number));
 
-        if(num < imageCount - 1)image.sprite = followSprites[num];
-        StartCoroutine(FadeOutImage(image));
-
+            image.sprite = followSprites[number];
+            StartCoroutine(FadeOutImage(image));
+        }
     }
 
     IEnumerator FadeOutFinalImage(Image image)
     {
         GameManager.instance.rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, GameManager.instance.Width(5));
         GameManager.instance.rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, GameManager.instance.Height(5));
-        //followImage.sprite = followSprites[4];
         followImage.color = new Vector4(1, 1, 1, 1);
         yield return new WaitForSeconds(3f);
 

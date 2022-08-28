@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 376752997}
     m_Modifications:
+    - target: {fileID: 4435016566522582463, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435016566522582463, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 34108f4858c8ced458262d752e633fde, type: 2}
     - target: {fileID: 5731848436691147853, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: power
       value: 0
@@ -224,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 64727869}
     - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -235,13 +243,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1159040875}
     - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1159040875}
+    - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VRExitHovering
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VRRayController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 64727873}
+    - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139790, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: m_IsKinematic
       value: 0
@@ -272,6 +296,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 20
+--- !u!1 &64727867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4535911854987500744, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+  m_PrefabInstance: {fileID: 64727863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &64727868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64727867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4440c10d34de1c4886019f942579358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHovering: 0
 --- !u!114 &64727869 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7826305070009139779, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
@@ -301,6 +343,7 @@ MonoBehaviour:
   radius: 0.1
   openRadius: 1
   hoveredBy: 0000
+  cp: 0
 --- !u!1 &113398717 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 234ba09c22863fc43a90a1052d8b354d, type: 3}
@@ -326,6 +369,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 376752997}
     m_Modifications:
+    - target: {fileID: 4435016566522582463, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435016566522582463, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 34108f4858c8ced458262d752e633fde, type: 2}
     - target: {fileID: 5731848436691147853, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: power
       value: 0
@@ -384,7 +435,7 @@ PrefabInstance:
       objectReference: {fileID: 179744031}
     - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -395,13 +446,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1159040875}
     - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1159040875}
+    - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VRExitHovering
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VRRayController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 179744035}
+    - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139790, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: m_IsKinematic
       value: 0
@@ -432,6 +499,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 20
+--- !u!1 &179744029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4535911854987500744, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+  m_PrefabInstance: {fileID: 179744025}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &179744030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179744029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4440c10d34de1c4886019f942579358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHovering: 0
 --- !u!114 &179744031 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7826305070009139779, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
@@ -461,6 +546,7 @@ MonoBehaviour:
   radius: 0.1
   openRadius: 1
   hoveredBy: 0000
+  cp: 0
 --- !u!1 &182114568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,6 +1884,7 @@ MonoBehaviour:
   radius: 1.5
   openRadius: 1
   hoveredBy: 0000
+  cp: 0
 --- !u!65 &920270247
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2033,6 +2120,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 376752997}
     m_Modifications:
+    - target: {fileID: 4435016566522582463, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435016566522582463, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 34108f4858c8ced458262d752e633fde, type: 2}
     - target: {fileID: 5731848436691147853, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: power
       value: 0
@@ -2091,7 +2186,7 @@ PrefabInstance:
       objectReference: {fileID: 1038283486}
     - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2102,13 +2197,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1159040875}
     - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1159040875}
+    - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VRExitHovering
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VRRayController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1038283490}
+    - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139790, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: m_IsKinematic
       value: 0
@@ -2139,6 +2250,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 20
+--- !u!1 &1038283484 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4535911854987500744, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+  m_PrefabInstance: {fileID: 1038283480}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1038283485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038283484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4440c10d34de1c4886019f942579358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHovering: 0
 --- !u!114 &1038283486 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7826305070009139779, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
@@ -2168,6 +2297,7 @@ MonoBehaviour:
   radius: 0.1
   openRadius: 1
   hoveredBy: 0000
+  cp: 0
 --- !u!1001 &1109222334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2588,6 +2718,7 @@ MonoBehaviour:
   radius: 1.5
   openRadius: 1
   hoveredBy: 0000
+  cp: 0
 --- !u!65 &1188964756
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3344,6 +3475,7 @@ MonoBehaviour:
   radius: 1.5
   openRadius: 1
   hoveredBy: 0000
+  cp: 0
 --- !u!65 &1716514896
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3449,6 +3581,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 376752997}
     m_Modifications:
+    - target: {fileID: 4435016566522582463, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435016566522582463, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 34108f4858c8ced458262d752e633fde, type: 2}
     - target: {fileID: 5731848436691147853, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: power
       value: 0
@@ -3507,7 +3647,7 @@ PrefabInstance:
       objectReference: {fileID: 1773474446}
     - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3518,13 +3658,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1159040875}
     - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1159040875}
+    - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: VRHovering
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VRExitHovering
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VRRayController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1773474450}
+    - target: {fileID: 7826305070009139776, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139790, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
       propertyPath: m_IsKinematic
       value: 0
@@ -3555,6 +3711,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 20
+--- !u!1 &1773474444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4535911854987500744, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
+  m_PrefabInstance: {fileID: 1773474440}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1773474445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773474444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4440c10d34de1c4886019f942579358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHovering: 0
 --- !u!114 &1773474446 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7826305070009139779, guid: 0d336a33493e6034686d0fe0b8544647, type: 3}
@@ -3584,6 +3758,7 @@ MonoBehaviour:
   radius: 0.1
   openRadius: 1
   hoveredBy: 0000
+  cp: 0
 --- !u!1 &1783551636
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class VRRayController : MonoBehaviour
 {
     public const int MAGNET_LAYER = 6;
-    public const float PULL_STR = 20f, STALL_TIME = 3f, YEET_STR = 600f, HOLD_LINGER = 0.5f, MAGNET_RANGE = 25f, PULL_STR2 = 45f;
+    public const float PULL_STR = 23f, STALL_TIME = 3f, YEET_STR = 600f, HOLD_LINGER = 0.5f, MAGNET_RANGE = 25f, PULL_STR2 = 45f;
 
     [Header("Preset Values")]
     public PlayerControl pcon;
@@ -70,14 +70,16 @@ public class VRRayController : MonoBehaviour
     public void VRHovering(Magnet magnet)
     {
         this.magnet = magnet;
-        //this.magnet.GetComponent<ObjectIsHovering>().IsHovering(true);
+        this.magnet.GetComponentInChildren<ObjectIsHovering>().isHovering = true;
         if(rc !=null) rc.targetMagnet = this.magnet.transform;
         BishopName = this.magnet.name;
     }
 
     public void VRExitHovering()
     {
-        //this.magnet.GetComponent<ObjectIsHovering>().IsHovering(true);
+        this.magnet.GetComponentInChildren<ObjectIsHovering>().isHovering = false;
+        magnet = null;
+        canTrigger = false;
     }
 
     public void VRTrigger()
@@ -98,15 +100,15 @@ public class VRRayController : MonoBehaviour
         }
         if (lastShoot)
         {
-            if ((!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger) ) && CT ==ControllerType.Right && otherController != null && otherController.connected && !isTest) // 
+            if (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger) && CT == ControllerType.Right && otherController != null && otherController.connected) //  && !isTest
             {
                 Detach();
             }
-            else if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && CT == ControllerType.Left && otherController != null && otherController.connected && !isTest)
+            else if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && CT == ControllerType.Left && otherController != null && otherController.connected)
             {
                 Detach();
             }
-            else if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger)) && !isTest)
+            else if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger)))
             {
                 CompletelyDetach();
             }
@@ -139,18 +141,30 @@ public class VRRayController : MonoBehaviour
         }
         else
         {
-            if (magnet != null && (canTrigger || isTest)) //
+            if ((int)ControllerType.Left == magnet.CheckChainPosition())
             {
-                pcon.canJump = false;
-                lastShoot = true;
-                connected = false;
-                if (CT == ControllerType.Left)
+                if (magnet != null && canTrigger) // || isTest)
                 {
-                    chain = ChainUtils.LineTarget(leftChainTransform.position, magnet.gameObject);
+                    pcon.canJump = false;
+                    lastShoot = true;
+                    connected = false;
+                    if (CT == ControllerType.Left)
+                    {
+                        chain = ChainUtils.LineTarget(leftChainTransform.position, magnet.gameObject);
+                    }
                 }
-                else
+            }
+            else
+            {
+                if (magnet != null && canTrigger) // || isTest)
                 {
-                    chain = ChainUtils.LineTarget(rightChainTransform.position, magnet.gameObject);
+                    pcon.canJump = false;
+                    lastShoot = true;
+                    connected = false;
+                    if (CT == ControllerType.Right)
+                    {
+                        chain = ChainUtils.LineTarget(rightChainTransform.position, magnet.gameObject);
+                    }
                 }
             }
         }
@@ -236,6 +250,7 @@ public class VRRayController : MonoBehaviour
 
     public void CompletelyDetach()
     {
+        StopAllCoroutines();
         if (stageNum == 2)
         {
             rc.isTriggerState = false;

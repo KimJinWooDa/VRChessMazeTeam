@@ -8,15 +8,16 @@ public class ObjectIsHovering : MonoBehaviour
 
     Renderer renderer;
 
+    public bool isHovering;
+
     private void Awake()
     {
         renderer = GetComponent<Renderer>();
-        mats = renderer.sharedMaterials;
+        mats = renderer.materials;
+    }
+    private void Update()
+    {
+        mats[1].SetFloat("_Thickness", isHovering ? 1.055f : 1f);
     }
 
-    public void IsHovering(bool isHovering)
-    {
-        mats[1].SetFloat("_Thickness", isHovering ? 1.1f : 1f);
-        //renderer.materials[1].SetFloat("_Thickness", isHovering ? 1.1f : 1f);
-    }
 }

@@ -3111,7 +3111,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8b015ba78e097fa4a90441141c9e35c3, type: 3}
   - {fileID: 21300000, guid: 631b6e92d192ac94bb7c1f956f5500ae, type: 3}
   - {fileID: 21300000, guid: 4ea08d3b57f9ba74599d15ae110a7cef, type: 3}
-  finalSprite: {fileID: 21300000, guid: 4ea08d3b57f9ba74599d15ae110a7cef, type: 3}
+  finalSprite: {fileID: 21300000, guid: 7f307efb782ea7d40b1797e0edae3eae, type: 3}
+  num: 0
 --- !u!23 &2863248566024615806
 MeshRenderer:
   m_ObjectHideFlags: 0

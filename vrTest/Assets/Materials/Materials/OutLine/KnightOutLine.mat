@@ -46,13 +46,13 @@ Material:
     - _ReceiveShadows: 1
     - _SrcBlend: 5
     - _Surface: 1
-    - _Thickness: 1.1
+    - _Thickness: 1.055
     - _WorkflowMode: 1
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 0, g: 1.882353, b: 11.984314, a: 1}
+    - _Color: {r: 1, g: 0.2113207, b: 0.5062605, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &7000120757985675293
 MonoBehaviour:
