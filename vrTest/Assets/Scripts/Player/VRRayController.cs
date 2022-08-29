@@ -231,16 +231,6 @@ public class VRRayController : MonoBehaviour
         pcon.rigid.drag = 0.9f;
         pcon.rigid.angularDrag = 0.9f;
     }
-    public void RemoveChain()
-    {
-        if (!lastShoot) return;
-
-        lastShoot = false;
-        connected = false;
-        if (chain.expanding) StartCoroutine(RemoveChainPreI(chain));
-        else StartCoroutine(RemoveChainI(chain));
-        chain = null;
-    }
 
     public void Detach() {
         magnet = null;
@@ -264,6 +254,16 @@ public class VRRayController : MonoBehaviour
         magnet = null;
         RemoveChain();
         canTrigger = false;
+    }
+    public void RemoveChain()
+    {
+        if (!lastShoot) return;
+
+        lastShoot = false;
+        connected = false;
+        if (chain.expanding) StartCoroutine(RemoveChainPreI(chain));
+        else StartCoroutine(RemoveChainI(chain));
+        chain = null;
     }
 
     private void UpdateChainLength(Magnet target)
