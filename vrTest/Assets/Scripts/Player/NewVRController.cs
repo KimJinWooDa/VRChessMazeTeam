@@ -36,7 +36,7 @@ public class NewVRController : MonoBehaviour
         rayPos = this.transform.position;
         Rotation = this.transform.rotation;
         Forward = Rotation * Vector3.forward;
-        Debug.DrawRay(this.transform.position, Forward);
+
         if (Physics.Raycast(rayPos, Forward, out hit, rayDistance, 1<<6))
         {
             isHovering = true;
@@ -65,10 +65,11 @@ public class NewVRController : MonoBehaviour
         {
             if (magnet != null)
             {
-                this.magnet.GetComponentInChildren<ObjectIsHovering>().isHovering = false;
-   
+                magnet.GetComponentInChildren<ObjectIsHovering>().isHovering = false;
+                
                 canTrigger = false;
                 isHovering = false;
+                magnet = null;
             }
         }
     }
@@ -120,16 +121,15 @@ public class NewVRController : MonoBehaviour
                 chain.transform.position = rightChainTransform.position;
             }
 
-            else
+
+            if (connected)
             {
-                if (connected)
-                {
-                    myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = false;
-                    UpdateChainLength(magnet);
-                    PullTowards(magnet);
-                    StartCoroutine(DragScaleUp());
-                }
+                myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = false;
+                UpdateChainLength(magnet);
+                PullTowards(magnet);
+                StartCoroutine(DragScaleUp());
             }
+
         }
     }
     IEnumerator DragScaleUp()

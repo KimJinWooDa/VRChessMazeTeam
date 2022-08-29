@@ -17,12 +17,12 @@ public class GrabChessObjects : MonoBehaviour
         if (other.CompareTag("ROCK"))
         {
             isEnter = true;
-            if (isEnter && OVRInput.Get(OVRInput.Button.SecondaryHandTrigger) && !isOnce ) //&& GameManager.instance.stageNum == 1
+            if (isEnter && OVRInput.Get(OVRInput.Button.SecondaryHandTrigger) && !isOnce && GameManager.instance.stageNum == 1) //
             {
                 if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
                 {
                     //StartCoroutine(DissolveChess(other.transform));
-                    other.GetComponent<ChessState>().TriggerState();
+                    //other.GetComponent<ChessState>().TriggerState();
                     GameManager.instance.stageNum = 1;
                     GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(1);
                     isOnce = true;
@@ -34,12 +34,12 @@ public class GrabChessObjects : MonoBehaviour
         if (other.CompareTag("BISHOP"))
         {
             isEnter = true;
-            if (isEnter && OVRInput.Get(OVRInput.Button.SecondaryHandTrigger) && !isOnce) // && GameManager.instance.stageNum == 2
+            if (isEnter && OVRInput.Get(OVRInput.Button.SecondaryHandTrigger) && !isOnce && GameManager.instance.stageNum == 2) // 
             {
                 if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
                 {
                     //StartCoroutine(DissolveChess(other.transform));
-                    other.GetComponent<ChessState>().TriggerState();
+                    //other.GetComponent<ChessState>().TriggerState();
                     GameManager.instance.stageNum = 2;
                     GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(2);
                     isOnce = true;
@@ -50,12 +50,12 @@ public class GrabChessObjects : MonoBehaviour
         if (other.CompareTag("KNIGHT"))
         {
             isEnter = true;
-            if (isEnter && OVRInput.Get(OVRInput.Button.SecondaryHandTrigger) && !isOnce) // && GameManager.instance.stageNum == 3
+            if (isEnter && OVRInput.Get(OVRInput.Button.SecondaryHandTrigger) && !isOnce && GameManager.instance.stageNum == 3) // 
             {
                 //StartCoroutine(DissolveChess(other.transform));
                 if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
                 {
-                    other.GetComponent<ChessState>().TriggerState();
+                    //other.GetComponent<ChessState>().TriggerState();
                     GameManager.instance.stageNum = 3;
                     GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(3);
                     isOnce = true;
@@ -67,19 +67,17 @@ public class GrabChessObjects : MonoBehaviour
         if (other.CompareTag("PAWN"))
         {
             isEnter = true;
-            if (isEnter && OVRInput.Get(OVRInput.Button.SecondaryHandTrigger) && !isOnce) // && GameManager.instance.stageNum == 4
+            if (isEnter && OVRInput.Get(OVRInput.Button.SecondaryHandTrigger) && !isOnce && GameManager.instance.stageNum == 4) // 
             {
                 //StartCoroutine(DissolveChess(other.transform));
                 if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
                 {
-                    other.GetComponent<ChessState>().TriggerState();
+                    //other.GetComponent<ChessState>().TriggerState();
                     GameManager.instance.stageNum = 4;
                     GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(4);
                     isOnce = true;
                 }
-
             }
-
         }
     }
     private void OnTriggerExit(Collider other)
@@ -101,30 +99,6 @@ public class GrabChessObjects : MonoBehaviour
             isEnter = false;
         }
     }
-
-   // private void Update()
-   // {
-        //if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
-        //{
-        //    GameManager.instance.stageNum = 2;
-        //    GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(2);
-        //}
-        //if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger))
-        //{
-        //    GameManager.instance.stageNum = 1;
-        //    GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(1);
-        //}
-        //if (OVRInput.GetDown(OVRInput.Button.Three))
-        //{
-        //    GameManager.instance.stageNum = 3;
-        //    GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(3);
-        //}
-        //if (OVRInput.GetDown(OVRInput.Button.Four))
-        //{
-        //    GameManager.instance.stageNum = 4;
-        //    GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(4);
-        //}
-    //}
 
     //IEnumerator DissolveChess(Transform obj)
     //{

@@ -156,9 +156,10 @@ namespace Oculus.Interaction
             ReleaseVelocityInformation throwVelocity = VelocityCalculator != null ?
                 VelocityCalculator.CalculateThrowVelocity(interactable.transform) :
                 new ReleaseVelocityInformation(Vector3.zero, Vector3.zero, Vector3.zero);
+
             interactable.ApplyVelocities(throwVelocity.LinearVelocity, throwVelocity.AngularVelocity);
 
-            //if(throwVelocity.LinearVelocity == Vector3.zero) interactable.GetComponent<Rigidbody>().AddForce(Vector3.forward * 3f , ForceMode.Impulse); velocity가 없을때만 작동된다 뭐지?
+            //interactable.GetComponent<Rigidbody>().AddForce( , ForceMode.Impulse);// velocity가 없을때만 작동된다 뭐지?
         }
 
         protected override void HandlePointerEventRaised(PointerEvent evt)

@@ -8,16 +8,9 @@ public class ChessState : MonoBehaviour {
     private void Start()
     {
         Material[] mats = GetComponent<MeshRenderer>().materials;
-
-        mats[0].SetColor("_BaseColor", Color.black);
-        mats[1].SetFloat("_Thickness", 0f);
+        Color color = new Color(62f, 58f, 128f, 255f);
+        mats[0].SetColor("_BaseColor", GameManager.instance.stageNum == chessState ? color : Color.black);
+        mats[1].SetFloat("_Thickness", GameManager.instance.stageNum == chessState ? 1.1f : 1f);
     }
 
-    public void TriggerState()
-    {
-        Material[] mats = GetComponent<MeshRenderer>().materials;
-        Color color = new Color(62f,58f,128f,255f);
-        mats[0].SetColor("_BaseColor", color);
-        mats[1].SetFloat("_Thickness", 1.1f);
-    }
 }
