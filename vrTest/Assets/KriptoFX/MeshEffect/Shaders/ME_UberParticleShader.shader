@@ -4,7 +4,7 @@ Shader "KriptoFX/ME/Particle"
 	{
 		[Header(Main Settings)]
 	[Space]
-	[PerRendererData] [HDR] _TintColor("Tint Color", Color) = (1,1,1,1)
+	[PerRendererData] [HDR] [MainColor] _TintColor("Tint Color", Color) = (1,1,1,1)
 		_MainTex("Main Texture", 2D) = "white" {}
 
 	[Header(Fading)]
