@@ -2,7 +2,7 @@
 
 Shader "KriptoFX/ME/GlowCutout" {
 	Properties{
-		[HDR]_TintColor("Tint Color", Color) = (0.5,0.5,0.5,1)
+		[HDR][MainColor]_TintColor("Tint Color", Color) = (0.5,0.5,0.5,1)
 		_TimeScale("Time Scale", Vector) = (1,1,1,1)
 		_MainTex("Noise Texture", 2D) = "white" {}
 	_BorderScale("Border Scale (XY) Offset (Z)", Vector) = (0.5,0.05,1,0)
