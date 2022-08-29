@@ -29,7 +29,7 @@ public class PieceMovement : MonoBehaviour
 
     private void Awake()
     {
-        originPos = transform.position;
+        originPos = Pos();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         init = angry = false;
         mat = mrender.materials[1];
@@ -40,8 +40,12 @@ public class PieceMovement : MonoBehaviour
     }
 
     private void Start() {
-        transform.position = TilePosition(GetTile());
-        originPos = transform.position;
+        SetPos(TilePosition(GetTile()));
+        originPos = Pos();
+
+        var main = ps.main;
+        main.simulationSpace = ParticleSystemSimulationSpace.Custom;
+        main.customSimulationSpace = transform.parent;
     }
 
     private void Update() {
@@ -51,8 +55,9 @@ public class PieceMovement : MonoBehaviour
             wait += Time.deltaTime;
             return;
         }
-        if(!ps.isStopped) ps.Stop();
-
+        if (!ps.isStopped) {
+            ps.Stop();
+        }
         if (!init) {
             SelectTarget();
             init = true;
@@ -87,6 +92,21 @@ public class PieceMovement : MonoBehaviour
                 SetPSLine(targetPos);
                 break;
             case ChessType.bishop:
+                if(Random.value < 0.5f) {
+                    //move /
+                    int min = -Mathf.Min(pos.x - 1, pos.y - 1);
+                    int max = Mathf.Min(board.width - pos.x, board.height - pos.y);
+                    int move = Random.Range(min, max + 1);
+                    targetPos = TilePosition(new Vector2Int(pos.x + move, pos.y + move));
+                }
+                else {
+                    //move \
+                    int min = -Mathf.Min(pos.x - 1, board.height - pos.y);
+                    int max = Mathf.Min(board.width - pos.x, pos.y - 1);
+                    int move = Random.Range(min, max + 1);
+                    targetPos = TilePosition(new Vector2Int(pos.x + move, pos.y - move));
+                }
+                SetPSLine(targetPos);
                 break;
             case ChessType.knight:
                 break;
@@ -114,6 +134,8 @@ public class PieceMovement : MonoBehaviour
                 }
                 break;
             case ChessType.bishop:
+                //i give the fuketh up
+                SelectTarget();
                 break;
             case ChessType.knight:
                 break;
@@ -124,9 +146,9 @@ public class PieceMovement : MonoBehaviour
     private bool Move() {
         switch (chessType) {
             default:
-                transform.position = Vector3.Lerp(transform.position, targetPos, moveSpeed * Time.deltaTime);
-                if((transform.position - targetPos).sqrMagnitude < 0.0001f) {
-                    transform.position = targetPos;
+                SetPos(Vector3.Lerp(Pos(), targetPos, moveSpeed * Time.deltaTime));
+                if((Pos() - targetPos).sqrMagnitude < 0.0001f) {
+                    SetPos(targetPos);
                     return true;
                 }
                 return false;
@@ -136,13 +158,27 @@ public class PieceMovement : MonoBehaviour
     }
 
     private void SetPSLine(Vector3 target) {
-        float length = (target - transform.position).magnitude;
-        ps.transform.forward = (target - transform.position);
+        float length = (target - Pos()).magnitude;
+        if(length > 0.01f) ps.transform.forward = (target - Pos());
         var shape = ps.shape;
         shape.scale = new Vector3(0, 0, length);
         shape.position = new Vector3(0, 0, length / 2f);
 
-        if (length > 0.01f) ps.Play();
+        if (length > 0.01f && ps.isStopped) {
+            ps.Play();
+        }
+    }
+
+    private Vector3 Pos() {
+        return transform.position - transform.parent.position;
+    }
+
+    private Vector3 Pos(Transform t) {
+        return t.position - transform.parent.position;
+    }
+
+    private void SetPos(Vector3 p) {
+        transform.position = p + transform.parent.position;
     }
 
     public void OnTriggerEnter(Collider other)
@@ -180,7 +216,8 @@ public class PieceMovement : MonoBehaviour
     private Vector3 TilePosition(Vector2Int tile) {
         float w = Mathf.Abs(board.start.position.x - board.end.position.x) / board.width;
         float h = Mathf.Abs(board.start.position.z - board.end.position.z) / board.height;
-        return new Vector3(board.start.position.x + w * (-0.5f + tile.x), originPos.y, board.start.position.z + h * (-0.5f + tile.y));
+        var wp = new Vector3(board.start.position.x + w * (-0.5f + tile.x), originPos.y + transform.parent.position.y, board.start.position.z + h * (-0.5f + tile.y));
+        return wp - transform.parent.position;
     }
 
     private float Map(float x, float a, float b, float c, float d) {

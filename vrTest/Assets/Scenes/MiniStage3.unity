@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.007884761, g: 0.029336905, b: 0.15355751, a: 1}
+  m_IndirectSpecularColor: {r: 0.007856585, g: 0.029214475, b: 0.1537363, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -277,7 +277,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 2
-  speed: 1.7
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!1001 &112806163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -613,7 +623,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 2
-  speed: 1.7
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!1001 &161156742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1453,7 +1473,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 2
-  speed: 1.7
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!1001 &348251354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2471,7 +2501,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 1
-  speed: 1.5
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!1001 &569493227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3565,7 +3605,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 1
-  speed: 1.5
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!65 &884956963
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3608,7 +3658,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 2
-  speed: 1.7
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!114 &891922910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4260,7 +4320,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 2
-  speed: 1.7
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!1001 &1114829624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4740,7 +4810,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 2
-  speed: 1.7
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!114 &1200372076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6500,7 +6580,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 1
-  speed: 1.5
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!1001 &1842914133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6848,7 +6938,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 1
-  speed: 1.5
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!114 &1957196209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7580,7 +7680,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 1
-  speed: 1.5
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!1 &2041114510
 GameObject:
   m_ObjectHideFlags: 0
@@ -7965,7 +8075,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 1
-  speed: 1.5
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!114 &2066284090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9936,7 +10056,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 0
-  speed: 1.7
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!33 &2708442856602646929
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9987,7 +10117,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 0
-  speed: 1.7
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!33 &2708442856696945930
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10038,7 +10178,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 0
-  speed: 1.7
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!33 &2708442856744967566
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10089,7 +10239,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 1
-  speed: 1.5
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!33 &2708442856768692328
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10140,7 +10300,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 0
-  speed: 1.7
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!33 &2708442857258857178
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10191,7 +10361,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 1
-  speed: 1.5
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!33 &2708442857620447978
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10242,7 +10422,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 1
-  speed: 1.5
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!33 &2708442857656743724
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10293,7 +10483,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 1
-  speed: 1.5
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!33 &2708442857704821107
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10344,7 +10544,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 1
-  speed: 1.5
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!33 &2708442858102796794
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10395,7 +10605,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 0
-  speed: 1.7
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  angryColor: {r: 1, g: 0.645, b: 0.645, a: 1}
+  angryColor2: {r: 1, g: 0.362, b: 0.362, a: 0.2627451}
+  mrender: {fileID: 0}
 --- !u!4 &2753195604171683056
 Transform:
   m_ObjectHideFlags: 0
