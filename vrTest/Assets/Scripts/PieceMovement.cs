@@ -7,7 +7,8 @@ using UnityEditor;
 
 public class PieceMovement : MonoBehaviour
 {
-    public enum ChessType { bishop, knight, rook };
+    private const float MAX_PLAYER_Y = 15f;
+    public enum ChessType { bishop, knight, rook, queen };
     public ChessType chessType;
 
     private static Vector2Int[] knightMoves = { new Vector2Int(1, 2), new Vector2Int(2, 1), new Vector2Int(-1, 2), new Vector2Int(-2, 1), new Vector2Int(-1, -2), new Vector2Int(-2, -1), new Vector2Int(1, -2), new Vector2Int(2, -1) };
@@ -16,15 +17,17 @@ public class PieceMovement : MonoBehaviour
     public ChessBoard board;
     public bool passive = false;
     [SerializeField] private float moveSpeed = 4f;
-    [SerializeField] private float waitTime = 1f, knightMoveTime = 1.5f, knightJumpHeight = 2.5f;
-    [SerializeField][ColorUsage(true, true)] private Color angryColor = Color.red, angryColor2 = Color.red;
+    [SerializeField] private float waitTime = 1f, knightMoveTime = 1.5f, knightJumpHeight = 2.5f, queenDashLength = 5f;
+    //[SerializeField][ColorUsage(true, true)] private Color angryColor = Color.red, angryColor2 = Color.red;
 
     [System.NonSerialized] public Vector3 targetPos;
     Vector3 originPos, kstartPos;
-    Color originColor, originColor2;
+    Quaternion originRot;
+    //Color originColor, originColor2;
     Transform player;
-    Material mat, mat2;
-    ParticleSystem ps;
+    Rigidbody rigid;
+    //Material mat, mat2;
+    [SerializeField] private ParticleSystem ps, ps2;
     [SerializeField] private MeshRenderer mrender;
 
     bool init = false, angry = false, knightRest = false;
@@ -33,6 +36,7 @@ public class PieceMovement : MonoBehaviour
     private void Awake()
     {
         originPos = Pos();
+        originRot = mrender.transform.rotation;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         init = angry = false;
         /*
@@ -41,12 +45,15 @@ public class PieceMovement : MonoBehaviour
         mat2 = mrender.materials[0];
         if (mrender.sharedMaterials.Length > 1) originColor = mat.color;
         originColor2 = mat2.color;*/
-        ps = GetComponentInChildren<ParticleSystem>();
+        if(ps == null) ps = GetComponentInChildren<ParticleSystem>();
+        if(chessType == ChessType.queen) rigid = GetComponent<Rigidbody>();
     }
 
     private void Start() {
-        SetPos(TilePosition(GetTile()));
-        originPos = Pos();
+        if (chessType != ChessType.queen) {
+            SetPos(TilePosition(GetTile()));
+            originPos = Pos();
+        }
 
         var main = ps.main;
         main.simulationSpace = ParticleSystemSimulationSpace.Custom;
@@ -56,8 +63,13 @@ public class PieceMovement : MonoBehaviour
     private void Update() {
         //if (mrender.sharedMaterials.Length > 1) mat.color = Color.Lerp(mat.color, angry ? angryColor : originColor, Time.deltaTime * 4f);
         //mat2.color = Color.Lerp(mat2.color, angry ? angryColor2 : originColor2, Time.deltaTime * 4f);
-        if(wait < waitTime) {
+        if (!init) {
+            SelectTarget(true);
+            init = true;
+        }
+        if (wait < waitTime) {
             wait += Time.deltaTime;
+            if(chessType == ChessType.queen) WaitQueen();
             return;
         }
         time += Time.deltaTime;
@@ -65,13 +77,9 @@ public class PieceMovement : MonoBehaviour
         if (!ps.isStopped) {
             ps.Stop();
         }
-        if (!init) {
-            SelectTarget();
-            init = true;
-        }
 
         if (Move()) {
-            if (!passive && HasPlayerTile()) {
+            if (!passive && chessType != ChessType.queen && HasPlayerTile()) {
                 SelectFocusedTarget();
                 angry = true;
             }
@@ -84,10 +92,14 @@ public class PieceMovement : MonoBehaviour
     }
 
     //target when idle
-    private void SelectTarget() {
+    private void SelectTarget(bool init = false) {
         time = 0f;
-        kstartPos = Pos();
-        Vector2Int pos = GetTile();
+        Vector2Int pos = new Vector2Int();
+        if (chessType != ChessType.queen) {
+            kstartPos = Pos();
+            pos = GetTile();
+        }
+
         switch (chessType) {
             case ChessType.rook:
                 if(Random.value < 0.5f) {
@@ -135,6 +147,17 @@ public class PieceMovement : MonoBehaviour
                         SetPSCircle(targetPos);
                     }
                 }
+                break;
+            case ChessType.queen:
+                if (init) {
+                    targetPos = originPos;
+                    knightRest = true;
+                    return;
+                }
+                knightRest = false;
+                Vector3 v = (player.position - transform.position).normalized * (queenDashLength + Random.Range(0f, 3f));
+                targetPos = transform.position + v - transform.parent.position;
+                SetPSLine(targetPos);
                 break;
         }
     }
@@ -218,6 +241,22 @@ public class PieceMovement : MonoBehaviour
                     return true;
                 }
                 return false;
+            case ChessType.queen:
+                if(!ps2.isPlaying) ps2.Play();
+                rigid.MovePosition(transform.parent.position + Vector3.Lerp(Pos(), targetPos, moveSpeed * Time.deltaTime));
+                if ((Pos() - targetPos).sqrMagnitude < 0.0001f) {
+                    SetPos(targetPos);
+                    return true;
+                }
+                return false;
+        }
+    }
+
+    private void WaitQueen() {
+        //make waits shorter the higher the player is up
+        wait += Time.deltaTime * Mathf.Clamp01(player.position.y / MAX_PLAYER_Y);
+        if (!knightRest) {
+            mrender.transform.rotation = Quaternion.Lerp(mrender.transform.rotation, Quaternion.LookRotation(-(targetPos + transform.parent.position - transform.position)), Time.deltaTime * 5f);
         }
     }
 
@@ -266,12 +305,25 @@ public class PieceMovement : MonoBehaviour
         {
             ReStart player = other.GetComponent<ReStart>();
             player.ReStartGame();
+            KilledPlayer();
         }
     }
 
     private void OnCollisionEnter(Collision collision) {
         if (collision.collider.CompareTag("Player")) {
             collision.transform.GetComponent<ReStart>().ReStartGame();
+            KilledPlayer();
+        }
+    }
+
+    private void KilledPlayer() {
+        if (chessType == ChessType.queen) {
+            SetPos(originPos);
+            mrender.transform.rotation = originRot;
+            time = wait = 0f;
+            angry = false;
+            init = false;
+            SelectTarget(true);
         }
     }
 
@@ -302,306 +354,6 @@ public class PieceMovement : MonoBehaviour
     private float Map(float x, float a, float b, float c, float d) {
         return (x - a) / (b - a) * (d - c) + c;
     }
-
-    /*
-    IEnumerator RockMoveMent(int x, int y)
-    {
-        endState = false;
-        changePos = this.transform.position;
-        while (!endState)
-        {
-            if (x == 1 && y == 0)
-            {
-                transform.position = Vector3.MoveTowards(this.transform.position, changePos + new Vector3(1, 0, 0), speed * Time.deltaTime);
-                if (transform.position == changePos + new Vector3(1, 0, 0))
-                {
-                    endState = true;
-                }
-            }
-            else if (x == 0 && y == 1)
-            {
-                transform.position = Vector3.MoveTowards(this.transform.position, changePos + new Vector3(0, 0, 1), speed * Time.deltaTime);
-                if (transform.position == changePos + new Vector3(0, 0, 1))
-                {
-                    endState = true;
-                }
-            }
-            else if (x == -1 && y == 0)
-            {
-                transform.position = Vector3.MoveTowards(this.transform.position, changePos + new Vector3(-1, 0, 0), speed * Time.deltaTime);
-                if (transform.position == changePos + new Vector3(-1, 0, 0))
-                {
-                    endState = true;
-                }
-            }
-            else if (x == 0 && y == -1)
-            {
-                transform.position = Vector3.MoveTowards(this.transform.position, changePos + new Vector3(0, 0, -1), speed * Time.deltaTime);
-                if (transform.position == changePos + new Vector3(0, 0, -1))
-                {
-                    endState = true;
-                }
-            }
-            else
-            {
-                transform.position = Vector3.MoveTowards(this.transform.position, originPos, speed * Time.deltaTime);
-                if (transform.position == originPos)
-                {
-                    endState = true;
-                }
-            }
-            yield return null;
-        }
-
-        chessX = Random.Range(-1, 2);
-        chessY = Random.Range(-1, 2);
-
-        minusX += chessX;
-        minusY += chessY;
-
-        if (minusX == 2)
-        {
-            chessX -= minusX;
-        }
-
-        if (minusY == 2)
-        {
-            chessY -= minusY;
-        }
-        if (minusX == -2)
-        {
-            chessX += minusX;
-        }
-        if (minusY == -2)
-        {
-            chessY += minusY;
-        }
-        yield return new WaitForSeconds(1f);
-        StartCoroutine(RockMoveMent(chessX, chessY));
-    }
-
-    IEnumerator BiShopMoveMent(int x, int y)
-    {
-        endState = false;
-        changePos = this.transform.position;
-        while (!endState)
-        {
-            if (x == 1 && y == 0)
-            {
-                transform.position = Vector3.MoveTowards(this.transform.position, changePos + new Vector3(1, 0, 1), speed * Time.deltaTime);
-                if(transform.position == changePos + new Vector3(1, 0, 1))
-                {
-                    endState = true;
-                }
-            }
-            else if (x == 2 && y == 1)
-            {
-                transform.position = Vector3.MoveTowards(this.transform.position, changePos + new Vector3(-1, 0, 1), speed * Time.deltaTime);
-                if (transform.position == changePos + new Vector3(-1, 0, 1))
-                {
-                    endState = true;
-                }
-            }
-            else if (x == 1 && y == 2)
-            {
-                transform.position = Vector3.MoveTowards(this.transform.position, changePos + new Vector3(-1, 0, -1), speed * Time.deltaTime);
-                if (transform.position == changePos + new Vector3(-1, 0, -1))
-                {
-                    endState = true;
-                }
-            }
-            else if (x == 0 && y == 1)
-            {
-                transform.position = Vector3.MoveTowards(this.transform.position, changePos + new Vector3(1, 0, -1), speed * Time.deltaTime);
-                if (transform.position == changePos + new Vector3(1, 0, -1))
-                {
-                    endState = true;
-                }
-            }
-            else
-            {
-                transform.position = Vector3.MoveTowards(this.transform.position, originPos, speed * Time.deltaTime);
-                if (transform.position == originPos)
-                {
-                    endState = true;
-                }
-            }
-            yield return null;
-        }
-        
-        chessX = Random.Range(1, 3);
-        chessY = Random.Range(0, 3);
-
-        minusX += chessX;
-        minusY += chessY;
-
-        if(minusX == 3)
-        {
-            chessX -= minusX + 1;
-        }
-
-        if (minusY == 4)
-        {
-            chessY -= minusY + 2;
-        }
-
-        yield return new WaitForSeconds(1f);
-        StartCoroutine(BiShopMoveMent(chessX, chessY));
-    }
-
-    IEnumerator KnightMoveMent(int x, int y)
-    {
-        endState = false;
-        changePos = this.transform.position;
-        while (!endState)
-        {
-            if (x == -1)
-            {
-                if(y == -1)
-                {
-                    transform.position = Vector3.MoveTowards(this.transform.position, changePos + new Vector3(-2, 0, -1), speed * Time.deltaTime);
-                    if (transform.position == changePos + new Vector3(-2, 0, -1))
-                    {
-                        endState = true;
-                    }
-                }
-                else if(y == 1)
-                {
-                    transform.position = Vector3.MoveTowards(this.transform.position, changePos + new Vector3(-2, 0, 1), speed * Time.deltaTime);
-                    if (transform.position == changePos + new Vector3(-2, 0, 1))
-                    {
-                        endState = true;
-                    }
-                }
-                else
-                {
-                    transform.position = Vector3.MoveTowards(this.transform.position, changePos + new Vector3(-2, 0, 1), speed * Time.deltaTime);
-                    if (transform.position == changePos + new Vector3(-2, 0, 1))
-                    {
-                        endState = true;
-                    }
-                }
-            }
-            else if (x == 1)
-            {
-                if (y == -1)
-                {
-                    transform.position = Vector3.MoveTowards(this.transform.position, changePos + new Vector3(2, 0, -1), speed * Time.deltaTime);
-                    if (transform.position == changePos + new Vector3(2, 0, -1))
-                    {
-                        endState = true;
-                    }
-                }
-                else if (y == 1)
-                {
-                    transform.position = Vector3.MoveTowards(this.transform.position, changePos + new Vector3(2, 0, 1), speed * Time.deltaTime);
-                    if (transform.position == changePos + new Vector3(2, 0, 1))
-                    {
-                        endState = true;
-                    }
-                }
-                else
-                {
-                    transform.position = Vector3.MoveTowards(this.transform.position, changePos + new Vector3(2, 0, 1), speed * Time.deltaTime);
-                    if (transform.position == changePos + new Vector3(2, 0, 1))
-                    {
-                        endState = true;
-                    }
-                }
-            }
-            else if (y == -1)
-            {
-                if (x == -1)
-                {
-                    transform.position = Vector3.MoveTowards(this.transform.position, changePos + new Vector3(-2, 0, -1), speed * Time.deltaTime);
-                    if (transform.position == changePos + new Vector3(-2, 0, -1))
-                    {
-                        endState = true;
-                    }
-                }
-                else if (x == 1)
-                {
-                    transform.position = Vector3.MoveTowards(this.transform.position, changePos + new Vector3(-2, 0, 1), speed * Time.deltaTime);
-                    if (transform.position == changePos + new Vector3(-2, 0, 1))
-                    {
-                        endState = true;
-                    }
-                }
-                else
-                {
-                    transform.position = Vector3.MoveTowards(this.transform.position, changePos + new Vector3(-2, 0, 1), speed * Time.deltaTime);
-                    if (transform.position == changePos + new Vector3(-2, 0, 1))
-                    {
-                        endState = true;
-                    }
-                }
-            }
-            else if (y == 1)
-            {
-                if (x == -1)
-                {
-                    transform.position = Vector3.MoveTowards(this.transform.position, changePos + new Vector3(-1, 0, 2), speed * Time.deltaTime);
-                    if (transform.position == changePos + new Vector3(-1, 0, 2))
-                    {
-                        endState = true;
-                    }
-                }
-                else if (x == 1)
-                {
-                    transform.position = Vector3.MoveTowards(this.transform.position, changePos + new Vector3(1, 0, 2), speed * Time.deltaTime);
-                    if (transform.position == changePos + new Vector3(1, 0, 2))
-                    {
-                        endState = true;
-                    }
-                }
-                else
-                {
-                    transform.position = Vector3.MoveTowards(this.transform.position, changePos + new Vector3(1, 0, 2), speed * Time.deltaTime);
-                    if (transform.position == changePos + new Vector3(1, 0, 2))
-                    {
-                        endState = true;
-                    }
-                }
-            }
-            else
-            {
-                transform.position = Vector3.MoveTowards(this.transform.position, originPos, speed * Time.deltaTime);
-                if (transform.position == originPos)
-                {
-                    endState = true;
-                }
-            }
-            yield return null;
-        }
-
-        chessX = Random.Range(-1, 2);
-        chessY = Random.Range(-1, 2);
-        
-        //minusX += chessX;
-        //minusY += chessY;
-
-        //if (minusX == 2)
-        //{
-        //    chessX -= minusX;
-        //}
-
-        //if (minusY == 2)
-        //{
-        //    chessY -= minusY;
-        //}
-        //if (minusY == -2)
-        //{
-        //    chessX += minusY;
-        //}
-
-        //if (minusX == -2)
-        //{
-        //    chessY += minusX;
-        //}
-
-        yield return new WaitForSeconds(1f);
-        StartCoroutine(KnightMoveMent(chessX, chessY));
-    }*/
 
 
     [System.Serializable]
