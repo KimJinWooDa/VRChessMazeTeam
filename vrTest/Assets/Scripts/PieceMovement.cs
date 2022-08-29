@@ -10,32 +10,37 @@ public class PieceMovement : MonoBehaviour
     public enum ChessType { bishop, knight, rook };
     public ChessType chessType;
 
+    private static Vector2Int[] knightMoves = { new Vector2Int(1, 2), new Vector2Int(2, 1), new Vector2Int(-1, 2), new Vector2Int(-2, 1), new Vector2Int(-1, -2), new Vector2Int(-2, -1), new Vector2Int(1, -2), new Vector2Int(2, -1) };
+    private List<Vector2Int> availableKinghtMoves = new List<Vector2Int>();
+
     public ChessBoard board;
     public bool passive = false;
     [SerializeField] private float moveSpeed = 4f;
-    [SerializeField] private float waitTime = 1f;
-    [SerializeField] private Color angryColor = Color.red, angryColor2 = Color.red;
+    [SerializeField] private float waitTime = 1f, knightMoveTime = 1.5f, knightJumpHeight = 2.5f;
+    [SerializeField][ColorUsage(true, true)] private Color angryColor = Color.red, angryColor2 = Color.red;
 
     [System.NonSerialized] public Vector3 targetPos;
-    Vector3 originPos;
+    Vector3 originPos, kstartPos;
     Color originColor, originColor2;
     Transform player;
     Material mat, mat2;
     ParticleSystem ps;
     [SerializeField] private MeshRenderer mrender;
 
-    bool init = false, angry = false;
-    float wait = 0f;
+    bool init = false, angry = false, knightRest = false;
+    float wait = 0f, time = 0f;
 
     private void Awake()
     {
         originPos = Pos();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         init = angry = false;
-        mat = mrender.materials[1];
+        /*
+        if(mrender == null) mrender = gameObject.GetComponent<MeshRenderer>();
+        if(mrender.sharedMaterials.Length > 1) mat = mrender.materials[1];
         mat2 = mrender.materials[0];
-        originColor = mat.color;
-        originColor2 = mat2.color;
+        if (mrender.sharedMaterials.Length > 1) originColor = mat.color;
+        originColor2 = mat2.color;*/
         ps = GetComponentInChildren<ParticleSystem>();
     }
 
@@ -49,12 +54,14 @@ public class PieceMovement : MonoBehaviour
     }
 
     private void Update() {
-        mat.color = Color.Lerp(mat.color, angry ? angryColor : originColor, Time.deltaTime * 4f);
-        mat2.color = Color.Lerp(mat2.color, angry ? angryColor2 : originColor2, Time.deltaTime * 4f);
+        //if (mrender.sharedMaterials.Length > 1) mat.color = Color.Lerp(mat.color, angry ? angryColor : originColor, Time.deltaTime * 4f);
+        //mat2.color = Color.Lerp(mat2.color, angry ? angryColor2 : originColor2, Time.deltaTime * 4f);
         if(wait < waitTime) {
             wait += Time.deltaTime;
             return;
         }
+        time += Time.deltaTime;
+
         if (!ps.isStopped) {
             ps.Stop();
         }
@@ -78,6 +85,8 @@ public class PieceMovement : MonoBehaviour
 
     //target when idle
     private void SelectTarget() {
+        time = 0f;
+        kstartPos = Pos();
         Vector2Int pos = GetTile();
         switch (chessType) {
             case ChessType.rook:
@@ -109,22 +118,41 @@ public class PieceMovement : MonoBehaviour
                 SetPSLine(targetPos);
                 break;
             case ChessType.knight:
+                knightRest = false;
+                if (Random.value < 0.3f) {
+                    //rest
+                    targetPos = Pos();
+                    knightRest = true;
+                }
+                else {
+                    //get available spots
+                    availableKinghtMoves.Clear();
+                    for (int i = 0; i < knightMoves.Length; i++) {
+                        if (ValidMove(pos + knightMoves[i])) availableKinghtMoves.Add(knightMoves[i]);
+                    }
+                    if (availableKinghtMoves.Count > 0) {
+                        targetPos = TilePosition(pos + availableKinghtMoves[Random.Range(0, availableKinghtMoves.Count)]);
+                        SetPSCircle(targetPos);
+                    }
+                }
                 break;
         }
     }
 
     //target when the player is on board
     private void SelectFocusedTarget() {
+        time = 0f;
+        kstartPos = Pos();
         Vector2Int p = GetPlayerTile();
         switch (chessType) {
             case ChessType.rook:
                 float rand = Random.value;
-                if(rand < 0.35f) {
+                if(rand < 0.4f) {
                     //follow x
                     targetPos = TilePosition(new Vector2Int(p.x, GetTile().y));
                     SetPSLine(targetPos);
                 }
-                else if(rand < 0.7f){
+                else if(rand < 0.8f){
                     //follow z
                     targetPos = TilePosition(new Vector2Int(GetTile().x, p.y));
                     SetPSLine(targetPos);
@@ -138,6 +166,35 @@ public class PieceMovement : MonoBehaviour
                 SelectTarget();
                 break;
             case ChessType.knight:
+                knightRest = false;
+                if (Random.value < 0.25f) {
+                    SelectTarget();
+                }
+                else {
+                    Vector2Int pos = GetTile();
+                    int xm = p.x > pos.x ? 1 : -1;
+                    int ym = p.y > pos.y ? 1 : -1;
+                    Vector2Int m1 = new Vector2Int(xm * 2, ym * 1);
+                    Vector2Int m2 = new Vector2Int(xm * 1, ym * 2);
+
+                    if (ValidMove(pos + m1)) {
+                        if (ValidMove(pos + m2)) {
+                            //pick one
+                            targetPos = TilePosition(pos + (Random.value < 0.5f ? m1 : m2));
+                        }
+                        else {
+                            targetPos = TilePosition(pos + m1);
+                        }
+                        SetPSCircle(targetPos);
+                    }
+                    else if (ValidMove(pos + m2)) {
+                        targetPos = TilePosition(pos + m2);
+                        SetPSCircle(targetPos);
+                    }
+                    else {
+                        SelectTarget();
+                    }
+                }
                 break;
         }
     }
@@ -153,8 +210,19 @@ public class PieceMovement : MonoBehaviour
                 }
                 return false;
             case ChessType.knight:
+                if (knightRest) return true;
+                float f = Mathf.Clamp01(time / knightMoveTime);
+                SetPos(Vector3.Lerp(kstartPos, targetPos, f) + Vector3.up * (1 - f) * f * 4f * knightJumpHeight);
+                if(f > 0.999f) {
+                    SetPos(targetPos);
+                    return true;
+                }
                 return false;
         }
+    }
+
+    private bool ValidMove(Vector2Int pos) {
+        return pos.x >= 1 && pos.y >= 1 && pos.x <= board.width && pos.y <= board.height;
     }
 
     private void SetPSLine(Vector3 target) {
@@ -163,8 +231,19 @@ public class PieceMovement : MonoBehaviour
         var shape = ps.shape;
         shape.scale = new Vector3(0, 0, length);
         shape.position = new Vector3(0, 0, length / 2f);
+        var ema = ps.emission;
+        ema.rateOverTimeMultiplier = length * 20f;
 
         if (length > 0.01f && ps.isStopped) {
+            ps.Play();
+        }
+    }
+
+    private void SetPSCircle(Vector3 target) {
+        target = target + transform.parent.position;
+        ps.transform.position = new Vector3(target.x, ps.transform.position.y, target.z);
+
+        if (ps.isStopped) {
             ps.Play();
         }
     }
@@ -210,7 +289,7 @@ public class PieceMovement : MonoBehaviour
     }
 
     private bool HasPlayerTile() {
-        return player.position.x >= board.start.position.x && player.position.x <= board.end.position.x && player.position.z >= board.start.position.z && player.position.z <= board.end.position.z;    
+        return player.position.x >= board.start.position.x && player.position.x <= board.end.position.x && player.position.z >= board.start.position.z && player.position.z <= board.end.position.z && player.position.y > board.start.position.y - 2f && player.position.y < board.start.position.y + 5f;    
     }
 
     private Vector3 TilePosition(Vector2Int tile) {
