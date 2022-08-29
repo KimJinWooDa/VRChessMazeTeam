@@ -31,58 +31,57 @@ public class NewVRController : MonoBehaviour
     Quaternion Rotation;
     Vector3 Forward;
 
+    public bool isTest;
     private void Update()
     {
         rayPos = this.transform.position;
         Rotation = this.transform.rotation;
         Forward = Rotation * Vector3.forward;
 
-        if (Physics.Raycast(rayPos, Forward, out hit, rayDistance, 1<<6))
+        if (Physics.Raycast(rayPos, Forward, out hit, rayDistance, 1 << 6))
         {
-            isHovering = true;
             magnet = hit.transform.GetComponent<Magnet>();
-            canTrigger = true;
-            this.magnet.GetComponentInChildren<ObjectIsHovering>().isHovering = true;
-            if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger) && CT == ControllerType.Right)
-            {
-                RayState();
-            }
-            else if (OVRInput.GetUp(OVRInput.Button.SecondaryIndexTrigger) && CT == ControllerType.Right && otherController != null && otherController.connected)
-            {
-                Detach();
-            }
-
-            if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && CT == ControllerType.Left)
-            {
-                RayState();
-            }
-            else if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger) && CT == ControllerType.Left && otherController != null && otherController.connected)
-            {
-                Detach();
-            }
+            magnet.GetComponentInChildren<ObjectIsHovering>().isHovering = true;
         }
         else
         {
             if (magnet != null)
             {
                 magnet.GetComponentInChildren<ObjectIsHovering>().isHovering = false;
-                
-                canTrigger = false;
-                isHovering = false;
-                magnet = null;
             }
         }
-    }
-    private void FixedUpdate()
-    {
-        if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger)) && !isHovering)
+
+        if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger) && CT == ControllerType.Right && magnet!=null)
+        {
+            canTrigger = true;
+        }
+        else if (OVRInput.GetUp(OVRInput.Button.SecondaryIndexTrigger) && CT == ControllerType.Right && otherController != null && otherController.connected)
+        {
+            Detach();
+        }
+
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) && CT == ControllerType.Left && magnet != null)
+        {
+            canTrigger = true;
+        }
+        else if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger) && CT == ControllerType.Left && otherController != null && otherController.connected)
+        {
+            Detach();
+        }
+
+        if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger)) && !otherController.connected)
         {
             CompletelyDetach();
         }
+
+        if (canTrigger)
+        {
+            RayState();
+        }
     }
+
     public void RayState()
     {
-
         if (lastShoot)
         {
             if (!connected)
@@ -96,7 +95,7 @@ public class NewVRController : MonoBehaviour
         }
         else
         {
-            if (magnet != null && canTrigger) // || isTest)
+            if (magnet != null && canTrigger)
             {
                 PlayerNoAction();
                 if(CT == ControllerType.Right)
@@ -134,8 +133,8 @@ public class NewVRController : MonoBehaviour
     }
     IEnumerator DragScaleUp()
     {
-        yield return new WaitForSeconds(0.23f);
-        pcon.rigid.drag = 0.9f;
+        yield return new WaitForSeconds(0.25f);
+        pcon.rigid.drag = 0.8f;
         pcon.rigid.angularDrag = 0.9f;
     }
     public void PlayerNoAction()
@@ -146,6 +145,7 @@ public class NewVRController : MonoBehaviour
     }
     public void Detach()
     {
+        pcon.isFlying = false;
         magnet = null;
         RemoveChain();
         canTrigger = false;
@@ -153,7 +153,7 @@ public class NewVRController : MonoBehaviour
 
     public void CompletelyDetach()
     {
-        myCharacter.GetComponent<PlayerControl>().isFlying = false;
+        pcon.isFlying = false;
         pcon.rigid.drag = 0f;
         pcon.rigid.angularDrag = 0.05f;
         myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = true;
@@ -191,7 +191,6 @@ public class NewVRController : MonoBehaviour
             pcon.rigid.MovePosition(pcon.rigid.position + (target.transform.position - pos).normalized * (len - chain.MaxLength()));
             if (Vector3.Distance(pos, target.transform.position) > chain.MaxLength() + 0.3f)
             {
-
                 return;
             }
             len = chain.MaxLength();
@@ -212,9 +211,8 @@ public class NewVRController : MonoBehaviour
             pos = rightChainTransform.position;
         }
         float len = Vector3.Distance(target.transform.position, pos);
-        //pull with force
 
-        pcon.rigid.AddExplosionForce(forwardPower * Time.deltaTime * pullSpeed * 60f * Mathf.Clamp01(len / (target.radius * 5f)) * -1f, target.transform.position, len * 1f);
+        pcon.rigid.AddExplosionForce(forwardPower * 1.5f *Time.deltaTime * pullSpeed * 60f * Mathf.Clamp01(len / (target.radius * 5f)) * -1f, target.transform.position, len * 1f);
 
 
         if (len < target.openRadius) target.CheckOpen();

@@ -9899,12 +9899,13 @@ MonoBehaviour:
   myCharacter: {fileID: 1692171972}
   canTrigger: 0
   rayDistance: 10
-  forwardPower: 3
+  forwardPower: 25
   hovering: 0
   connected: 0
   lastShoot: 0
   isHovering: 0
-  pullSpeed: 2
+  isTest: 0
+  pullSpeed: 3
 --- !u!114 &2053263831143261673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9929,12 +9930,13 @@ MonoBehaviour:
   myCharacter: {fileID: 1692171972}
   canTrigger: 0
   rayDistance: 10
-  forwardPower: 3
+  forwardPower: 25
   hovering: 0
   connected: 0
   lastShoot: 0
   isHovering: 0
-  pullSpeed: 2
+  isTest: 0
+  pullSpeed: 3
 --- !u!4 &2431919255275269608
 Transform:
   m_ObjectHideFlags: 0

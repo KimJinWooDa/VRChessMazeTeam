@@ -4409,6 +4409,7 @@ PrefabInstance:
       objectReference: {fileID: 1601029674}
     m_RemovedComponents:
     - {fileID: 1516515129344489940, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
+    - {fileID: 4521980662788665292, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}
 --- !u!114 &1601029674 stripped
 MonoBehaviour:
@@ -4492,12 +4493,13 @@ MonoBehaviour:
   myCharacter: {fileID: 1601029676}
   canTrigger: 0
   rayDistance: 15
-  forwardPower: 23
+  forwardPower: 25
   hovering: 0
   connected: 0
   lastShoot: 0
   isHovering: 0
-  pullSpeed: 2
+  isTest: 0
+  pullSpeed: 3
 --- !u!114 &1601029683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4522,12 +4524,13 @@ MonoBehaviour:
   myCharacter: {fileID: 1601029676}
   canTrigger: 0
   rayDistance: 15
-  forwardPower: 23
+  forwardPower: 25
   hovering: 0
   connected: 0
   lastShoot: 0
   isHovering: 0
-  pullSpeed: 2
+  isTest: 0
+  pullSpeed: 3
 --- !u!114 &1643459176 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4449215033374039038, guid: b99c3fe793ad0d44980ef16b22e5735d, type: 3}

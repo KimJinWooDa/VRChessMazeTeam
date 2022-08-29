@@ -3909,6 +3909,7 @@ MonoBehaviour:
   connected: 0
   lastShoot: 0
   isHovering: 0
+  isTest: 0
   pullSpeed: 2
 --- !u!114 &9076776619995806866
 MonoBehaviour:
@@ -3939,6 +3940,7 @@ MonoBehaviour:
   connected: 0
   lastShoot: 0
   isHovering: 0
+  isTest: 0
   pullSpeed: 2
 --- !u!114 &9076776619995806867
 MonoBehaviour:
@@ -3954,7 +3956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pcon: {fileID: 9076776619995806862}
   triggerEffectHolder: {fileID: 3473858992073620695, guid: 198bb81b1eea479419f9f40ada2ce1f9, type: 3}
-  magnet: {fileID: 0}
+  magnet: {fileID: 1214902742}
   chain: {fileID: 0}
   otherController: {fileID: 9076776619995806868}
   CT: 1
@@ -3964,12 +3966,13 @@ MonoBehaviour:
   myCharacter: {fileID: 58778044}
   canTrigger: 0
   rayDistance: 15
-  forwardPower: 3
+  forwardPower: 25
   hovering: 0
   connected: 0
   lastShoot: 0
   isHovering: 0
-  pullSpeed: 2
+  isTest: 0
+  pullSpeed: 3
 --- !u!114 &9076776619995806868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3994,9 +3997,10 @@ MonoBehaviour:
   myCharacter: {fileID: 58778044}
   canTrigger: 0
   rayDistance: 15
-  forwardPower: 3
+  forwardPower: 25
   hovering: 0
   connected: 0
   lastShoot: 0
   isHovering: 0
-  pullSpeed: 2
+  isTest: 0
+  pullSpeed: 3
