@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TestMiniThree.unity
     guid: ab55dd4a9d93d234787ae318581df93d
   - enabled: 1
+    path: Assets/Scenes/TestFinal.unity
+    guid: 1dd865f2355af794687b6835d5fe970f
+  - enabled: 0
     path: Assets/Scenes/Final scene.unity
     guid: 6e014911d72182f40bbc8bb5b2713b93
   - enabled: 0

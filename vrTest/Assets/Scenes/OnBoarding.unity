@@ -1388,7 +1388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transferOnSecondSelection: 0
   _addNewPointsToFront: 0
-  _forwardElement: {fileID: 1255617380}
+  _forwardElement: {fileID: 0}
   _oneGrabTransformer: {fileID: 0}
   _twoGrabTransformer: {fileID: 0}
   _maxGrabPoints: -1
@@ -3423,7 +3423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2133312969, guid: 122b5381d79adb7438af2f44873cf80e, type: 3}
       propertyPath: Speed
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 915074810086635148, guid: 122b5381d79adb7438af2f44873cf80e, type: 3}
       propertyPath: m_IsActive

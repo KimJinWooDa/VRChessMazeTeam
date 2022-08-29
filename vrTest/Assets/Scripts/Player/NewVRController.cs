@@ -19,8 +19,8 @@ public class NewVRController : MonoBehaviour
 
     public bool canTrigger;
 
-    [SerializeField] float rayDistance = 15f;
-    [SerializeField] float forwardPower = 3f;
+    [SerializeField] float rayDistance = 20f;
+    [SerializeField] float forwardPower = 23f;
 
     RaycastHit hit;
 
@@ -198,22 +198,7 @@ public class NewVRController : MonoBehaviour
         }
         chain.SetLength(len);
     }
-    private void UpdateChainLengthWhite(Magnet target)
-    {
-        Vector3 pos = rightChainTransform.position;
-        float len = Vector3.Distance(pos, target.transform.position);
-        if (len > chain.MaxLength())
-        {
-            pcon.rigid.MovePosition(pcon.rigid.position + (target.transform.position - pos).normalized * (len - chain.MaxLength()));
-            if (Vector3.Distance(pos, target.transform.position) > chain.MaxLength() + 0.3f)
-            {
-                RemoveChain();
-                return;
-            }
-            len = chain.MaxLength();
-        }
-        chain.SetLength(len);
-    }
+
     [SerializeField] float pullSpeed = 2f;
     private void PullTowards(Magnet target)
     {
@@ -228,10 +213,9 @@ public class NewVRController : MonoBehaviour
         }
         float len = Vector3.Distance(target.transform.position, pos);
         //pull with force
-        if (true)
-        {
-            pcon.rigid.AddExplosionForce(forwardPower * Time.deltaTime * pullSpeed * 60f * Mathf.Clamp01(len / (target.radius * 5f)) * -1f, target.transform.position, len * 1f);
-        }
+
+        pcon.rigid.AddExplosionForce(forwardPower * Time.deltaTime * pullSpeed * 60f * Mathf.Clamp01(len / (target.radius * 5f)) * -1f, target.transform.position, len * 1f);
+
 
         if (len < target.openRadius) target.CheckOpen();
     }
