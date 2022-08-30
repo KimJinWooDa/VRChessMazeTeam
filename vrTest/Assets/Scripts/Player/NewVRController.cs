@@ -43,21 +43,19 @@ public class NewVRController : MonoBehaviour
 
         if (Physics.Raycast(rayPos, Forward, out hit, rayDistance, 1 << 6))
         {
-
-            if (magnet == null)
+            if(magnet == null)
             {
                 canTrigger = true;
                 magnet = hit.transform.GetComponent<Magnet>();
                 magnet.GetComponentInChildren<ObjectIsHovering>().isHovering = true;
             }
+
         }
         else
         {
             if (magnet != null)
             {
-                //canTrigger = false;
                 magnet.GetComponentInChildren<ObjectIsHovering>().isHovering = false;
-                //magnet = null;
             }
         }
 
@@ -65,7 +63,7 @@ public class NewVRController : MonoBehaviour
         {
             RayState();
         }
-        else if (OVRInput.GetUp(OVRInput.Button.SecondaryIndexTrigger) && CT == ControllerType.Right && otherController != null && otherController.connected)
+        else if (OVRInput.GetUp(OVRInput.Button.SecondaryIndexTrigger))
         {
             Detach();
         }
@@ -74,16 +72,16 @@ public class NewVRController : MonoBehaviour
         {
             RayState();
         }
-        else if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger)  && CT == ControllerType.Left && otherController != null && otherController.connected)
+        else if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger))
         {
             Detach();
         }
     }
     private void FixedUpdate()
     {
-        if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger)))
+        if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger)) && !canTrigger)
         {
-            pcon.isFlying = false;
+            CompletelyDetach();
         }
     }
     public void RayState()
@@ -142,24 +140,9 @@ public class NewVRController : MonoBehaviour
         RemoveChain();
 
         magnet = null;
-        this.canTrigger = false;
+        canTrigger = false;
     }
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.CompareTag("GROUND"))
-        {
 
-            pcon.rigid.drag = 0f;
-            pcon.rigid.angularDrag = 0.05f;
-
-            myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = true;
-            this.canTrigger = false;
-            if (otherController.canTrigger) otherController.canTrigger = false;
-
-            RemoveChain();
-            magnet = null;
-        }
-    }
     public void CompletelyDetach()
     {
         pcon.isFlying = false;
@@ -173,6 +156,7 @@ public class NewVRController : MonoBehaviour
 
         RemoveChain();
         magnet = null;
+        otherController.magnet = null;
     }
     public void RemoveChain()
     {
@@ -184,12 +168,13 @@ public class NewVRController : MonoBehaviour
         else StartCoroutine(RemoveChainI(chain));
         chain = null;
     }
-    float len;
+   
     private void UpdateChainLength(Magnet target)
     {
         pos = CT == ControllerType.Left ? leftChainTransform.position : rightChainTransform.position;
         if (target != null)
         {
+            float len;
             len = Vector3.Distance(pos, target.transform.position);
             //pcon.rigid.MovePosition(pcon.rigid.position + (target.transform.position - pos).normalized * (len - chain.MaxLength()));
             if (len > chain.MaxLength())
@@ -205,25 +190,27 @@ public class NewVRController : MonoBehaviour
     }
 
     [SerializeField] float pullSpeed = 2f;
-    float len2;
+  
     private void PullTowards(Magnet target)
     {
+        canTrigger = false;
         pos = CT == ControllerType.Left ? leftChainTransform.position : rightChainTransform.position;
         if (target != null)
         {
+            float len2;
             len2 = Vector3.Distance(target.transform.position, pos);
 
             if (len2 < target.openRadius)
             {
-                myCharacter.transform.position = Vector3.Lerp(myCharacter.transform.position, target.transform.position, 0.077f);
-                pcon.rigid.isKinematic = true;
-                pcon.rigid.isKinematic = false;
+                myCharacter.transform.position += (target.transform.position - myCharacter.transform.position).normalized * pullSpeed * Time.deltaTime;
+                //pcon.rigid.isKinematic = true;
+                //pcon.rigid.isKinematic = false;
                 target.CheckOpen();
             }
             else
             {
-                pcon.rigid.AddExplosionForce(forwardPower * 60f * Time.deltaTime * pullSpeed * Mathf.Clamp01(len / (target.radius * 5f)) * -1f, target.transform.position, len2 * 1f);
-
+                float a = Mathf.Clamp01(len2 / 10f);
+                pcon.rigid.AddForce((target.transform.position - myCharacter.transform.position).normalized * pullSpeed * a * Time.deltaTime, ForceMode.Acceleration);
             }
         }
     }
