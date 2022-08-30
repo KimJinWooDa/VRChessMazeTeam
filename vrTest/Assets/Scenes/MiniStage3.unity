@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.007856585, g: 0.029214475, b: 0.1537363, a: 1}
+  m_IndirectSpecularColor: {r: 0.007884761, g: 0.029336905, b: 0.15355751, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -283,14 +283,14 @@ MonoBehaviour:
     width: 14
     height: 27
   passive: 0
-  moveSpeed: 4
+  moveSpeed: 2
   waitTime: 1.5
   knightMoveTime: 1.5
   knightJumpHeight: 2.5
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 860466293}
 --- !u!82 &68659562
 AudioSource:
   m_ObjectHideFlags: 0
@@ -764,14 +764,14 @@ MonoBehaviour:
     width: 19
     height: 19
   passive: 0
-  moveSpeed: 4
+  moveSpeed: 2
   waitTime: 2
   knightMoveTime: 1.5
   knightJumpHeight: 2.5
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 1000618201}
 --- !u!82 &134338637
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1862,14 +1862,14 @@ MonoBehaviour:
     width: 23
     height: 18
   passive: 0
-  moveSpeed: 4
+  moveSpeed: 2
   waitTime: 1.5
   knightMoveTime: 1.5
   knightJumpHeight: 2.5
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 314572304}
 --- !u!82 &283483369
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1997,6 +1997,11 @@ Transform:
   m_Father: {fileID: 975097686}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &314572304 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: db6373ea0bc3c894b89034c7cd4d13ff, type: 3}
+  m_PrefabInstance: {fileID: 283483363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &348251354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2850,9 +2855,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 500, y: 0.1, z: 500}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 636651302}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &526234333 stripped
 Transform:
@@ -3146,7 +3152,7 @@ MonoBehaviour:
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 987078988}
 --- !u!82 &547142630
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3442,6 +3448,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHovering: 0
+--- !u!23 &612480616 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: db6373ea0bc3c894b89034c7cd4d13ff, type: 3}
+  m_PrefabInstance: {fileID: 1100040461}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &636651298
 GameObject:
   m_ObjectHideFlags: 0
@@ -3532,13 +3543,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636651298}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.75, y: 45.63, z: 6.14}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.029500002, y: 456.30002, z: 0.01228}
+  m_LocalScale: {x: 0.002, y: 10, z: 0.002}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 521202326}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &636901708
 PrefabInstance:
@@ -4291,6 +4302,11 @@ MonoBehaviour:
   _collider: {fileID: 0}
   _surface: {fileID: 0}
   _movementProvider: {fileID: 0}
+--- !u!23 &860466293 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: db6373ea0bc3c894b89034c7cd4d13ff, type: 3}
+  m_PrefabInstance: {fileID: 68659556}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &884956963
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4339,14 +4355,14 @@ MonoBehaviour:
     width: 19
     height: 19
   passive: 0
-  moveSpeed: 4
+  moveSpeed: 2
   waitTime: 2
   knightMoveTime: 1.5
   knightJumpHeight: 2.5
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 1711813855960482724}
 --- !u!1001 &886820689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4717,6 +4733,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2605089134603115792, guid: ce682d13ba9c4544d94bee84a0fbf64c, type: 3}
   m_PrefabInstance: {fileID: 1987792614}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &987078988 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: db35f4c929b053740a9046342c2ff905, type: 3}
+  m_PrefabInstance: {fileID: 547142624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1000618201 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: db6373ea0bc3c894b89034c7cd4d13ff, type: 3}
+  m_PrefabInstance: {fileID: 134338631}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1007430902 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6943977983461612500, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
@@ -4827,6 +4853,11 @@ MonoBehaviour:
   openRadius: 1
   hoveredBy: 0000
   cp: 0
+--- !u!23 &1050763982 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: db35f4c929b053740a9046342c2ff905, type: 3}
+  m_PrefabInstance: {fileID: 2054618356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1075992260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5318,14 +5349,14 @@ MonoBehaviour:
     width: 10
     height: 17
   passive: 0
-  moveSpeed: 4
+  moveSpeed: 2
   waitTime: 1
   knightMoveTime: 1.5
   knightJumpHeight: 2.5
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 612480616}
 --- !u!82 &1100040467
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5760,6 +5791,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHovering: 0
+--- !u!23 &1173361116 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: db35f4c929b053740a9046342c2ff905, type: 3}
+  m_PrefabInstance: {fileID: 2036565023}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1185254272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5907,14 +5943,14 @@ MonoBehaviour:
     width: 10
     height: 17
   passive: 0
-  moveSpeed: 4
+  moveSpeed: 2
   waitTime: 1
   knightMoveTime: 1.5
   knightJumpHeight: 2.5
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 1908121907}
 --- !u!82 &1185254278
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8625,7 +8661,7 @@ MonoBehaviour:
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 1894956222}
 --- !u!82 &1758070804
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9023,6 +9059,16 @@ MonoBehaviour:
   openRadius: 1
   hoveredBy: 0000
   cp: 0
+--- !u!23 &1894956222 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: db35f4c929b053740a9046342c2ff905, type: 3}
+  m_PrefabInstance: {fileID: 1758070798}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1908121907 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: db6373ea0bc3c894b89034c7cd4d13ff, type: 3}
+  m_PrefabInstance: {fileID: 1185254272}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1923806625 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6943977983461612500, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
@@ -9201,7 +9247,7 @@ MonoBehaviour:
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 2144228735}
 --- !u!82 &1937564508
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10156,7 +10202,7 @@ MonoBehaviour:
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 1173361116}
 --- !u!82 &2036565029
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10689,7 +10735,7 @@ MonoBehaviour:
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 1050763982}
 --- !u!82 &2054618362
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11423,6 +11469,11 @@ Transform:
   m_Father: {fileID: 1563646846355217106}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &2144228735 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: db35f4c929b053740a9046342c2ff905, type: 3}
+  m_PrefabInstance: {fileID: 1937564502}
+  m_PrefabAsset: {fileID: 0}
 --- !u!23 &176384909889881392
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12875,7 +12926,7 @@ MonoBehaviour:
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 176384911093131681}
 --- !u!82 &2708442856353242479
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13035,7 +13086,7 @@ MonoBehaviour:
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 176384911340359003}
 --- !u!82 &2708442856602646933
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13195,7 +13246,7 @@ MonoBehaviour:
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 176384911434672576}
 --- !u!82 &2708442856696945934
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13355,7 +13406,7 @@ MonoBehaviour:
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 176384910677420356}
 --- !u!82 &2708442856744967570
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13515,7 +13566,7 @@ MonoBehaviour:
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 176384910770345122}
 --- !u!82 &2708442856768692332
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13675,7 +13726,7 @@ MonoBehaviour:
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 176384910184629776}
 --- !u!82 &2708442857258857182
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13835,7 +13886,7 @@ MonoBehaviour:
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 176384910481282592}
 --- !u!82 &2708442857620447982
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13995,7 +14046,7 @@ MonoBehaviour:
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 176384910314046438}
 --- !u!82 &2708442857656743728
 AudioSource:
   m_ObjectHideFlags: 0
@@ -14155,7 +14206,7 @@ MonoBehaviour:
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 176384910295066041}
 --- !u!82 &2708442857704821111
 AudioSource:
   m_ObjectHideFlags: 0
@@ -14315,7 +14366,7 @@ MonoBehaviour:
   queenDashLength: 5
   ps: {fileID: 0}
   ps2: {fileID: 0}
-  mrender: {fileID: 0}
+  mrender: {fileID: 176384909889881392}
 --- !u!82 &2708442858102796798
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15708,6 +15759,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3968769809496887720, guid: f5da03129557d894cb85fd00d8083850, type: 3}
+      propertyPath: mrender
+      value: 
+      objectReference: {fileID: 3968769810325522998}
+    - target: {fileID: 3968769809496887720, guid: f5da03129557d894cb85fd00d8083850, type: 3}
       propertyPath: board.end
       value: 
       objectReference: {fileID: 1087808528}
@@ -15822,3 +15877,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!23 &3968769810325522998 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2365078908534639905, guid: f5da03129557d894cb85fd00d8083850, type: 3}
+  m_PrefabInstance: {fileID: 3968769810325522995}
+  m_PrefabAsset: {fileID: 0}
