@@ -26,6 +26,7 @@ public class PieceMovement : MonoBehaviour
     //Color originColor, originColor2;
     Transform player;
     Rigidbody rigid;
+    AudioSource audios;
     //Material mat, mat2;
     [SerializeField] private ParticleSystem ps, ps2;
     [SerializeField] private MeshRenderer mrender;
@@ -47,6 +48,7 @@ public class PieceMovement : MonoBehaviour
         originColor2 = mat2.color;*/
         if(ps == null) ps = GetComponentInChildren<ParticleSystem>();
         if(chessType == ChessType.queen) rigid = GetComponent<Rigidbody>();
+        audios = GetComponent<AudioSource>();
     }
 
     private void Start() {
@@ -226,9 +228,11 @@ public class PieceMovement : MonoBehaviour
     private bool Move() {
         switch (chessType) {
             default:
+                if (!audios.isPlaying) audios.Play();
                 SetPos(Vector3.Lerp(Pos(), targetPos, moveSpeed * Time.deltaTime));
                 if((Pos() - targetPos).sqrMagnitude < 0.0001f) {
                     SetPos(targetPos);
+                    audios.Stop();
                     return true;
                 }
                 return false;
@@ -238,6 +242,7 @@ public class PieceMovement : MonoBehaviour
                 SetPos(Vector3.Lerp(kstartPos, targetPos, f) + Vector3.up * (1 - f) * f * 4f * knightJumpHeight);
                 if(f > 0.999f) {
                     SetPos(targetPos);
+                    audios.Play();
                     return true;
                 }
                 return false;
