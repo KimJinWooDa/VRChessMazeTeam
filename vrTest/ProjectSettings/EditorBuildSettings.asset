@@ -8,22 +8,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OnBoarding.unity
     guid: f04a89d6676121547a57691f13043d7d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/TestMiniOne.unity
     guid: 3c96cc235fe1ec348ae6563474eda561
   - enabled: 1
     path: Assets/Scenes/MiniStage2.unity
     guid: 4f444b6e786e5824bb1f95845afe73c9
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/TestMiniThree.unity
     guid: ab55dd4a9d93d234787ae318581df93d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/TestFinal.unity
     guid: 1dd865f2355af794687b6835d5fe970f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MiniStage1.unity
     guid: 4816520312ee0494195853390bc68dd3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MiniStage3.unity
     guid: 7a85a85d334cd914cb6c074e490ce20a
   - enabled: 1

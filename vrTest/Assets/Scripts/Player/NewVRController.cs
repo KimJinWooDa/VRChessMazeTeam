@@ -43,13 +43,20 @@ public class NewVRController : MonoBehaviour
 
         if (Physics.Raycast(rayPos, Forward, out hit, rayDistance, 1 << 6))
         {
-            canTrigger = true;
-            magnet = hit.transform.GetComponent<Magnet>();
-            magnet.GetComponentInChildren<ObjectIsHovering>().isHovering = true;
+            if(magnet == null)
+            {
+                canTrigger = true;
+                magnet = hit.transform.GetComponent<Magnet>();
+                magnet.GetComponentInChildren<ObjectIsHovering>().isHovering = true;
+            }
+
         }
         else
         {
-           if(magnet!=null) magnet.GetComponentInChildren<ObjectIsHovering>().isHovering = false;
+            if (magnet != null)
+            {
+                magnet.GetComponentInChildren<ObjectIsHovering>().isHovering = false;
+            }
         }
 
         if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger) && magnet != null)
@@ -149,6 +156,7 @@ public class NewVRController : MonoBehaviour
 
         RemoveChain();
         magnet = null;
+        otherController.magnet = null;
     }
     public void RemoveChain()
     {
@@ -194,15 +202,15 @@ public class NewVRController : MonoBehaviour
 
             if (len2 < target.openRadius)
             {
-                myCharacter.transform.position = Vector3.Lerp(myCharacter.transform.position, target.transform.position, 0.07f);
-                pcon.rigid.isKinematic = true;
-                pcon.rigid.isKinematic = false;
+                myCharacter.transform.position += (target.transform.position - myCharacter.transform.position).normalized * pullSpeed * Time.deltaTime;
+                //pcon.rigid.isKinematic = true;
+                //pcon.rigid.isKinematic = false;
                 target.CheckOpen();
             }
             else
             {
-                pcon.rigid.AddExplosionForce(forwardPower * 60f * Time.deltaTime * pullSpeed * Mathf.Clamp01(len2/ (target.radius * 5f)) * -1f, target.transform.position, len2 * 1f);
-
+                float a = Mathf.Clamp01(len2 / 10f);
+                pcon.rigid.AddForce((target.transform.position - myCharacter.transform.position).normalized * pullSpeed * a * Time.deltaTime, ForceMode.Acceleration);
             }
         }
     }
