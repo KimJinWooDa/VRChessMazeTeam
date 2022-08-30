@@ -141,33 +141,30 @@ public class VRRayController : MonoBehaviour
         }
         else
         {
-            if ((int)ControllerType.Left == magnet.CheckChainPosition())
+
+            if (magnet != null && canTrigger) // || isTest)
             {
-                if (magnet != null && canTrigger) // || isTest)
+                pcon.canJump = false;
+                lastShoot = true;
+                connected = false;
+                if (CT == ControllerType.Left)
                 {
-                    pcon.canJump = false;
-                    lastShoot = true;
-                    connected = false;
-                    if (CT == ControllerType.Left)
-                    {
-                        chain = ChainUtils.LineTarget(leftChainTransform.position, magnet.gameObject);
-                    }
+                    chain = ChainUtils.LineTarget(leftChainTransform.position, magnet.gameObject);
                 }
             }
-            else
+
+            if (magnet != null && canTrigger) // || isTest)
             {
-                if (magnet != null && canTrigger) // || isTest)
+                pcon.canJump = false;
+                lastShoot = true;
+                connected = false;
+                if (CT == ControllerType.Right)
                 {
-                    pcon.canJump = false;
-                    lastShoot = true;
-                    connected = false;
-                    if (CT == ControllerType.Right)
-                    {
-                        chain = ChainUtils.LineTarget(rightChainTransform.position, magnet.gameObject);
-                    }
+                    chain = ChainUtils.LineTarget(rightChainTransform.position, magnet.gameObject);
                 }
             }
         }
+        
 
         if (lastShoot && chain != null)
         {

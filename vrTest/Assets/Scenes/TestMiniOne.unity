@@ -162,7 +162,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 122d36a1f759fba4986a7539dc551356, type: 2}
     - target: {fileID: 5731848436691147853, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: power
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5731848436691147853, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: openRadius
@@ -174,7 +174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6998756611016554181, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: m_Radius
-      value: 0.23
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: m_RootOrder
@@ -348,7 +348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6998756611016554181, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_Radius
-      value: 0.23
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7244775738129962585, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: VelocityModule.orbitalZ.scalar
@@ -1147,7 +1147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6998756611016554181, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: m_Radius
-      value: 0.23
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: m_RootOrder
@@ -1483,7 +1483,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429904451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -23, z: 0}
+  m_LocalPosition: {x: 0, y: -20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1624,6 +1624,10 @@ PrefabInstance:
     - target: {fileID: 2242184789360690543, guid: 7677645373ea83c46becbfc329c8f78a, type: 3}
       propertyPath: m_Name
       value: Rook (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2242184789360690543, guid: 7677645373ea83c46becbfc329c8f78a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7677645373ea83c46becbfc329c8f78a, type: 3}
@@ -2091,6 +2095,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rook (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2242184789360690543, guid: 7677645373ea83c46becbfc329c8f78a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7677645373ea83c46becbfc329c8f78a, type: 3}
 --- !u!4 &1035633527 stripped
@@ -2179,7 +2187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6998756611016554181, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: m_Radius
-      value: 0.23
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: m_RootOrder
@@ -2390,7 +2398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6998756611016554181, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: m_Radius
-      value: 0.23
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: m_RootOrder
@@ -2558,7 +2566,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6998756611016554181, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: m_Radius
-      value: 0.23
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: m_RootOrder
@@ -2778,6 +2786,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rook (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2242184789360690543, guid: 7677645373ea83c46becbfc329c8f78a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7677645373ea83c46becbfc329c8f78a, type: 3}
 --- !u!4 &1317063404 stripped
@@ -2895,7 +2907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6998756611016554181, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_Radius
-      value: 0.23
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7244775738129962585, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: VelocityModule.orbitalZ.scalar
@@ -3118,7 +3130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6998756611016554181, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: m_Radius
-      value: 0.23
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: m_RootOrder
@@ -3284,7 +3296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6998756611016554181, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: m_Radius
-      value: 0.23
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: m_RootOrder
@@ -3865,6 +3877,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3192908197591979344, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192908197591979358, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: RotationAngle
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 4943502179719254314, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -3983,7 +4003,8 @@ MonoBehaviour:
   hovering: 0
   connected: 0
   lastShoot: 0
-  isHovering: 0
+  isRightHovering: 0
+  isLeftHovering: 0
   isTest: 0
   pullSpeed: 2
 --- !u!114 &9076776619995806866
@@ -4014,7 +4035,8 @@ MonoBehaviour:
   hovering: 0
   connected: 0
   lastShoot: 0
-  isHovering: 0
+  isRightHovering: 0
+  isLeftHovering: 0
   isTest: 0
   pullSpeed: 2
 --- !u!114 &9076776619995806867
@@ -4031,7 +4053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pcon: {fileID: 9076776619995806862}
   triggerEffectHolder: {fileID: 3473858992073620695, guid: 198bb81b1eea479419f9f40ada2ce1f9, type: 3}
-  magnet: {fileID: 1214902742}
+  magnet: {fileID: 0}
   chain: {fileID: 0}
   otherController: {fileID: 9076776619995806868}
   CT: 1
@@ -4040,12 +4062,13 @@ MonoBehaviour:
   leftChainTransform: {fileID: 9076776619995806864}
   myCharacter: {fileID: 58778044}
   canTrigger: 0
-  rayDistance: 15
-  forwardPower: 25
+  rayDistance: 10
+  forwardPower: 15
   hovering: 0
   connected: 0
   lastShoot: 0
-  isHovering: 0
+  isRightHovering: 0
+  isLeftHovering: 0
   isTest: 0
   pullSpeed: 3
 --- !u!114 &9076776619995806868
@@ -4071,11 +4094,12 @@ MonoBehaviour:
   leftChainTransform: {fileID: 9076776619995806864}
   myCharacter: {fileID: 58778044}
   canTrigger: 0
-  rayDistance: 15
-  forwardPower: 25
+  rayDistance: 10
+  forwardPower: 15
   hovering: 0
   connected: 0
   lastShoot: 0
-  isHovering: 0
+  isRightHovering: 0
+  isLeftHovering: 0
   isTest: 0
   pullSpeed: 3
