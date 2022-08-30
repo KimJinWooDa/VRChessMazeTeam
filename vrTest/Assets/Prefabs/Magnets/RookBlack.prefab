@@ -264,6 +264,7 @@ MonoBehaviour:
   openRadius: 3
   hoveredBy: 0000
   cp: 0
+  nvrrc: []
   power: 10
   audios: {fileID: 0}
 --- !u!198 &7244775738129962585

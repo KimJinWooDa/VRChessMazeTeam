@@ -37,7 +37,7 @@ public class PieceMovement : MonoBehaviour
     private void Awake()
     {
         originPos = Pos();
-        originRot = mrender.transform.rotation;
+        originRot = mrender != null ? mrender.transform.rotation : transform.rotation;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         init = angry = false;
         /*

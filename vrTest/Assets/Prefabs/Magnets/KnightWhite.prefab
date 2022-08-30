@@ -264,6 +264,7 @@ MonoBehaviour:
   openRadius: 3
   hoveredBy: 0000
   cp: 0
+  nvrrc: []
   power: 10
   audios: {fileID: 0}
 --- !u!198 &7244775738129962585
@@ -5065,7 +5066,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b4679cec511ba1d42ba1f5638555ecdb, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
