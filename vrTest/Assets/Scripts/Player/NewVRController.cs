@@ -25,23 +25,39 @@ public class NewVRController : MonoBehaviour
     RaycastHit hit;
 
     public bool hovering, connected, lastShoot;
-
     public bool isHovering;
+    bool onceScaleUp;
+    public bool isTest;
 
     Quaternion Rotation;
     Vector3 Forward;
+    Vector3 pos;
 
-    public bool isTest;
+    private void Awake()
+    {
+        if (CT == ControllerType.Left)
+        {
+            pos = leftChainTransform.position;
+        }
+        else
+        {
+            pos = rightChainTransform.position;
+        }
+    }
     private void Update()
     {
         rayPos = this.transform.position;
         Rotation = this.transform.rotation;
         Forward = Rotation * Vector3.forward;
 
-        if (Physics.Raycast(rayPos, Forward, out hit, rayDistance, 1 << 6))
+        if (Physics.Raycast(rayPos, Forward, out hit, rayDistance, 1 << 6) && !canTrigger)
         {
             magnet = hit.transform.GetComponent<Magnet>();
             magnet.GetComponentInChildren<ObjectIsHovering>().isHovering = true;
+        }
+        else if (Physics.Raycast(rayPos, Forward, out hit, rayDistance, 1 << 6))
+        {
+            hit.transform.GetComponentInChildren<ObjectIsHovering>().isHovering = true;        
         }
         else
         {
@@ -51,20 +67,20 @@ public class NewVRController : MonoBehaviour
             }
         }
 
-        if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger) && CT == ControllerType.Right && magnet!=null)
+        if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger) && magnet!=null)
         {
             canTrigger = true;
         }
-        else if (OVRInput.GetUp(OVRInput.Button.SecondaryIndexTrigger) && CT == ControllerType.Right && otherController != null && otherController.connected)
+        else if (OVRInput.GetUp(OVRInput.Button.SecondaryIndexTrigger) && otherController != null && otherController.connected)
         {
             Detach();
         }
 
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) && CT == ControllerType.Left && magnet != null)
+        if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && magnet != null)
         {
             canTrigger = true;
         }
-        else if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger) && CT == ControllerType.Left && otherController != null && otherController.connected)
+        else if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger)  && otherController != null && otherController.connected)
         {
             Detach();
         }
@@ -126,13 +142,14 @@ public class NewVRController : MonoBehaviour
                 myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = false;
                 UpdateChainLength(magnet);
                 PullTowards(magnet);
-                StartCoroutine(DragScaleUp());
+                if(!onceScaleUp) StartCoroutine(DragScaleUp());
             }
 
         }
     }
     IEnumerator DragScaleUp()
     {
+        onceScaleUp = true;
         yield return new WaitForSeconds(0.25f);
         pcon.rigid.drag = 0.8f;
         pcon.rigid.angularDrag = 0.9f;
@@ -145,6 +162,7 @@ public class NewVRController : MonoBehaviour
     }
     public void Detach()
     {
+        onceScaleUp = false;
         pcon.isFlying = false;
         magnet = null;
         RemoveChain();
@@ -175,45 +193,26 @@ public class NewVRController : MonoBehaviour
 
     private void UpdateChainLength(Magnet target)
     {
-        Vector3 pos;
-        if (CT == ControllerType.Left)
-        {
-            pos = leftChainTransform.position;
-        }
-        else
-        {
-            pos = rightChainTransform.position;
-        }
-
         float len = Vector3.Distance(pos, target.transform.position);
-        if (len > chain.MaxLength())
-        {
-            pcon.rigid.MovePosition(pcon.rigid.position + (target.transform.position - pos).normalized * (len - chain.MaxLength()));
-            if (Vector3.Distance(pos, target.transform.position) > chain.MaxLength() + 0.3f)
-            {
-                return;
-            }
-            len = chain.MaxLength();
-        }
+        pcon.rigid.MovePosition(pcon.rigid.position + (target.transform.position - pos).normalized * (len - chain.MaxLength()));
+        //if (len > chain.MaxLength())
+        //{
+            
+        //    //if (Vector3.Distance(pos, target.transform.position) > chain.MaxLength() + 0.3f)
+        //    //{
+        //    //    return;
+        //    //}
+        //    len = chain.MaxLength();
+        //}
         chain.SetLength(len);
     }
 
     [SerializeField] float pullSpeed = 2f;
     private void PullTowards(Magnet target)
     {
-        Vector3 pos;
-        if (CT == ControllerType.Left)
-        {
-            pos = leftChainTransform.position;
-        }
-        else
-        {
-            pos = rightChainTransform.position;
-        }
         float len = Vector3.Distance(target.transform.position, pos);
 
-        pcon.rigid.AddExplosionForce(forwardPower * 1.5f *Time.deltaTime * pullSpeed * 60f * Mathf.Clamp01(len / (target.radius * 5f)) * -1f, target.transform.position, len * 1f);
-
+        pcon.rigid.AddExplosionForce(forwardPower *Time.deltaTime * pullSpeed * 60f * Mathf.Clamp01(len / (target.radius * 5f)) * -1f, target.transform.position, len * 1f);
 
         if (len < target.openRadius) target.CheckOpen();
     }

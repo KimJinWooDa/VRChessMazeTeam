@@ -164,6 +164,10 @@ PrefabInstance:
       propertyPath: power
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5731848436691147853, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
+      propertyPath: openRadius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6943977983461612500, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: m_Name
       value: Rook
@@ -333,6 +337,10 @@ PrefabInstance:
     - target: {fileID: 6369319044010995400, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: power
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369319044010995400, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: openRadius
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6943977983461612500, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_Name
@@ -1225,6 +1233,10 @@ PrefabInstance:
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139778, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
+      propertyPath: openRadius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139779, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1337,19 +1349,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6000917664772175109, guid: c1f571e01c871d44680977a90ff8560a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.71343184
+      value: 0.6401624
       objectReference: {fileID: 0}
     - target: {fileID: 6000917664772175109, guid: c1f571e01c871d44680977a90ff8560a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.67291677
+      value: 0.54856175
       objectReference: {fileID: 0}
     - target: {fileID: 6000917664772175109, guid: c1f571e01c871d44680977a90ff8560a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.4351
+      value: -1.361
       objectReference: {fileID: 0}
     - target: {fileID: 6000917664772175109, guid: c1f571e01c871d44680977a90ff8560a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.0559
+      value: 0.9311
       objectReference: {fileID: 0}
     - target: {fileID: 6063294386021930206, guid: c1f571e01c871d44680977a90ff8560a, type: 3}
       propertyPath: m_TagString
@@ -2099,7 +2111,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 2
-  speed: 1.7
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  knightMoveTime: 1.5
+  knightJumpHeight: 2.5
+  queenDashLength: 5
+  ps: {fileID: 0}
+  ps2: {fileID: 0}
+  mrender: {fileID: 0}
 --- !u!65 &1035633531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2228,6 +2253,10 @@ PrefabInstance:
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1147708243}
+    - target: {fileID: 7826305070009139778, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+      propertyPath: openRadius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139779, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2297,7 +2326,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 2
-  speed: 1.7
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  knightMoveTime: 1.5
+  knightJumpHeight: 2.5
+  queenDashLength: 5
+  ps: {fileID: 0}
+  ps2: {fileID: 0}
+  mrender: {fileID: 0}
 --- !u!65 &1177142252
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2422,6 +2464,10 @@ PrefabInstance:
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1214902742}
+    - target: {fileID: 7826305070009139778, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+      propertyPath: openRadius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139779, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2582,6 +2628,10 @@ PrefabInstance:
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1296560383}
+    - target: {fileID: 7826305070009139778, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
+      propertyPath: openRadius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139779, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2753,7 +2803,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessType: 2
-  speed: 1.7
+  board:
+    start: {fileID: 0}
+    end: {fileID: 0}
+    width: 1
+    height: 1
+  passive: 0
+  moveSpeed: 4
+  waitTime: 1
+  knightMoveTime: 1.5
+  knightJumpHeight: 2.5
+  queenDashLength: 5
+  ps: {fileID: 0}
+  ps2: {fileID: 0}
+  mrender: {fileID: 0}
 --- !u!65 &1446445632
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2820,7 +2883,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6369319044010995400, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: power
-      value: 22
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369319044010995400, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
+      propertyPath: openRadius
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6943977983461612500, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_Name
@@ -2876,31 +2943,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5702235
+      value: 0.56129724
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7922139
+      value: -0.8132241
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.05791156
+      value: 0.04470459
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.20949584
+      value: -0.14701547
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -111.914
+      value: -115.871
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -45.431
+      value: -41.52899
       objectReference: {fileID: 0}
     - target: {fileID: 7716398459215708526, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 23.223007
+      value: 33.015
       objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139776, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: m_Enabled
@@ -3141,6 +3208,10 @@ PrefabInstance:
       propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7826305070009139778, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
+      propertyPath: openRadius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139779, guid: a076c0ae399adc74bb7340d395944acd, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -3283,6 +3354,10 @@ PrefabInstance:
       propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 75789202}
+    - target: {fileID: 7826305070009139778, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
+      propertyPath: openRadius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7826305070009139779, guid: 737dc4fb14897c244b8dadd50bdb046f, type: 3}
       propertyPath: m_Enabled
       value: 0
