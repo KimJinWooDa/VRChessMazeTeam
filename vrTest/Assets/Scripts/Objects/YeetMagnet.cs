@@ -9,12 +9,14 @@ public class YeetMagnet : Magnet {
     public static Rigidbody prigid;
     public static VRRayController[] vrrc;
     public float power;
+    [SerializeField] private AudioSource audios;
 
     public override void Awake() {
         base.Awake();
 
         if (prigid == null) prigid = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
         if (vrrc == null || vrrc.Length == 0) vrrc = GameObject.FindObjectsOfType<VRRayController>();
+        if(audios == null) audios = GetComponent<AudioSource>();
     }
 
     public override void Open() {
@@ -24,12 +26,12 @@ public class YeetMagnet : Magnet {
             if (vr.lastShoot)
             {
                 vr.CompletelyDetach();
-
             }
         }
 
         //yeet
         prigid.velocity = tv;
+        audios.Play();
         StartCoroutine(IReset(1));
     }
 
