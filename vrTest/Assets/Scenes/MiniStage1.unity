@@ -4906,6 +4906,10 @@ PrefabInstance:
       propertyPath: rc
       value: 
       objectReference: {fileID: 3192908198263725717, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+    - target: {fileID: 10, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: pullSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 11, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
       propertyPath: rc
       value: 
