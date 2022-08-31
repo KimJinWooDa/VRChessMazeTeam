@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9158890503951719639}
   - component: {fileID: 3265311941430984832}
   m_Layer: 0
-  m_Name: ChainFx
+  m_Name: ChainFx 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

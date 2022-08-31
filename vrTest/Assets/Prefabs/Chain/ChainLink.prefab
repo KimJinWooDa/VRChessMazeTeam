@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesh: {fileID: 8759435253123479967}
-  chainFx: {fileID: 3473858992073620695, guid: 198bb81b1eea479419f9f40ada2ce1f9, type: 3}
+  chainFx: {fileID: 3473858992073620695, guid: be72c016cf4e0cd4db9182329b28a71d, type: 3}
   pos: {x: 0, y: 0, z: 0}
   id: 0
   core: {fileID: 0}
