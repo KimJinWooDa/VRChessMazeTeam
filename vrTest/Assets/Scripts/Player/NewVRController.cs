@@ -33,7 +33,18 @@ public class NewVRController : MonoBehaviour
     Quaternion Rotation;
     Vector3 Forward;
     Vector3 pos;
+    private float holdf = 0;
+    private bool holdb = false;
 
+    private void Start()
+    {
+        myCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        holdb = false;
+        holdf = 0;
+        triggerEffectHolder.SetActive(false);
+        //this.stageNum = GameManager.instance.stageNum;
+        forwardPower = 20f;
+    }
 
     private void Update()
     {
@@ -44,8 +55,7 @@ public class NewVRController : MonoBehaviour
         if (Physics.Raycast(rayPos, Forward, out hit, rayDistance, 1 << 6))
         {
             if(magnet == null)
-            {
-                canTrigger = true;
+            {       
                 magnet = hit.transform.GetComponent<Magnet>();
                 magnet.GetComponentInChildren<ObjectIsHovering>().isHovering = true;
             }
@@ -59,36 +69,31 @@ public class NewVRController : MonoBehaviour
             }
         }
 
-        if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger) && magnet != null)
+        if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger) && magnet != null)
         {
-            RayState();
-        }
-        else if (OVRInput.GetUp(OVRInput.Button.SecondaryIndexTrigger))
-        {
-            Detach();
+            canTrigger = true;
         }
 
-        if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && magnet != null)
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) && magnet != null)
         {
-            RayState();
+            canTrigger = true;
         }
-        else if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger))
-        {
-            Detach();
-        }
-    }
-    private void FixedUpdate()
-    {
-        if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger)) && !canTrigger)
-        {
-            CompletelyDetach();
-        }
-    }
-    public void RayState()
-    {
+
         if (lastShoot)
         {
-            if (!connected)
+            if ((!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger)) && CT == ControllerType.Right && otherController != null && otherController.connected) //  && !isTest
+            {
+                Detach();
+            }
+            else if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && CT == ControllerType.Left && otherController != null && otherController.connected)//!isTest
+            {
+                Detach();
+            }
+            else if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))) // && !isTest
+            {
+                CompletelyDetach();
+            }
+            else if (!connected)
             {
                 if (!chain.expanding)
                 {
@@ -99,18 +104,18 @@ public class NewVRController : MonoBehaviour
         }
         else
         {
-            if (magnet != null && canTrigger)
+            if (magnet != null && (canTrigger)) //
             {
+                pcon.canJump = false;
                 lastShoot = true;
-                PlayerNoAction();
-                
-                chain = CT == ControllerType.Right ? ChainUtils.LineTarget(rightChainTransform.position, magnet.gameObject) : ChainUtils.LineTarget(leftChainTransform.position, magnet.gameObject);
+                connected = false;
+                chain = CT == ControllerType.Left ? ChainUtils.LineTarget(leftChainTransform.position, magnet.gameObject) : chain = ChainUtils.LineTarget(rightChainTransform.position, magnet.gameObject);
             }
         }
 
         if (lastShoot && chain != null)
         {
-            chain.transform.position = CT == ControllerType.Left ? leftChainTransform.position: rightChainTransform.position;
+            chain.transform.position = CT == ControllerType.Right ? rightChainTransform.position : leftChainTransform.position;
 
             if (connected)
             {
@@ -121,42 +126,35 @@ public class NewVRController : MonoBehaviour
             }
 
         }
+
+
+
+
+        holdf = Mathf.Clamp01(holdf + Time.deltaTime / 0.5f * (hovering ? 1 : -1));
+        if (holdf > 0)
+        {
+            if (!holdb)
+            {
+                holdb = true;
+                triggerEffectHolder.SetActive(true);
+            }
+            triggerEffectHolder.transform.localScale = Vector3.one * holdf;
+        }
+        else
+        {
+            if (holdb)
+            {
+                holdb = false;
+                triggerEffectHolder.SetActive(false);
+            }
+        }
     }
+
     IEnumerator DragScaleUp()
     {
-        onceScaleUp = true;
-        yield return new WaitForSeconds(0.15f);
-        pcon.rigid.drag = 0.8f;
+        yield return new WaitForSeconds(0.23f);
+        pcon.rigid.drag = 0.9f;
         pcon.rigid.angularDrag = 0.9f;
-    }
-    public void PlayerNoAction()
-    {
-        pcon.isFlying = true;
-        pcon.canJump = false;
-        connected = false;
-    }
-    public void Detach()
-    {
-        RemoveChain();
-
-        magnet = null;
-        canTrigger = false;
-    }
-
-    public void CompletelyDetach()
-    {
-        pcon.isFlying = false;
-        pcon.rigid.drag = 0f;
-        pcon.rigid.angularDrag = 0.05f;
-
-        myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = true;
-
-        this.canTrigger = false;
-        if (otherController.canTrigger) otherController.canTrigger = false;
-
-        RemoveChain();
-        magnet = null;
-        otherController.magnet = null;
     }
     public void RemoveChain()
     {
@@ -168,53 +166,88 @@ public class NewVRController : MonoBehaviour
         else StartCoroutine(RemoveChainI(chain));
         chain = null;
     }
-   
+
+    public void Detach()
+    {
+        magnet = null;
+        RemoveChain();
+        canTrigger = false;
+    }
+
+    public void CompletelyDetach()
+    {
+        myCharacter.GetComponent<PlayerControl>().isFlying = false;
+        pcon.rigid.drag = 0f;
+        pcon.rigid.angularDrag = 0.05f;
+        myCharacter.GetComponent<SimpleCapsuleWithStickMovement>().enabled = true;
+
+        magnet = null;
+        RemoveChain();
+        canTrigger = false;
+    }
+
     private void UpdateChainLength(Magnet target)
     {
-        pos = CT == ControllerType.Left ? leftChainTransform.position : rightChainTransform.position;
-        if (target != null)
+        Vector3 pos;
+        if (CT == ControllerType.Left)
         {
-            float len;
-            len = Vector3.Distance(pos, target.transform.position);
-            //pcon.rigid.MovePosition(pcon.rigid.position + (target.transform.position - pos).normalized * (len - chain.MaxLength()));
-            if (len > chain.MaxLength())
-            {
-                if (Vector3.Distance(pos, target.transform.position) > chain.MaxLength() + 0.3f)
-                {
-                    return;
-                }
-                len = chain.MaxLength();
-            }
-            chain.SetLength(len);
+            pos = leftChainTransform.position;
         }
-    }
+        else
+        {
+            pos = rightChainTransform.position;
+        }
 
+        float len = Vector3.Distance(pos, target.transform.position);
+        if (len > chain.MaxLength())
+        {
+            pcon.rigid.MovePosition(pcon.rigid.position + (target.transform.position - pos).normalized * (len - chain.MaxLength()));
+            if (Vector3.Distance(pos, target.transform.position) > chain.MaxLength() + 0.3f)
+            {
+
+                return;
+            }
+            len = chain.MaxLength();
+        }
+        chain.SetLength(len);
+    }
+    private void UpdateChainLengthWhite(Magnet target)
+    {
+        Vector3 pos = rightChainTransform.position;
+        float len = Vector3.Distance(pos, target.transform.position);
+        if (len > chain.MaxLength())
+        {
+            pcon.rigid.MovePosition(pcon.rigid.position + (target.transform.position - pos).normalized * (len - chain.MaxLength()));
+            if (Vector3.Distance(pos, target.transform.position) > chain.MaxLength() + 0.3f)
+            {
+                RemoveChain();
+                return;
+            }
+            len = chain.MaxLength();
+        }
+        chain.SetLength(len);
+    }
     [SerializeField] float pullSpeed = 2f;
-  
     private void PullTowards(Magnet target)
     {
-        canTrigger = false;
-        pos = CT == ControllerType.Left ? leftChainTransform.position : rightChainTransform.position;
-        if (target != null)
-        {
-            float len2;
-            len2 = Vector3.Distance(target.transform.position, pos);
+        Vector3 pos;
+        pos = CT == ControllerType.Right ? rightChainTransform.position : leftChainTransform.position;
 
-            if (len2 < target.openRadius)
-            {
-                myCharacter.transform.position += (target.transform.position - myCharacter.transform.position).normalized * pullSpeed * Time.deltaTime;
-                //pcon.rigid.isKinematic = true;
-                //pcon.rigid.isKinematic = false;
-                target.CheckOpen();
-            }
-            else
-            {
-                float a = Mathf.Clamp01(len2 / 10f);
-                pcon.rigid.AddForce((target.transform.position - myCharacter.transform.position).normalized * pullSpeed * a * Time.deltaTime, ForceMode.Acceleration);
-            }
+        float len = Vector3.Distance(target.transform.position, pos);
+        //pull with force
+
+        if (len < target.openRadius)
+        {
+            target.CheckOpen();
+        }
+        else
+        {
+            pcon.rigid.AddExplosionForce(forwardPower * Time.deltaTime * pullSpeed * 60f * Mathf.Clamp01(len / (target.radius * 5f)) * -1f, target.transform.position, len * 1f);
         }
     }
-  
+
+
+
     public IEnumerator RemoveChainI(ChainCore chain)
     {
         while (chain != null && chain.gameObject != null)

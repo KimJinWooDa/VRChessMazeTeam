@@ -38,6 +38,13 @@ public class ReStart : MonoBehaviour
                 vr.CompletelyDetach();
             }
         }
+        foreach (NewVRController vr2 in FindObjectsOfType<NewVRController>())
+        {
+            if (vr2.lastShoot)
+            {
+                vr2.CompletelyDetach();
+            }
+        }
         if (vc != null)
         { 
         vc.magnet = null;

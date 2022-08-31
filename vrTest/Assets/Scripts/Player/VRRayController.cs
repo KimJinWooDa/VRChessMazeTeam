@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class VRRayController : MonoBehaviour
 {
     public const int MAGNET_LAYER = 6;
-    public const float PULL_STR = 23f, STALL_TIME = 3f, YEET_STR = 600f, HOLD_LINGER = 0.5f, MAGNET_RANGE = 25f, PULL_STR2 = 45f;
+    public const float PULL_STR = 20f, STALL_TIME = 3f, YEET_STR = 600f, HOLD_LINGER = 0.5f, MAGNET_RANGE = 25f, PULL_STR2 = 45f;
 
     [Header("Preset Values")]
     public PlayerControl pcon;
@@ -45,7 +45,7 @@ public class VRRayController : MonoBehaviour
     [SerializeField] VRRayController otherController;
     void Start()
     {
-        myCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(); 
+        myCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         holdb = false;
         holdf = 0;
         triggerEffectHolder.SetActive(false);
@@ -70,16 +70,14 @@ public class VRRayController : MonoBehaviour
     public void VRHovering(Magnet magnet)
     {
         this.magnet = magnet;
-        this.magnet.GetComponentInChildren<ObjectIsHovering>().isHovering = true;
-        if(rc !=null) rc.targetMagnet = this.magnet.transform;
+        //this.magnet.GetComponent<ObjectIsHovering>().IsHovering(true);
+        if (rc != null) rc.targetMagnet = this.magnet.transform;
         BishopName = this.magnet.name;
     }
 
     public void VRExitHovering()
     {
-        this.magnet.GetComponentInChildren<ObjectIsHovering>().isHovering = false;
-        magnet = null;
-        canTrigger = false;
+        //this.magnet.GetComponent<ObjectIsHovering>().IsHovering(true);
     }
 
     public void VRTrigger()
@@ -100,15 +98,15 @@ public class VRRayController : MonoBehaviour
         }
         if (lastShoot)
         {
-            if (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger) && CT == ControllerType.Right && otherController != null && otherController.connected) //  && !isTest
+            if ((!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger)) && CT == ControllerType.Right && otherController != null && otherController.connected && !isTest) // 
             {
                 Detach();
             }
-            else if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && CT == ControllerType.Left && otherController != null && otherController.connected)
+            else if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && CT == ControllerType.Left && otherController != null && otherController.connected && !isTest)
             {
                 Detach();
             }
-            else if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger)))
+            else if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger)) && !isTest)
             {
                 CompletelyDetach();
             }
@@ -141,8 +139,7 @@ public class VRRayController : MonoBehaviour
         }
         else
         {
-
-            if (magnet != null && canTrigger) // || isTest)
+            if (magnet != null && (canTrigger || isTest)) //
             {
                 pcon.canJump = false;
                 lastShoot = true;
@@ -151,20 +148,12 @@ public class VRRayController : MonoBehaviour
                 {
                     chain = ChainUtils.LineTarget(leftChainTransform.position, magnet.gameObject);
                 }
-            }
-
-            if (magnet != null && canTrigger) // || isTest)
-            {
-                pcon.canJump = false;
-                lastShoot = true;
-                connected = false;
-                if (CT == ControllerType.Right)
+                else
                 {
                     chain = ChainUtils.LineTarget(rightChainTransform.position, magnet.gameObject);
                 }
             }
         }
-        
 
         if (lastShoot && chain != null)
         {
@@ -228,8 +217,19 @@ public class VRRayController : MonoBehaviour
         pcon.rigid.drag = 0.9f;
         pcon.rigid.angularDrag = 0.9f;
     }
+    public void RemoveChain()
+    {
+        if (!lastShoot) return;
 
-    public void Detach() {
+        lastShoot = false;
+        connected = false;
+        if (chain.expanding) StartCoroutine(RemoveChainPreI(chain));
+        else StartCoroutine(RemoveChainI(chain));
+        chain = null;
+    }
+
+    public void Detach()
+    {
         magnet = null;
         RemoveChain();
         canTrigger = false;
@@ -237,7 +237,6 @@ public class VRRayController : MonoBehaviour
 
     public void CompletelyDetach()
     {
-        StopAllCoroutines();
         if (stageNum == 2)
         {
             rc.isTriggerState = false;
@@ -252,16 +251,6 @@ public class VRRayController : MonoBehaviour
         RemoveChain();
         canTrigger = false;
     }
-    public void RemoveChain()
-    {
-        if (!lastShoot) return;
-
-        lastShoot = false;
-        connected = false;
-        if (chain.expanding) StartCoroutine(RemoveChainPreI(chain));
-        else StartCoroutine(RemoveChainI(chain));
-        chain = null;
-    }
 
     private void UpdateChainLength(Magnet target)
     {
@@ -274,14 +263,14 @@ public class VRRayController : MonoBehaviour
         {
             pos = rightChainTransform.position;
         }
-       
+
         float len = Vector3.Distance(pos, target.transform.position);
         if (len > chain.MaxLength())
         {
             pcon.rigid.MovePosition(pcon.rigid.position + (target.transform.position - pos).normalized * (len - chain.MaxLength()));
             if (Vector3.Distance(pos, target.transform.position) > chain.MaxLength() + 0.3f)
             {
- 
+
                 return;
             }
             len = chain.MaxLength();
@@ -318,12 +307,19 @@ public class VRRayController : MonoBehaviour
         }
         float len = Vector3.Distance(target.transform.position, pos);
         //pull with force
-        if (true)
+        //if (true)
+        //{
+          
+        //}
+
+        if (len < target.openRadius)
+        {
+            target.CheckOpen();
+        }
+        else
         {
             pcon.rigid.AddExplosionForce(forwardPower * Time.deltaTime * pullSpeed * 60f * Mathf.Clamp01(len / (target.radius * 5f)) * -1f, target.transform.position, len * 1f);
         }
-
-        if (len < target.openRadius) target.CheckOpen();
     }
 
     private void WrongColor(Magnet target)
@@ -346,19 +342,19 @@ public class VRRayController : MonoBehaviour
     }
 
     public bool Grip(ControllerType lr)
-    { 
+    {
         if (testGrip) return true;
         if (lr == ControllerType.Left) return OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger);
         else return OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger);
     }
 
     public bool Trigger(ControllerType lr)
-    { 
+    {
         if (lr == ControllerType.Left) return OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger);
         else return OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger);
     }
 
-   public IEnumerator RemoveChainI(ChainCore chain)
+    public IEnumerator RemoveChainI(ChainCore chain)
     {
         while (chain != null && chain.gameObject != null)
         {

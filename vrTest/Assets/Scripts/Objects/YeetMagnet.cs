@@ -34,7 +34,7 @@ public class YeetMagnet : Magnet {
                 }
             }
         }
-      if(nvrrc.Length != 0)
+        if (nvrrc.Length != 0)
         {
             foreach (NewVRController vr2 in nvrrc)
             {

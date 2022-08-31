@@ -3941,6 +3941,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7188414328729654944, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 541995577023416461, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bf40f8f705eca5d4baf3a7000432e538, type: 3}
@@ -4003,8 +4007,6 @@ MonoBehaviour:
   hovering: 0
   connected: 0
   lastShoot: 0
-  isRightHovering: 0
-  isLeftHovering: 0
   isTest: 0
   pullSpeed: 2
 --- !u!114 &9076776619995806866
@@ -4035,8 +4037,6 @@ MonoBehaviour:
   hovering: 0
   connected: 0
   lastShoot: 0
-  isRightHovering: 0
-  isLeftHovering: 0
   isTest: 0
   pullSpeed: 2
 --- !u!114 &9076776619995806867
@@ -4067,8 +4067,6 @@ MonoBehaviour:
   hovering: 0
   connected: 0
   lastShoot: 0
-  isRightHovering: 0
-  isLeftHovering: 0
   isTest: 0
   pullSpeed: 3
 --- !u!114 &9076776619995806868
@@ -4099,7 +4097,5 @@ MonoBehaviour:
   hovering: 0
   connected: 0
   lastShoot: 0
-  isRightHovering: 0
-  isLeftHovering: 0
   isTest: 0
   pullSpeed: 3
