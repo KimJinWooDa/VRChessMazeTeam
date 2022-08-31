@@ -41,6 +41,7 @@ public class YeetMagnet : Magnet {
                 if (vr2.lastShoot)
                 {
                     vr2.CompletelyDetach();
+                    vr2.waitTime = true;
                 }
             }
         }

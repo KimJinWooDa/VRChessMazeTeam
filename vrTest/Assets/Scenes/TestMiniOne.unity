@@ -162,12 +162,24 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 122d36a1f759fba4986a7539dc551356, type: 2}
     - target: {fileID: 5731848436691147853, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: power
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5731848436691147853, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: openRadius
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5731848436691147853, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
+      propertyPath: nvrrc.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5731848436691147853, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
+      propertyPath: nvrrc.Array.data[0]
+      value: 
+      objectReference: {fileID: 9076776619995806868}
+    - target: {fileID: 5731848436691147853, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
+      propertyPath: nvrrc.Array.data[1]
+      value: 
+      objectReference: {fileID: 9076776619995806867}
     - target: {fileID: 6943977983461612500, guid: 9cbcaeaad85e68c429ad9c3f8a13f4b4, type: 3}
       propertyPath: m_Name
       value: Rook
@@ -2895,7 +2907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6369319044010995400, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: power
-      value: 24
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 6369319044010995400, guid: 72fb024333e1a054785146e4631f5e01, type: 3}
       propertyPath: openRadius
@@ -4007,6 +4019,7 @@ MonoBehaviour:
   hovering: 0
   connected: 0
   lastShoot: 0
+  waitTime: 0
   isTest: 0
   pullSpeed: 2
 --- !u!114 &9076776619995806866
@@ -4037,6 +4050,7 @@ MonoBehaviour:
   hovering: 0
   connected: 0
   lastShoot: 0
+  waitTime: 0
   isTest: 0
   pullSpeed: 2
 --- !u!114 &9076776619995806867
@@ -4067,6 +4081,7 @@ MonoBehaviour:
   hovering: 0
   connected: 0
   lastShoot: 0
+  waitTime: 0
   isTest: 0
   pullSpeed: 3
 --- !u!114 &9076776619995806868
@@ -4097,5 +4112,6 @@ MonoBehaviour:
   hovering: 0
   connected: 0
   lastShoot: 0
+  waitTime: 0
   isTest: 0
   pullSpeed: 3

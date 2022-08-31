@@ -46,6 +46,14 @@ public class GrabChessObjects : MonoBehaviour
             isOnce = true;
         }
 
+        if (OVRInput.GetDown(OVRInput.Button.Two))
+        {
+            //StartCoroutine(DissolveChess(other.transform));
+            //other.GetComponent<ChessState>().TriggerState();
+            GameManager.instance.stageNum = 1;
+            GameObject.Find("Fade Manager").GetComponent<FadeManager>().GoToScene(5);
+            isOnce = true;
+        }
 
     }
     private void OnTriggerStay(Collider other)

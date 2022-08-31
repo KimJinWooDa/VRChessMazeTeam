@@ -25,10 +25,11 @@ public class NewVRController : MonoBehaviour
     RaycastHit hit;
 
     public bool hovering, connected, lastShoot;
-
+    public bool waitTime;
     bool onceScaleUp;
     public bool isTest;
     bool plz;
+    bool isOnce;
 
     Quaternion Rotation;
     Vector3 Forward;
@@ -52,7 +53,7 @@ public class NewVRController : MonoBehaviour
         Rotation = this.transform.rotation;
         Forward = Rotation * Vector3.forward;
 
-        if (Physics.Raycast(rayPos, Forward, out hit, rayDistance, 1 << 6))
+        if (Physics.Raycast(rayPos, Forward, out hit, rayDistance, 1 << 6) && !waitTime)
         {
             if(magnet == null)
             {       
@@ -68,28 +69,32 @@ public class NewVRController : MonoBehaviour
                 magnet.GetComponentInChildren<ObjectIsHovering>().isHovering = false;
             }
         }
-
-        if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger) && magnet != null)
+        if (waitTime && !isOnce)
+        {
+            isOnce = true;
+            StartCoroutine(WaitTwoOneSecondTime());
+        }
+        if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger) && CT == ControllerType.Right && magnet != null)
         {
             canTrigger = true;
         }
 
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) && magnet != null)
+        if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && CT == ControllerType.Left && magnet != null)
         {
             canTrigger = true;
         }
 
         if (lastShoot)
         {
-            if ((!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger)) && CT == ControllerType.Right && otherController != null && otherController.connected) //  && !isTest
+            if ((!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger)) && CT == ControllerType.Right && otherController.connected && !isTest) //  && !isTest
             {
                 Detach();
             }
-            else if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && CT == ControllerType.Left && otherController != null && otherController.connected)//!isTest
+            else if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && CT == ControllerType.Left && otherController.connected && !isTest) //!isTest
             {
                 Detach();
             }
-            else if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))) // && !isTest
+            else if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && (!OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger)) && !isTest) // && !isTest
             {
                 CompletelyDetach();
             }
@@ -104,7 +109,7 @@ public class NewVRController : MonoBehaviour
         }
         else
         {
-            if (magnet != null && (canTrigger)) //
+            if (magnet != null && (canTrigger || isTest)) //
             {
                 pcon.canJump = false;
                 lastShoot = true;
@@ -149,7 +154,12 @@ public class NewVRController : MonoBehaviour
             }
         }
     }
-
+    IEnumerator WaitTwoOneSecondTime()
+    {
+        yield return new WaitForSeconds(0.5f);
+        waitTime = false;
+        isOnce = false;
+    }
     IEnumerator DragScaleUp()
     {
         yield return new WaitForSeconds(0.23f);
@@ -236,13 +246,11 @@ public class NewVRController : MonoBehaviour
         float len = Vector3.Distance(target.transform.position, pos);
         //pull with force
 
+        pcon.rigid.AddExplosionForce(forwardPower * Time.deltaTime * pullSpeed * 60f * Mathf.Clamp01(len / (target.radius * 5f)) * -1f, target.transform.position, len * 1f);
+
         if (len < target.openRadius)
         {
             target.CheckOpen();
-        }
-        else
-        {
-            pcon.rigid.AddExplosionForce(forwardPower * Time.deltaTime * pullSpeed * 60f * Mathf.Clamp01(len / (target.radius * 5f)) * -1f, target.transform.position, len * 1f);
         }
     }
 

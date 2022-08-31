@@ -18,7 +18,7 @@ public class SuperJump : MonoBehaviour
         }
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<PlayerControl>().jumpPower *= 2.3f;
+            other.GetComponent<PlayerControl>().jumpPower *= 3f;
         }
     }
 

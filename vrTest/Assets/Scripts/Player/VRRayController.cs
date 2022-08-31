@@ -307,19 +307,16 @@ public class VRRayController : MonoBehaviour
         }
         float len = Vector3.Distance(target.transform.position, pos);
         //pull with force
-        //if (true)
-        //{
-          
-        //}
+        if (true)
+        {
+            pcon.rigid.AddExplosionForce(forwardPower * Time.deltaTime * pullSpeed * 60f * Mathf.Clamp01(len / (target.radius * 5f)) * -1f, target.transform.position, len * 1f);
+        }
 
         if (len < target.openRadius)
         {
             target.CheckOpen();
         }
-        else
-        {
-            pcon.rigid.AddExplosionForce(forwardPower * Time.deltaTime * pullSpeed * 60f * Mathf.Clamp01(len / (target.radius * 5f)) * -1f, target.transform.position, len * 1f);
-        }
+
     }
 
     private void WrongColor(Magnet target)
